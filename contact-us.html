@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Uttarakhand With Us">
+    <meta name="keywords" content="Tourism,Uttarakhand,Nature,web-appication">
+    <!-- open graph data -->
+    <meta property="og:site_name" content="Uttarakhand Tourism">
+    <meta property="og:title" content="Explore Uttarakhand With Us">
+    <meta property="og:url" content="url">
+    <meta property="og:image" content="Image Url">
+    <title>Blog</title>
+    <!-- link goggle font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- font-awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./stylesheets/blogstyle.css">
+
+
+</head>
+
+<body>
+    <section class="header-section">
+        <div class="menuopen-btn" id="menu-open-btn">
+            <span>
+                <i class="fa-solid fa-bars fa-2xl"></i>
+            </span>
+        </div>
+        <header id="header">
+            <div class="close-btn" id="menu-close-btn">
+                <span>
+                    <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
+                </span>
+            </div>
+
+            <a href="./index.html" class="logo">
+                <img src="./Assests/logo.svg" alt="logo">
+            </a>
+
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./index.html">Home</a> </li>
+                    <li><a href="#">About</a> </li>
+                    <li><a href="./destinations.html">Destinaton</a> </li>
+                    <li><a href="#">Explore</a> </li>
+                    <li><a href="./contact-us.html">Contact</a> </li>
+                </ul>
+            </nav>
+            <div>
+                <a href="./signin.html" class="btn-style">Sign-Up</a>
+            </div>
+        </header>
+    </section>
+
+    <main class="main-container">
+        <section class="contact-section container">
+            <h1 class="heading">Get in Touch</h1>
+            <p>We would love to hear from you! If you have any comments or suggestions about our website or our
+                tours, please don't hesitate to get in touch. We are always looking for ways to improve and make
+                your travel experience even better.</p>
+            <div class="social-media-card">
+                <div class="contact-card card">
+                    <h3>Social Media</h3>
+                    <div class="social-media-icon">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook fa-xl"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                        <a href="mailto:abc@gmail.com">
+                            <i class="fa-solid fa-envelope fa-xl"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram fa-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="email-card card">
+                    <h3>Email & Phone</h3>
+                    <div class="links">
+                        <i class="fa-solid fa-envelope" style="margin-right: 10px;"></i>
+                        <a href="mailto:robin123@gmail.com">robin@123gmail.com</a>
+                    </div>
+                    <div class="links">
+                        <i class=" fa-solid fa-phone" style="margin-right: 10px;"></i>
+                        <a href="tel:23232323232">45544422594</a>
+                    </div>
+                </div>
+                <div class="address-card card">
+                    <h3>Address</h3>
+                    <address>
+                        Balawala, Dehradun<br>
+                        Uttarakhand, India
+                    </address>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <div class="input-field">
+                        <label for="user-name">User Name</label>
+                        <input type="text" id="user-name" name="username" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="user-email">User Email</label>
+                        <input type="email" id="user-email" name="useremail" placeholder="Your Email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="user-phone">Phone Number</label>
+                        <input type="number" id="user-phone" name="userphone" placeholder="Your Mobile Number" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Type your message here"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="./scripts/sidebar.js"></script>
+</body>
+
+</html>

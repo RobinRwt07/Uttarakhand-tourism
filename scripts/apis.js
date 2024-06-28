@@ -1,7 +1,6 @@
 
 const api_key = "46856b024a23a0bcfcf98c5194d9945e";
 
-
 export const url = {
     currentWeather(lat, lon) {
         return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key} `;
@@ -18,5 +17,3 @@ export const url = {
 export function kelvintoCelsius(kel) {
     return (kel - 273.15)
 }
-
-export const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesdat', 'Thursday', 'Friday', 'Saturday'];

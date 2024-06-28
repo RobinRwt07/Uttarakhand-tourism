@@ -1,5 +1,6 @@
 @import url("./reset.css");
 @import url("./header.css");
+@import url('./footer.css');
 
 .blog-section {
     @media (max-width: 768px) {
@@ -175,6 +176,7 @@
         padding: 1rem 0.5rem;
         border: 1px solid var(--lightGray);
         border-radius: 1rem;
+        margin-block-end: 1rem;
 
         @media (min-width: 450px) {
             padding: 2% 5%;
@@ -449,6 +451,7 @@
 
 .environment {
     background-color: var(--blue);
+    margin-bottom: 2rem;
 
     .env {
         max-width: 1500px;

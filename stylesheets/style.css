@@ -116,6 +116,7 @@
                 display: block;
                 padding: .4rem 1rem;
                 color: var(--white);
+                text-align: center;
 
                 @media (min-width:768px) {
                     flex-direction: row;

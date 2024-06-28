@@ -4,6 +4,7 @@
     @media (min-width:768px) {
         position: sticky;
         top: 0;
+        z-index: 15;
     }
 
     background-color: var(--blue);
@@ -11,8 +12,8 @@
     &>.menuopen-btn {
         cursor: pointer;
         position: absolute;
-        top: 5%;
-        left: 2rem;
+        top: 1rem;
+        left: 1.5rem;
 
         @media (min-width:768px) {
             display: none;
@@ -69,6 +70,7 @@
             }
 
             &>li>a {
+                text-align: center;
                 display: block;
                 padding: .4rem .6rem;
                 color: var(--white);
@@ -80,6 +82,12 @@
                 }
             }
 
+        }
+
+        @media (max-width:768px) {
+            &>.btn {
+                margin-inline: auto;
+            }
         }
     }
 }

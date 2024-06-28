@@ -1,20 +1,33 @@
 @import url("./reset.css");
 
+@import url("./header.css");
 
 #switch:checked+.signin-form {
     display: none;
-
 }
 
 #switch:checked~.signup-form {
     display: block;
+}
 
+.login {
+    display: flex;
+    align-items: center;
+    height: 100dvh;
 }
 
 .login-container {
+    @media (max-width: 768px) {
+        margin-block-start: 3rem;
+    }
+
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    max-width: 1024px;
+    margin: auto;
+    background-color: var(--bg2);
+    border-radius: 0.5rem;
 
     &>.left {
         &>img {
@@ -22,17 +35,21 @@
         }
     }
 
-    @media (min-width:450px) {
+    @media (min-width: 450px) {
         width: 90%;
         margin-inline: auto;
     }
 
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
         flex-direction: row;
         width: 100%;
 
         &>.left {
             width: 50%;
+
+            &>img {
+                border-radius: .5rem;
+            }
         }
 
         &>.right {
@@ -46,41 +63,38 @@
         flex-direction: column;
         justify-content: center;
 
-        @media (min-width:768px) {
-            padding: 3% 5%;
+        @media (min-width: 768px) {
+            padding: 1% 5%;
         }
 
         &>h2 {
-            color: var(--blue);
-            font-size: clamp(24px, 4vw, 42px);
             text-align: center;
         }
 
         &>.forms {
-            & input[type=checkbox] {
+            & input[type="checkbox"] {
                 display: none;
             }
 
             &>h3 {
-                margin-block: 1rem;
                 text-align: center;
             }
 
             &>a {
                 display: flex;
                 justify-content: center;
-                gap: .5rem;
-                padding: .5rem;
+                gap: 0.5rem;
+                padding: 0.5rem;
                 border: 2px solid var(--blue);
-                border-radius: .5rem;
-                margin-block: .5rem;
-                font-size: .8rem;
+                border-radius: 0.5rem;
+                margin-block: 0.5rem;
+                font-size: 0.8rem;
             }
 
             &>.divider {
-                padding: .5rem 1rem;
+                padding: 0.5rem 1rem;
                 text-align: center;
-                margin-block: 1rem;
+                margin-block-end: 1rem;
 
                 &>span {
                     position: relative;
@@ -106,8 +120,6 @@
                         left: -25%;
                     }
                 }
-
-
             }
 
             &>.signup-form {
@@ -115,7 +127,6 @@
             }
 
             &>.form {
-
                 &>form {
                     display: flex;
                     flex-direction: column;
@@ -123,12 +134,11 @@
 
                     &>button {
                         border: none;
-                        padding: .5rem .6rem;
+                        padding: 0.5rem 0.6rem;
                         border-radius: 1rem;
                         cursor: pointer;
                         background-color: var(--blue);
                         color: var(--white);
-                        transition: all .3s ease-out;
                         margin-block-start: 1rem;
 
                         &:hover {
@@ -144,19 +154,23 @@
                     &>label {
                         cursor: pointer;
                         text-align: center;
-                        font-size: .8rem;
+                        font-size: 13px;
                     }
                 }
 
                 & .input-field {
                     display: flex;
                     flex-direction: column;
-                    gap: .5rem;
+                    gap: 0.3rem;
+
+                    &>label {
+                        font-size: 14px;
+                    }
 
                     &>input,
                     &>textarea {
-                        padding: .5rem .6rem;
-                        font-size: 16px;
+                        padding: 0.5rem 0.6rem;
+
                         outline: none;
                         border-radius: 8px;
                         border: 2px solid var(--lightGray);
@@ -165,6 +179,11 @@
                         &:focus {
                             border-color: var(--darkgray);
                         }
+                    }
+
+                    &>.error {
+                        font-size: 13px;
+                        color: red;
                     }
                 }
             }

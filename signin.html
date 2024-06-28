@@ -28,70 +28,104 @@
 </head>
 
 <body>
-    <main class="main-container">
-        <section>
-            <div class="login-container">
-                <div class="left">
-                    <img src="./Assests/front-image.jpg" alt="image">
-                </div>
-                <div class="right">
-                    <h2 class="heading">Welcome</h2>
-                    <div class="forms">
-                        <h3>Create Your Account -</h3>
-                        <a href="#">
-                            <span>
-                                <i class="fa-brands fa-google fa-xl" style="color: #000000;"></i>
-                            </span>
-                            <p>Continue with Google</p>
-                        </a>
-                        <div class="divider"><span>Or</span></div>
-                        <input type="checkbox" name="form-switch" id="switch">
-                        <div class="form signin-form">
-                            <form action="#">
-                                <div class="input-field">
-                                    <label for="user-email">User Email</label>
-                                    <input type="email" id="user-email" name="useremail" placeholder="Your Email"
-                                        required>
-                                </div>
+    <section class="header-section">
+        <div class="menuopen-btn" id="menu-open-btn" style="z-index:15;">
+            <span>
+                <i class="fa-solid fa-bars fa-xl" style="color: #0c0c0c;"></i>
+            </span>
+        </div>
+        <header id="header">
+            <div class=" close-btn" id="menu-close-btn">
+                <span>
+                    <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
+                </span>
+            </div>
 
-                                <div class="input-field">
-                                    <label for="user-password">User Password</label>
-                                    <input type="password" id="user-password" name="userpassword"
-                                        placeholder="Your Password" required>
-                                </div>
-                                <button type="submit">Log-In</button>
-                                <label for="switch">New User? Sign-Up Here</label>
-                            </form>
-                        </div>
+            <a href="./index.html" class="logo">
+                <img src="./Assests/logo.svg" alt="logo">
+            </a>
 
-                        <div class="form signup-form">
-                            <form action="#">
-                                <div class="input-field">
-                                    <label for="new-user-name">Full Name</label>
-                                    <input type="text" id="new-user-name" name="newusername" placeholder="Your Name"
-                                        required>
-                                </div>
-                                <div class="input-field">
-                                    <label for="new-user-email">User Email</label>
-                                    <input type="email" id="new-user-email" name="newuseremail" placeholder="Your Email"
-                                        required>
-                                </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="./index.html">Home</a> </li>
+                    <li><a href="./destinations.html">Destinaton</a> </li>
+                    <li><a href="#">Explore</a> </li>
+                    <li><a href="./contact-us.html">Contact</a> </li>
+                    <li><a href="./about.html">About Us</a> </li>
+                </ul>
+            </nav>
+            <div class="btn">
+                <a href="./signin.html" class="btn-style">Sign-Up</a>
+            </div>
+        </header>
 
-                                <div class="input-field">
-                                    <label for="new-user-password">User Password</label>
-                                    <input type="password" id="new-user-password" name="new-userpassword"
-                                        placeholder="Your Password" required>
-                                </div>
+    </section>
+    <section class="login">
+        <div class="login-container">
+            <div class="left">
+                <img src="./Assests/login.jpg" alt="image">
+            </div>
+            <div class="right">
+                <h2 class="heading">Welcome</h2>
+                <div class="forms">
+                    <h3>Create Your Account -</h3>
+                    <a href="#">
+                        <span>
+                            <i class="fa-brands fa-google fa-xl" style="color: #000000;"></i>
+                        </span>
+                        <p>Continue with Google</p>
+                    </a>
+                    <div class="divider"><span>Or</span></div>
+                    <input type="checkbox" name="form-switch" id="switch">
+                    <div class="form signin-form">
+                        <form action="#" id="signin">
+                            <div class="input-field">
+                                <label for="user-email">User Email</label>
+                                <input type="email" id="user-email" name="useremail" placeholder="Your Email">
+                                <span class="error" id="emailError"></span>
+                            </div>
 
-                                <button type="submit">Create New Account</button>
-                                <label for="switch">Already have and account? Login here</label>
-                            </form>
-                        </div>
+                            <div class="input-field">
+                                <label for="user-password">User Password</label>
+                                <input type="password" id="user-password" name="userpassword"
+                                    placeholder="Your Password">
+                                <span class="error" id="passwordError"></span>
+                            </div>
+                            <button type="submit">Log-In</button>
+                            <label for="switch">New User? Sign-Up Here</label>
+                        </form>
+                    </div>
+
+                    <div class="form signup-form">
+                        <form action="#" id="signup">
+                            <div class="input-field">
+                                <label for="new-user-name">Full Name</label>
+                                <input type="text" id="new-user-name" name="new-username" placeholder="Your Name">
+                                <span class="error" id="nameErr"></span>
+                            </div>
+                            <div class="input-field">
+                                <label for="new-user-email">User Email</label>
+                                <input type="email" id="new-user-email" name="new-useremail" placeholder="Your Email">
+                                <span class="error" id="emailErr"></span>
+                            </div>
+
+                            <div class="input-field">
+                                <label for="new-user-password">User Password</label>
+                                <input type="password" id="new-user-password" name="new-userpassword"
+                                    placeholder="Your Password">
+                                <span class="error" id="passwordErr"></span>
+                            </div>
+
+                            <button type="submit">Create New Account</button>
+                            <label for="switch">Already have and account? Login here</label>
+                        </form>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+    <script src="./scripts/formvalidation.js" type="module"></script>
+    <script src="./scripts/sidebar.js" type="module"> </script>
 </body>
 
 </html>

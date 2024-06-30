@@ -83,6 +83,8 @@ async function fetchData() {
     }
 }
 
+// this function initialize map into our page
+
 function showMap(lat, lon) {
     let map = L.map("map").setView([lat, lon], 13);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {

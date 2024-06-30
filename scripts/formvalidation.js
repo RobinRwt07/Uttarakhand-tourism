@@ -25,6 +25,29 @@ signIn.addEventListener("submit", (e) => {
         valid = false;
         passwordError.textContent = notValid;
     }
+
+    // verify user data 
+
+    if (valid) {
+        let user = {
+            email: formData.get("useremail"),
+            password: formData.get("userpassword")
+        }
+        if (!localStorage.getItem(user.email)) {
+            alert("Please register before login");
+            location.reload();
+        }
+        else {
+            let userdata = JSON.parse(localStorage.getItem(user.email));
+            if (user.password === userdata.password) {
+                location.href = "./index.html";
+            }
+            else {
+                alert("Password not matched");
+            }
+        }
+    }
+
 });
 
 signUp.addEventListener("submit", (e) => {
@@ -57,5 +80,22 @@ signUp.addEventListener("submit", (e) => {
         nameErr.textContent = isNameNotValid;
     }
 
+    // if user credential are valid then store it into local storage 
+    if (valid) {
+        let user = {
+            name: formData.get("new-username"),
+            email: formData.get("new-useremail"),
+            password: formData.get("new-userpassword")
+        }
+
+        if (!localStorage.getItem(user.email)) {
+            localStorage.setItem(user.email, JSON.stringify(user));
+            alert("Registred Successfully");
+            location.reload();
+        }
+        else {
+            alert("User Already Exists");
+        }
+    }
 });
 

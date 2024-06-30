@@ -35,7 +35,7 @@ export const validateName = (name) => {
         return "Name field Should not be empty";
     }
     else if (!regex.test(name)) {
-        return "Name should only contain letter."
+        return "Name should only contain letter.";
     }
     else {
         return false;

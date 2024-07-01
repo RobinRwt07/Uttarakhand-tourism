@@ -26,6 +26,10 @@
 
     <link rel="stylesheet" href="./stylesheets/destination.css">
 
+    <!-- swiper library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -173,7 +177,7 @@
                 <div class="treks-container scrollbar ">
                     <a href="#" class="trek-card">
                         <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
+                            <img src="./Assests/trek-uttrakhand.jpg" alt="trek" loading="lazy">
                         </div>
                         <div class="bottom">
                             <span>5 Days</span>
@@ -196,7 +200,7 @@
                     </a>
                     <a href="#" class="trek-card">
                         <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
+                            <img src="./Assests/trek-uttrakhand.jpg" alt="trek" loading="lazy">
                         </div>
                         <div class="bottom">
                             <span>5 Days</span>
@@ -219,7 +223,7 @@
                     </a>
                     <a href="#" class="trek-card">
                         <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
+                            <img src="./Assests/trek-uttrakhand.jpg" alt="trek" loading="lazy">
                         </div>
                         <div class="bottom">
                             <span>5 Days</span>
@@ -242,7 +246,7 @@
                     </a>
                     <a href="#" class="trek-card">
                         <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
+                            <img src="./Assests/trek-uttrakhand.jpg" alt="trek" loading="lazy">
                         </div>
                         <div class="bottom">
                             <span>5 Days</span>
@@ -265,53 +269,7 @@
                     </a>
                     <a href="#" class="trek-card">
                         <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
-                        </div>
-                        <div class="bottom">
-                            <span>5 Days</span>
-                            <p>Chopta Chandrashilla Trek</p>
-                            <div class="first">
-                                <span>Dificulty Level</span>
-                                <span>Medium</span>
-                            </div>
-                            <div class="second">
-                                <span>
-                                    <i class="fa-solid fa-road"></i>
-                                    3000mts
-                                </span>
-                                <span>
-                                    <i class="fa-solid fa-signal fa-sm"></i>
-                                    40kms
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="trek-card">
-                        <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
-                        </div>
-                        <div class="bottom">
-                            <span>5 Days</span>
-                            <p>Chopta Chandrashilla Trek</p>
-                            <div class="first">
-                                <span>Dificulty Level</span>
-                                <span>Medium</span>
-                            </div>
-                            <div class="second">
-                                <span>
-                                    <i class="fa-solid fa-road"></i>
-                                    3000mts
-                                </span>
-                                <span>
-                                    <i class="fa-solid fa-signal fa-sm"></i>
-                                    40kms
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="trek-card">
-                        <div class="top">
-                            <img src="./Assests/treks.jpg" alt="trek">
+                            <img src="./Assests/trek-uttrakhand.jpg" alt="trek" loading="lazy">
                         </div>
                         <div class="bottom">
                             <span>5 Days</span>
@@ -434,6 +392,53 @@
             </div>
         </section>
 
+        <section class="event-section container">
+            <div class="events">
+                <h2 class="sub-heading">Events</h2>
+                <div class="event-container scrollbar">
+                    <div class="event-item">
+                        <div class="event-image">
+                            <img src="./Assests/Feature_Govind National Park.jpeg" alt="event image">
+                        </div>
+                        <div class="event-info">
+                            <h3>Event title</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos sequi, atque
+                                officiis aliquam, autem amet tempora, voluptates consequatur iure odio alias ullam
+                                libero
+                                tenetur. Labore debitis quae unde minus culpa?</p>
+                            <strong> <span>24 July - 28 July 2024</span></strong>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-image"> <img src="./Assests/Feature_Govind National Park.jpeg"
+                                alt="event image">
+                        </div>
+                        <div class="event-info">
+                            <h3>Event title</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos sequi, atque
+                                officiis aliquam, autem amet tempora, voluptates consequatur iure odio alias ullam
+                                libero
+                                tenetur. Labore debitis quae unde minus culpa?</p>
+                            <span>24 July - 28 July 2024</span>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-image"> <img src="./Assests/Feature_Govind National Park.jpeg"
+                                alt="event image">
+                        </div>
+                        <div class="event-info">
+                            <h3>Event title</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos sequi, atque
+                                officiis aliquam, autem amet tempora, voluptates consequatur iure odio alias ullam
+                                libero
+                                tenetur. Labore debitis quae unde minus culpa?</p>
+                            <span>24 July - 28 July 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- scripts -->
     </main>
     <section class="footer-section container">
@@ -490,6 +495,7 @@
         </div>
     </section>
     <script src="./scripts/sidebar.js"></script>
+    <script src="./scripts/swiper.js"></script>
 </body>
 
 </html>

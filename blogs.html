@@ -28,6 +28,40 @@
 </head>
 
 <body>
+
+    <dialog id="blog" class="blog-form-section " role="dialog">
+        <div class="close-btn" id="close-dialog">
+            <span>
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+            </span>
+        </div>
+
+        <div class="info">
+            <h3>Share your experience with world</h3>
+            <div class="blog-upload-form">
+                <form method="post" id="blog-form" enctype="multipart/form-data">
+                    <div class="input-field">
+                        <label for="user-name">User Name</label>
+                        <input type="text" id="user-name" name="username" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="blog-heading">Blog heading</label>
+                        <input type="text" id="blog-heading" name="blogheading" placeholder="Blog heading`" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="image">Image</label>
+                        <input type="file" id="image" name="image" required accept=".jpeg, .png, .webp">
+                    </div>
+                    <div class="input-field">
+                        <label for="message">Write Your Experience</label>
+                        <textarea name="message" id="message" rows="5" placeholder="minimum 100 Words"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
     <section class="header-section">
         <div class="menuopen-btn" id="menu-open-btn">
             <span>
@@ -40,8 +74,6 @@
                     <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
                 </span>
             </div>
-
-
             <a href="./index.html" class="logo">
                 <img src="./Assests/logo.svg" alt="logo">
             </a>
@@ -58,11 +90,15 @@
             <div class="btn">
                 <a href="./signin.html" class="btn-style">Sign-Up</a>
             </div>
+            <div class="btn">
+                <button class="btn-style" id="open-dialog">Add Blog</button>
+            </div>
         </header>
 
     </section>
+
     <main class="main-container">
-        <section class=" container">
+        <section class="container">
             <div class="blogs-section">
                 <h1 class="heading">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, veritatis!</h1>
                 <div class="blog-banner">
@@ -291,6 +327,18 @@
         </div>
     </section>
     <script src="./scripts/sidebar.js"></script>
+    <script>
+        const openDialog = document.querySelector("#open-dialog");
+        const closeDialog = document.querySelector("#close-dialog");
+        const blog = document.querySelector("#blog");
+
+        openDialog.addEventListener("click", () => {
+            blog.showModal();
+        })
+        closeDialog.addEventListener("click", () => {
+            blog.close();
+        })
+    </script>
 </body>
 
 </html>

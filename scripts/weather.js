@@ -23,7 +23,6 @@ async function fetchData() {
                 const forecast = await result.json();
                 if (forecast) {
                     const hourlyForecast = forecast.list.slice(0, 7);
-
                     const weatherBox = document.createElement("div");
                     weatherBox.classList.add("weather-map");
                     weatherBox.innerHTML = `

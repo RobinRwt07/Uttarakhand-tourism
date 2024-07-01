@@ -115,7 +115,7 @@ img {
 .btn-style {
     border: none;
     border-radius: 2rem;
-    padding: .6rem 1.2rem;
+    padding: .4rem 1.2rem;
     cursor: pointer;
     background-color: var(--white);
     transition: all .4s ease-out;
@@ -131,7 +131,7 @@ img {
 
 .swiper {
     width: 100%;
-    height: auto;
+    height: 100%;
 
     @media (min-width:600px) {
         height: 300px;
@@ -142,4 +142,16 @@ img {
         height: 400px;
         margin-inline: auto;
     }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: rgb(255, 144, 40) !important;
+    width: 0% !important
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 30px !important;
+    font-weight: bold;
 }

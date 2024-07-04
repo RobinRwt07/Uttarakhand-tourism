@@ -128,60 +128,13 @@
 
             &>.form {
                 &>form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-
-                    &>button {
-                        border: none;
-                        padding: 0.5rem 0.6rem;
-                        border-radius: 1rem;
-                        cursor: pointer;
-                        background-color: var(--blue);
-                        color: var(--white);
-                        margin-block-start: 1rem;
-
-                        &:hover {
-                            background-color: var(--textColor);
-                        }
-
-                        &:focus {
-                            outline-offset: 3px;
-                            outline: 3px solid var(--orange);
-                        }
-                    }
-
                     &>label {
                         cursor: pointer;
                         text-align: center;
                         font-size: 13px;
                     }
-                }
 
-                & .input-field {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.3rem;
-
-                    &>label {
-                        font-size: 14px;
-                    }
-
-                    &>input,
-                    &>textarea {
-                        padding: 0.5rem 0.6rem;
-
-                        outline: none;
-                        border-radius: 8px;
-                        border: 2px solid var(--lightGray);
-                        resize: none;
-
-                        &:focus {
-                            border-color: var(--darkgray);
-                        }
-                    }
-
-                    &>.error {
+                    & .error {
                         font-size: 13px;
                         color: red;
                     }

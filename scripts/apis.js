@@ -10,7 +10,7 @@ export const url = {
     },
     geo(query) {
         return `http://api.openweathermap.org/geo/1.0/direct?q=${query},uttarakhand,india&limit=1&appid=${api_key}`;
-    },
+    }
 }
 
 

@@ -32,6 +32,14 @@
         padding: 1rem 2rem;
         background-color: var(--blue);
         z-index: 15;
+        opacity: 1;
+        transition: all .3s linear;
+
+        /* define the staring value for header property */
+        @starting-style {
+            width: 0%;
+            opacity: 0;
+        }
 
         @media (min-width:768px) {
             position: sticky;
@@ -89,5 +97,7 @@
                 margin-inline: auto;
             }
         }
+
     }
+
 }

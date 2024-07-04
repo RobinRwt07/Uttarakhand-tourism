@@ -2,6 +2,15 @@
 @import url("./header.css");
 @import url('./footer.css');
 
+@supports selector(::-webkit-file-upload-button) {
+    #image::-webkit-file-upload-button {
+        appearance: none;
+        border: 1px solid var(--gray);
+        border-radius: 2rem;
+        background-color: var(--white);
+    }
+}
+
 .blog-section {
     @media (max-width: 768px) {
         margin-top: 2rem;
@@ -195,60 +204,6 @@
     }
 }
 
-
-/* form style */
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    &>button {
-        border: none;
-        padding: 0.5rem 0.6rem;
-        border-radius: 1.5rem;
-        cursor: pointer;
-        font-size: 16px;
-        background-color: var(--blue);
-        color: var(--white);
-        transition: all 0.3s ease-out;
-        margin-block-start: 1rem;
-
-        &:hover {
-            background-color: var(--textColor);
-        }
-
-        &:focus {
-            outline-offset: 3px;
-            outline: 3px solid var(--blue);
-        }
-    }
-}
-
-& .input-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-
-    &>label {
-        font-size: 15px;
-    }
-
-    &>input,
-    &>textarea {
-        padding: .4rem 0.6rem;
-        font-size: 16px;
-        outline: none;
-        border-radius: 8px;
-        border: 2px solid var(--lightGray);
-        resize: none;
-
-        &:focus {
-            border-color: var(--darkgray);
-        }
-    }
-}
-
 /* blogs page style */
 
 .blogs-section {
@@ -322,6 +277,23 @@ form {
     @media (min-width:1200px) {
         width: 90%;
         margin-inline: auto;
+    }
+
+    &>div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        &>button {
+            margin: 0;
+
+            @media (max-width:500px) {
+                display: none;
+            }
+
+            ;
+        }
     }
 
     &>p {
@@ -448,7 +420,7 @@ form {
                 margin-bottom: .5rem;
             }
 
-            &>a {
+            & a {
                 color: var(--orange);
             }
         }
@@ -472,6 +444,10 @@ form {
         }
 
         &>h2 {
+            color: var(--white);
+        }
+
+        &>p {
             color: var(--white);
         }
 
@@ -513,21 +489,6 @@ form {
             @media (min-width:1024px) {
                 width: 80%;
                 margin-inline: auto;
-            }
-
-            & #image {
-                &::-webkit-file-upload-button {
-                    appearance: none;
-                    border: 1px solid var(--gray);
-                    border-radius: 2rem;
-                    background-color: var(--white);
-
-                    &:hover {
-                        border: 1px solid var(--orange);
-                    }
-                }
-
-
             }
         }
     }

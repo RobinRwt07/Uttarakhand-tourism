@@ -30,14 +30,14 @@
 <body>
 
     <dialog id="blog" class="blog-form-section " role="dialog">
-        <div class="close-btn" id="close-dialog">
-            <span>
+        <div class="close-btn">
+            <span id="close-dialog">
                 <i class="fa-solid fa-xmark fa-2xl"></i>
             </span>
         </div>
 
         <div class="info">
-            <h3>Share your experience with world</h3>
+            <h3>Share your experience</h3>
             <div class="blog-upload-form">
                 <form method="post" id="blog-form" enctype="multipart/form-data">
                     <div class="input-field">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="input-field">
                         <label for="blog-heading">Blog heading</label>
-                        <input type="text" id="blog-heading" name="blogheading" placeholder="Blog heading`" required>
+                        <input type="text" id="blog-heading" name="blogheading" placeholder="Blog heading" required>
                     </div>
                     <div class="input-field">
                         <label for="image">Image</label>
@@ -90,9 +90,6 @@
             <div class="btn">
                 <a href="./signin.html" class="btn-style">Sign-Up</a>
             </div>
-            <div class="btn">
-                <button class="btn-style" id="open-dialog">Add Blog</button>
-            </div>
         </header>
 
     </section>
@@ -126,7 +123,11 @@
         </section>
         <section class="container">
             <div class="featured-blog">
-                <h2 class="heading">Featured Blog Post</h2>
+                <div>
+                    <h2 class="heading">Featured Blog Post</h2>
+                    <button type="button" id="open-dialog">Add Blog</button>
+
+                </div>
                 <div class="blog-container scrollbar">
                     <div class="blog-card">
                         <div class="top">
@@ -334,10 +335,14 @@
 
         openDialog.addEventListener("click", () => {
             blog.showModal();
-        })
+        });
         closeDialog.addEventListener("click", () => {
             blog.close();
-        })
+        });
+
+        // validate blog form
+
+
     </script>
 </body>
 

@@ -2,24 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Uttarakhand With Us">
-    <meta name="keywords" content="Tourism,Uttarakhand,Nature,web-appication">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore Uttarakhand With Us" />
+    <meta name="keywords" content="Tourism,Uttarakhand,Nature,web-appication" />
     <!-- open graph data -->
-    <meta property="og:site_name" content="Uttarakhand Tourism">
-    <meta property="og:title" content="Explore Uttarakhand With Us">
-    <meta property="og:url" content="url">
-    <meta property="og:image" content="Image Url">
-    <title>Uttarakhand Tourism </title>
+    <meta property="og:site_name" content="Uttarakhand Tourism" />
+    <meta property="og:title" content="Explore Uttarakhand With Us" />
+    <meta property="og:url" content="url" />
+    <meta property="og:image" content="Image Url" />
+    <title>Uttarakhand Tourism</title>
     <!-- link goggle font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/style.css" />
     <!-- font-awesome cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -31,37 +31,64 @@
 </head>
 
 <body>
+    <dialog id="search-container" role="dialog">
+        <div class="close-btn">
+            <span id="close-search-icon">
+                <i class="fa-solid fa-xmark fa-2xl"></i>
+            </span>
+        </div>
+
+        <!-- <h2>Search location</h2> -->
+        <div>
+            <input type="text" name="search-location" id="search-location" placeholder="Search location" />
+            <button>Search</button>
+            <div class="locations">
+                <ul></ul>
+            </div>
+        </div>
+    </dialog>
+
     <main class="main-container">
         <section class="home-section">
             <div class="header-box">
                 <div class="menuopen-btn" id="menuopen-btn">
                     <span>
-                        <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+                        <i class="fa-solid fa-bars fa-xl" style="color: #ffffff"></i>
                     </span>
                 </div>
+
+                <!-- search bar -->
+                <div class="open-search-icon" id="open-search-icon">
+                    <i class="fa-solid fa-search fa-xl" style="color: #ffffff"></i>
+                </div>
+
                 <header id="header">
                     <div class="close-btn" id="menuclose-btn">
                         <span>
-                            <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff"></i>
                         </span>
                     </div>
 
-
                     <a href="./index.html" class="logo">
-                        <img src="./Assests/logo.svg" alt="logo">
+                        <img src="./Assests/logo.svg" alt="logo" />
                     </a>
 
                     <nav class="navigation">
                         <ul>
-                            <li><a href="./index.html">Home</a> </li>
-                            <li><a href="./destinations.html">Destinatons</a> </li>
-                            <li><a href="./blogs.html">Blogs</a> </li>
-                            <li><a href="./contact-us.html">Contact</a> </li>
-                            <li><a href="./About.html">About Us</a> </li>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./destinations.html">Destinatons</a></li>
+                            <li><a href="./blogs.html">Blogs</a></li>
+                            <li><a href="./contact-us.html">Contact</a></li>
+                            <li><a href="./About.html">About</a></li>
                         </ul>
                     </nav>
                     <div>
-                        <a href="./signin.html" class="btn-style">Sign-Up</a>
+                        <div>
+                            <a href="./signin.html" class="btn-style">Sign-Up</a>
+                        </div>
+                        <div id="open-search">
+                            <i class="fa-solid fa-search " style="color: #000000"></i>
+                        </div>
                     </div>
                 </header>
             </div>
@@ -79,61 +106,77 @@
                     <!-- Slides -->
                     <div class="swiper-slide">
                         <div class="left">
-                            <img src="./Assests/lord shiva.jpg" alt="lord shiva" fetchpriority="high">
+                            <img src="./Assests/lord shiva.jpg" alt="lord shiva" fetchpriority="high" />
                         </div>
                         <div class="right">
                             <h3>Land Of Gods</h3>
-                            <p>Called Devbhoomi (Land of the gods), Uttarakhand is home to one of the highest Lord Shiva
-                                temples in the world, the Char Dham (four revered sites), the Panch Kedar (five temples
-                                dedicated to Lord Shiva), the Panch Badri (five temples dedicated to Lord Vishnu) and
-                                the Panch Prayag (five confluences of the holy Ganges river).</p>
+                            <p>
+                                Called Devbhoomi (Land of the gods), Uttarakhand is home to
+                                one of the highest Lord Shiva temples in the world, the Char
+                                Dham (four revered sites), the Panch Kedar (five temples
+                                dedicated to Lord Shiva), the Panch Badri (five temples
+                                dedicated to Lord Vishnu) and the Panch Prayag (five
+                                confluences of the holy Ganges river).
+                            </p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="left">
-                            <img src="./Assests/adventure.jpg" alt="Adventure">
+                            <img src="./Assests/adventure.jpg" alt="Adventure" />
                         </div>
                         <div class="right">
                             <h3>Adventure Hub</h3>
-                            <p>From white water rafting to paragliding, from bungee jumping to trekking and from skiing
-                                to mountain biking - there is no dearth of adventure activities to be had and
-                                experienced in Uttarakhand. While Auli is known as the skiing paradise of India,
-                                Rishikesh hosts India's highest bungee platform!</p>
+                            <p>
+                                From white water rafting to paragliding, from bungee jumping
+                                to trekking and from skiing to mountain biking - there is no
+                                dearth of adventure activities to be had and experienced in
+                                Uttarakhand. While Auli is known as the skiing paradise of
+                                India, Rishikesh hosts India's highest bungee platform!
+                            </p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="left">
-                            <img src="./Assests/Corbett_Feature image_1.jpg" alt="slider-image" alt="Adventure">
+                            <img src="./Assests/Corbett_Feature image_1.jpg" alt="slider-image" alt="Adventure" />
                         </div>
                         <div class="right">
                             <h3>Where The Beatles Prayed</h3>
-                            <p>Take a trip down memory lane at the Beatles Ashram, where members of the British rock
-                                band The Beatles stayed during their visit to India in 1968. A popular tourist spot in
-                                Rishikesh, the ashram, also known as Chaurasia Kutir, is located inside the Rajaji Tiger
-                                Reserve (RTR).</p>
+                            <p>
+                                Take a trip down memory lane at the Beatles Ashram, where
+                                members of the British rock band The Beatles stayed during
+                                their visit to India in 1968. A popular tourist spot in
+                                Rishikesh, the ashram, also known as Chaurasia Kutir, is
+                                located inside the Rajaji Tiger Reserve (RTR).
+                            </p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="left">
-                            <img src="./Assests/env.jpg" alt="slider-image">
+                            <img src="./Assests/env.jpg" alt="slider-image" />
                         </div>
                         <div class="right">
                             <h3>Char Dham Yatra</h3>
-                            <p>This annual pilgrimage to four temple destinations in Uttarakhand - Yamunotri, Gangotri,
-                                Kedarnath and Badrinath - is considered to be one of the most sacred in Hinduism, and
-                                draws millions of devotees.</p>
+                            <p>
+                                This annual pilgrimage to four temple destinations in
+                                Uttarakhand - Yamunotri, Gangotri, Kedarnath and Badrinath -
+                                is considered to be one of the most sacred in Hinduism, and
+                                draws millions of devotees.
+                            </p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="left">
-                            <img src="./Assests/Yoga.jpg" alt="slider-image">
+                            <img src="./Assests/Yoga.jpg" alt="slider-image" />
                         </div>
                         <div class="right">
                             <h3>Yoga Capital Of The World</h3>
-                            <p>The city of Rishikesh. located on the banks of the River Ganges, is popularly called the
-                                Yoga capital of the world. Every year around March, it hosts the International Yoga
-                                Festival, which is attended by yoga enthusiasts, practitioners and gurus from across the
-                                world in large numbers.</p>
+                            <p>
+                                The city of Rishikesh. located on the banks of the River
+                                Ganges, is popularly called the Yoga capital of the world.
+                                Every year around March, it hosts the International Yoga
+                                Festival, which is attended by yoga enthusiasts, practitioners
+                                and gurus from across the world in large numbers.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -147,41 +190,56 @@
         </section>
         <section class="second-section">
             <div class="top">
-                <h2 class="heading">Trending, Best <br>Tours And Fun Destinations</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, ipsam dolore quibusdam facilis suscipit
-                    soluta et. Ipsa quia ad pariatur.</p>
+                <h2 class="heading">
+                    Unveil the Wonders of Uttarakhand <br />
+
+                </h2>
+                <p>
+                    Explore the wonders of Uttarakhand, from serene temples and
+                    pilgrimage sites to thrilling adventures and breathtaking
+                    landscapes. Plan your perfect getaway and immerse yourself in the
+                    natural beauty and rich culture of this Himalayan paradise.
+                </p>
             </div>
             <div class="bottom">
-                <div style="order: 1;" class="image-box"><img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg"
-                        alt="religious" loading="lazy"></div>
+                <div style="order: 1" class="image-box">
+                    <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="religious" loading="lazy" />
+                </div>
 
-                <div style="order: 2;" class="text"><span>Religious</span></div>
-                <div style="order: 3;" class="content-box">
+                <div style="order: 2" class="text"><span>Religious</span></div>
+                <div style="order: 3" class="content-box">
                     <h3>Temples and pilgrimage sites</h3>
-                    <p>Discover the spiritual heart of Uttarakhand through its ancient temples</p>
+                    <p>
+                        Discover the spiritual heart of Uttarakhand through its ancient
+                        temples
+                    </p>
                     <a href="#">Learn More ></a>
                 </div>
 
-                <div style="order: 6;" class="content-box">
+                <div style="order: 6" class="content-box">
                     <h3>Trekking and paragliding</h3>
-                    <p>Engage in thrilling activities set against
-                        the backdrop of the Himalayas.</p>
+                    <p>
+                        Engage in thrilling activities set against the backdrop of the
+                        Himalayas.
+                    </p>
                     <a href="#">Learn More ></a>
                 </div>
-                <div style="order: 4;" class="image-box"><img src="./Assests/pexels-sanmane-1365425.jpg" alt="Adventure"
-                        loading="lazy"></div>
-                <div style="order: 5;" class="text"><span>Adventure</span></div>
+                <div style="order: 4" class="image-box">
+                    <img src="./Assests/pexels-sanmane-1365425.jpg" alt="Adventure" loading="lazy" />
+                </div>
+                <div style="order: 5" class="text"><span>Adventure</span></div>
 
-
-                <div style="order: 8;" class="text"><span>Heritage</span></div>
-                <div style="order: 9;" class="content-box">
+                <div style="order: 8" class="text"><span>Heritage</span></div>
+                <div style="order: 9" class="content-box">
                     <h3>Historical and cultural sites</h3>
-                    <p>Step back in time with historical landmarks and cultural sites</p>
+                    <p>
+                        Step back in time with historical landmarks and cultural sites
+                    </p>
                     <a href="#">Learn More > </a>
                 </div>
-                <div style="order: 7;" class="image-box"><img src="./Assests/velly of flower.jpg" alt="heritage"
-                        loading="lazy"></div>
-
+                <div style="order: 7" class="image-box">
+                    <img src="./Assests/velly of flower.jpg" alt="heritage" loading="lazy" />
+                </div>
             </div>
         </section>
         <section class="testimonial-section container">
@@ -190,19 +248,23 @@
                     <h3>Testimonials</h3>
                     <h2 class="heading">Traveler Testimonials</h2>
                 </div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi nostrum iste iure commodi unde
-                    minima quasi quis fuga aperiam temporibus?</p>
+                <p>
+                    Hear from our travelers about their unforgettable experiences
+                    exploring the serene landscapes, vibrant culture, and thrilling
+                    adventures in Uttarakhand. Their stories inspire us and future
+                    travelers to embark on their own journeys to this magical land.
+                </p>
             </div>
             <div class="testimonial-card-container">
                 <div class="testimonial-card">
-
                     <div class="top">
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dicta error impedit.
-                            Obcaecati ullam assumenda, temporibus totam animi voluptates beatae unde sed eveniet dolor
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptatem dicta error impedit. Obcaecati ullam assumenda,
+                            temporibus totam animi voluptates beatae unde sed eveniet dolor
                         </p>
                         <div class="userimage">
-                            <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy">
+                            <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy" />
                         </div>
                     </div>
 
@@ -210,17 +272,16 @@
                         <h4>User Name</h4>
                         <span>Traveler</span>
                     </div>
-
-
                 </div>
                 <div class="testimonial-card">
-
                     <div class="top">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dicta error impedit.
-                            Obcaecati ullam assumenda, temporibus totam animi voluptates beatae unde sed eveniet dolor
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptatem dicta error impedit. Obcaecati ullam assumenda,
+                            temporibus totam animi voluptates beatae unde sed eveniet dolor
                         </p>
                         <div class="userimage">
-                            <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy">
+                            <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy" />
                         </div>
                     </div>
 
@@ -228,16 +289,16 @@
                         <h4>User Name</h4>
                         <span>Traveler</span>
                     </div>
-
                 </div>
                 <div class="testimonial-card">
-
                     <div class="top">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dicta error impedit.
-                            Obcaecati ullam assumenda, temporibus totam animi voluptates beatae unde sed eveniet dolor
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptatem dicta error impedit. Obcaecati ullam assumenda,
+                            temporibus totam animi voluptates beatae unde sed eveniet dolor
                         </p>
                         <div class="userimage">
-                            <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy">
+                            <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy" />
                         </div>
                     </div>
 
@@ -245,7 +306,6 @@
                         <h4>User Name</h4>
                         <span>Traveler</span>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -256,38 +316,49 @@
                     <h2 class="heading">Photo's From Travellers</h2>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis non repellendus iusto molestias
-                    modi, eos dolores ea natus vero provident Lorem ipsum dolor sit amet.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                    non repellendus iusto molestias modi, eos dolores ea natus vero
+                    provident Lorem ipsum dolor sit amet.
                 </p>
             </div>
 
             <div class="gallery">
                 <div class="first">
-                    <div><img src="./Assests/nainital.jpg" alt="image" loading="lazy"></div>
                     <div>
-                        <div><img src="./Assests/velly of flower.jpg" alt="image" loading="lazy"></div>
-                        <div><img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="image" loading="lazy">
+                        <img src="./Assests/nainital.jpg" alt="image" loading="lazy" />
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./Assests/velly of flower.jpg" alt="image" loading="lazy" />
+                        </div>
+                        <div>
+                            <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="image"
+                                loading="lazy" />
                         </div>
                     </div>
                 </div>
                 <div class="second">
-                    <img src="./Assests/nainital.jpg" alt="image" loading="lazy">
+                    <img src="./Assests/nainital.jpg" alt="image" loading="lazy" />
                 </div>
                 <div class="third">
-                    <div><img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="image" loading="lazy">
+                    <div>
+                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="image" loading="lazy" />
                     </div>
-                    <div><img src="./Assests/pexels-sanmane-1365425.jpg" alt="image" loading="lazy"></div>
+                    <div>
+                        <img src="./Assests/pexels-sanmane-1365425.jpg" alt="image" loading="lazy" />
+                    </div>
                 </div>
             </div>
         </section>
         <section class="blog-section container">
             <div class="left">
                 <h2 class="heading">Read Our Lastest Travel Blog & Tips Here</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius maxime quos modi asperiores odio, sed
-                    illum vero iusto
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
+                    maxime quos modi asperiores odio, sed illum vero iusto
                 </p>
                 <div class="image-box">
-                    <img src="./Assests/velly of flower.jpg" alt="blog cover" loading="lazy">
+                    <img src="./Assests/velly of flower.jpg" alt="blog cover" loading="lazy" />
                     <div class="overlay">
                         <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
                         <a href="#">Read More -></a>
@@ -297,45 +368,60 @@
             <div class="right">
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy">
+                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae"
+                            loading="lazy" />
                     </div>
                     <div class="blog-data">
                         <h4>This is Blog Heading</h4>
-                        <p>Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint, corrupti.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint,
+                            corrupti.
+                        </p>
                         <a href="#">Read More-></a>
                     </div>
                 </div>
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy">
+                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae"
+                            loading="lazy" />
                     </div>
                     <div class="blog-data">
                         <h4>This is Blog Heading</h4>
-                        <p>Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint, corrupti.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint,
+                            corrupti.
+                        </p>
                         <a href="#">Read More-></a>
                     </div>
                 </div>
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy">
+                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae"
+                            loading="lazy" />
                     </div>
                     <div class="blog-data">
                         <h4>This is Blog Heading</h4>
-                        <p>Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint, corrupti.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint,
+                            corrupti.
+                        </p>
                         <a href="#">Read More-></a>
                     </div>
                 </div>
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy">
+                        <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae"
+                            loading="lazy" />
                     </div>
                     <div class="blog-data">
                         <h4>This is Blog Heading</h4>
-                        <p>Lorem ipsum dolor sit amet, loremn adipisicing elit. Sint, corrupti.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, loremn adipisicing elit. Sint,
+                            corrupti.
+                        </p>
                         <a href="#">Read More-></a>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
@@ -344,26 +430,25 @@
             <div class="footer">
                 <div class="logobox">
                     <div>
-                        <img src="./Assests/logo.svg" alt="logo">
+                        <img src="./Assests/logo.svg" alt="logo" />
                     </div>
                     <address>
-                        Dalanwala Dehradun<br>
+                        Dalanwala Dehradun<br />
                         Uttarakhand, India
                     </address>
                     <div class="icons">
                         <a href="#">
-                            <i class="fa-brands fa-facebook fa-xl" style="color: #ffffff;"></i>
+                            <i class="fa-brands fa-facebook fa-xl" style="color: #ffffff"></i>
                         </a>
                         <a href="#">
-                            <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i>
+                            <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff"></i>
                         </a>
                         <a href="mailto:abc@gmail.com">
-                            <i class="fa-solid fa-envelope fa-xl" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-envelope fa-xl" style="color: #ffffff"></i>
                         </a>
                         <a href="#">
-                            <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i>
+                            <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff"></i>
                         </a>
-
                     </div>
                 </div>
 
@@ -393,7 +478,6 @@
         </div>
     </section>
 
-
     <script src="./scripts/swiper.js" type="module"></script>
     <script>
         const openBtn = document.querySelector("#menuopen-btn");
@@ -402,11 +486,29 @@
 
         openBtn.addEventListener("click", () => {
             header.style.left = "0";
-        })
+        });
 
         closeBtn.addEventListener("click", () => {
             header.style.left = "-300px";
-        })
+        });
+    </script>
+    <script>
+        const openDialog = document.querySelector("#open-search-icon");
+        const openSearch = document.querySelector("#open-search");
+        const closeDialog = document.querySelector("#close-search-icon");
+        const search = document.querySelector("#search-container");
+
+        openDialog.addEventListener("click", () => {
+            search.showModal();
+        });
+        openSearch.addEventListener("click", () => {
+            search.showModal();
+        });
+        closeDialog.addEventListener("click", () => {
+            search.close();
+        });
+
+        // validate blog form
     </script>
 </body>
 

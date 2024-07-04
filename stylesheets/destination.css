@@ -16,6 +16,7 @@
     &>p {
         margin-block: 1rem;
         margin-block-end: 1.5rem;
+        color: var(--darkgray)
     }
 
     &>.item-container {
@@ -34,6 +35,7 @@
 
         & div:has(img) {
             position: relative;
+            bottom: 0;
             border-radius: 1rem;
 
             &>img {
@@ -168,6 +170,7 @@
 
     &>p {
         margin-bottom: 1.5rem;
+        color: var(--darkgray);
     }
 
     &>.treks-container {
@@ -213,7 +216,7 @@
                 }
 
                 &>p {
-                    font-size: 15px;
+                    font-size: 16px;
                     font-weight: bold;
                 }
 
@@ -221,6 +224,7 @@
                 .second {
                     display: flex;
                     justify-content: space-between;
+                    color: var(--darkgray);
                 }
             }
         }
@@ -243,6 +247,7 @@
 
 
     & a:has(img) {
+
         position: relative;
         border-radius: 0.5rem;
         overflow: hidden;
@@ -289,6 +294,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            &>p {
+                color: var(--darkgray);
+            }
         }
 
         &>.wildlife-box {
@@ -331,7 +340,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.318);
+        background-color: rgba(0, 0, 0, 0.509);
         z-index: -1;
     }
 }
@@ -504,6 +513,7 @@
 
                 &>p,
                 span {
+                    color: var(--darkgray);
                     font-size: 15px;
                 }
             }

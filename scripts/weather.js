@@ -39,16 +39,16 @@ async function fetchData() {
                   <div class="right">
                     <div class="weather-info">
                         <div>
-                            <p>Visibility:</p>
-                            <p >${weatherData.visibility / 1000} Km</p>
+                            <span>Visibility:</span>
+                            <span>${weatherData.visibility / 1000} Km</span>
                         </div>
                         <div>
-                            <p>Humidity:</p>
-                            <p >${weatherData.main.humidity}%</p>
+                            <span>Humidity:</span>
+                            <span>${weatherData.main.humidity}%</span>
                         </div>
                         <div>
-                            <p>Wind:</p>
-                            <p>${weatherData.wind.speed} m/s</p>
+                            <span>Wind:</span>
+                            <span>${weatherData.wind.speed} m/s</span>
                         </div>
                     </div>
                   </div>`;

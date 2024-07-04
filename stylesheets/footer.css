@@ -67,6 +67,10 @@
             padding-block: 1rem;
             text-align: center;
             margin-top: 1rem;
+
+            & p {
+                color: var(--white);
+            }
         }
     }
 }

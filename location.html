@@ -2,313 +2,339 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Uttarakhand With Us">
-    <meta name="keywords" content="Tourism,Uttarakhand,Nature,web-appication">
-    <!-- open graph data -->
-    <meta property="og:site_name" content="Uttarakhand Tourism">
-    <meta property="og:title" content="Explore Uttarakhand With Us">
-    <meta property="og:url" content="url">
-    <meta property="og:image" content="Image Url">
-    <title>Uttarakhand Tourism </title>
-    <!-- link goggle font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Uttarakhand With Us">
+  <meta name="keywords" content="Tourism,Uttarakhand,Nature,web-appication">
+  <!-- open graph data -->
+  <meta property="og:site_name" content="Uttarakhand Tourism">
+  <meta property="og:title" content="Explore Uttarakhand With Us">
+  <meta property="og:url" content="url">
+  <meta property="og:image" content="Image Url">
+  <title>Uttarakhand Tourism </title>
+  <!-- link goggle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet">
 
-    <link rel="stylesheet" href="./stylesheets/location.css">
-    <!-- font-awesome cdn  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- include swiper library -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./stylesheets/location.css">
+  <!-- font-awesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- include swiper library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-    <!-- leaflet js library css file -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <!-- leaflet Js files -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- leaflet js library css file -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <!-- leaflet Js files -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 </head>
 
 <body>
-    <section class="header-section">
-        <div class="menuopen-btn" id="menu-open-btn" style="z-index:15;">
-            <span>
-                <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
-            </span>
-        </div>
-        <header id="header">
-            <div class=" close-btn" id="menu-close-btn">
-                <span>
-                    <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
-                </span>
-            </div>
+  <section class="header-section">
+    <div class="menuopen-btn" id="menu-open-btn" style="z-index:15;">
+      <span>
+        <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff;"></i>
+      </span>
+    </div>
+    <header id="header">
+      <div class=" close-btn" id="menu-close-btn">
+        <span>
+          <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
+        </span>
+      </div>
 
-            <a href="./index.html" class="logo">
-                <img src="./Assests/logo.svg" alt="logo">
+      <a href="./index.html" class="logo">
+        <img src="./Assests/logo.svg" alt="logo">
+      </a>
+
+      <nav class="navigation">
+        <ul>
+          <li><a href="./index.html">Home</a> </li>
+          <li><a href="./destinations.html">Explore</a> </li>
+          <li><a href="./blogs.html">Blogs</a> </li>
+          <li><a href="./contact-us.html">Contact</a> </li>
+          <li><a href="./about.html">About</a> </li>
+        </ul>
+      </nav>
+      <div class="btn">
+        <a href="./signin.html" class="btn-style">Sign-Up</a>
+      </div>
+    </header>
+
+  </section>
+
+  <main class="main-container">
+    <div class="banner-section">
+      <div class="image">
+        <img src="./Assests/nainital.jpg" alt="image" fetchpriority="high">
+      </div>
+      <div class="banner-info">
+        <div>
+          <h1 id="location-name">Srinagar</h1>
+          <h2>Tehri Garhwal</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit cumque nam eius exercitationem
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section container">
+      <div>
+        <div class="info card">
+          <div class="location-info">
+            <h2>What to Know</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias itaque dignissimos
+              reiciendis
+              ratione repellat asperiores, esse ipsum quos perferendis aperiam hic magni, rerum at ex et
+              nulla
+              in
+              quis harum!</p>
+          </div>
+          <div class="time-to-visit ">
+            <h2>Best time to Visit</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, perspiciatis.</p>
+          </div>
+        </div>
+        <div class="weather-section card" id="weather-container">
+          <!-- <div class="weather-map" id="weather-condition">
+                </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="how-to-reach">
+        <h2 class="sub-heading">How to Reach</h2>
+        <div class="card-container">
+          <div class="card">
+            <h3>By Road</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, veniam!</p>
+          </div>
+          <div class="card">
+            <h3>By Air</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ex.</p>
+          </div>
+          <div class="card">
+            <h3>By Train</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, eum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container">
+
+      <div class="location-gallery-container">
+        <h2 class="sub-heading">Pictures Form Travellers</h2>
+        <div class="picture-container">
+          <div class="picture-card">
+            <img src="./Assests/env.jpg" alt="Picture">
+          </div>
+          <div class="picture-card">
+            <img src="./Assests/env2.jpg" alt="Picture">
+          </div>
+          <div class="picture-card">
+            <img src="./Assests/env.jpg" alt="Picture">
+          </div>
+          <div class="picture-card">
+            <img src="./Assests/env2.jpg" alt="Picture">
+          </div>
+          <div class="picture-card">
+            <img src="./Assests/env.jpg" alt="Picture">
+          </div>
+          <div class="picture-card">
+            <img src="./Assests/env2.jpg" alt="Picture">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="hotel-section">
+
+        <h2 class="sub-heading">Nearby Hotels </h2>
+        <div class="hotel-list">
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+          <div class="hotel-card">
+            <div class="top">
+              <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+            </div>
+            <div class="bottom">
+              <p>Hotel Name</p>
+              <div>
+                <span>1 Day</span>
+                <span>Rs 2000</span>
+              </div>
+              <p>AC Rooms</p>
+              <a href="#">Book Now </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section container">
+      <div>
+        <h2 class="sub-heading">Get Direction</h2>
+        <div class="map" id="map">
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <section class="footer-section container">
+    <div class="footer-container">
+      <div class="footer">
+        <div class="logobox">
+          <div>
+            <img src="./Assests/logo.svg" alt="logo">
+          </div>
+          <address>
+            Dalanwala Dehradun<br>
+            Uttarakhand, India
+          </address>
+          <div class="icons">
+            <a href="www.facebook.com">
+              <i class="fa-brands fa-facebook fa-xl" style="color: #ffffff;"></i>
+            </a>
+            <a href="www.twitter.com">
+              <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i>
+            </a>
+            <a href="mailto:abc@gmail.com">
+              <i class="fa-solid fa-envelope fa-xl" style="color: #ffffff;"></i>
+            </a>
+            <a href="www.instagram.com">
+              <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i>
             </a>
 
-            <nav class="navigation">
-                <ul>
-                    <li><a href="./index.html">Home</a> </li>
-                    <li><a href="./destinations.html">Explore</a> </li>
-                    <li><a href="./blogs.html">Blogs</a> </li>
-                    <li><a href="./contact-us.html">Contact</a> </li>
-                    <li><a href="./about.html">About</a> </li>
-                </ul>
-            </nav>
-            <div class="btn">
-                <a href="./signin.html" class="btn-style">Sign-Up</a>
-            </div>
-        </header>
-
-    </section>
-
-    <main class="main-container">
-        <div class="banner-section">
-            <div class="image">
-                <img src="./Assests/nainital.jpg" alt="image" fetchpriority="high">
-            </div>
-            <div class="banner-info">
-                <div>
-                    <h1 id="location-name">Srinagar</h1>
-                    <h2>Tehri Garhwal</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit cumque nam eius exercitationem
-                    </p>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <div class="info-section container">
-            <div>
-                <div class="info card">
-                    <div class="location-info">
-                        <h2>What to Know</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias itaque dignissimos
-                            reiciendis
-                            ratione repellat asperiores, esse ipsum quos perferendis aperiam hic magni, rerum at ex et
-                            nulla
-                            in
-                            quis harum!</p>
-                    </div>
-                    <div class="time-to-visit ">
-                        <h2>Best time to Visit</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, perspiciatis.</p>
-                    </div>
-                </div>
-                <div class="weather-section card" id="weather-container">
-                    <!-- <div class="weather-map" id="weather-condition">
-                </div> -->
-                </div>
-            </div>
+        <div class="pages">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./contact-us.html">Contact Us</a></li>
+            <li><a href="./destinations.html">Destination</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
         </div>
-
-        <div class="container">
-            <div class="how-to-reach">
-                <h2 class="heading">How to Reach</h2>
-                <div class="card-container">
-                    <div class="card">
-                        <h3>By Road</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, veniam!</p>
-                    </div>
-                    <div class="card">
-                        <h3>By Air</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ex.</p>
-                    </div>
-                    <div class="card">
-                        <h3>By Train</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, eum.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="important">
+          <h3>Important Links</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">T&C</a></li>
+            <li><a href="#">Places</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
         </div>
+      </div>
 
-        <section class="container">
-            <div class="hotel-section">
+      <div class="copyright-section">
+        <p>Copyright &copy; 2024 All right reserved</p>
+      </div>
+    </div>
+  </section>
 
-                <h2 class="heading">Nearby Hotels </h2>
-                <div class="hotel-list">
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-                    <div class="hotel-card">
-                        <div class="top">
-                            <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
-                        </div>
-                        <div class="bottom">
-                            <p>Hotel Name</p>
-                            <div>
-                                <span>1 Day</span>
-                                <span>Rs 2000</span>
-                            </div>
-                            <p>AC Rooms</p>
-                            <a href="#">Book Now </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="map-section container">
-            <div>
-                <h2 class="sub-heading">Get Direction</h2>
-                <div class="map" id="map">
-                </div>
-            </div>
-        </section>
+  <script>
 
 
-    </main>
-    <section class="footer-section container">
-        <div class="footer-container">
-            <div class="footer">
-                <div class="logobox">
-                    <div>
-                        <img src="./Assests/logo.svg" alt="logo">
-                    </div>
-                    <address>
-                        Dalanwala Dehradun<br>
-                        Uttarakhand, India
-                    </address>
-                    <div class="icons">
-                        <a href="www.facebook.com">
-                            <i class="fa-brands fa-facebook fa-xl" style="color: #ffffff;"></i>
-                        </a>
-                        <a href="www.twitter.com">
-                            <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff;"></i>
-                        </a>
-                        <a href="mailto:abc@gmail.com">
-                            <i class="fa-solid fa-envelope fa-xl" style="color: #ffffff;"></i>
-                        </a>
-                        <a href="www.instagram.com">
-                            <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff;"></i>
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="pages">
-                    <h3>Pages</h3>
-                    <ul>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./contact-us.html">Contact Us</a></li>
-                        <li><a href="./destinations.html">Destination</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="important">
-                    <h3>Important Links</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">T&C</a></li>
-                        <li><a href="#">Places</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="copyright-section">
-                <p>Copyright &copy; 2024 All right reserved</p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-
-
-    </script>
-    <script src="./scripts/weather.js" type="module"> </script>
-    <script src="./scripts/sidebar.js" type="module"> </script>
+  </script>
+  <script src="./scripts/weather.js" type="module"> </script>
+  <script src="./scripts/sidebar.js" type="module"> </script>
 </body>
 
 </html>

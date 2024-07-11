@@ -399,6 +399,79 @@
 
 }
 
+.chardham-section {
+
+  /* @media (min-width:1200px) {
+    width: 90%;
+    margin-inline: auto;
+  } */
+
+  &>.chardham-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width:640px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+
+      &>* {
+        flex: 1 1;
+      }
+    }
+
+    &>.left {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: .5rem;
+      margin: 1rem;
+
+      @media (min-width:450px) {
+        grid-template-columns: 1fr 1fr;
+
+        &>div:first-child {
+          position: relative;
+          left: 1rem;
+          bottom: 1rem;
+        }
+
+        &>div:nth-child(2) {
+          position: relative;
+          left: 1rem;
+          bottom: -1rem;
+        }
+
+        &>div:nth-child(3) {
+          position: relative;
+          left: -1rem;
+          bottom: 1rem;
+        }
+
+        &>div:last-child {
+          position: relative;
+          left: -1rem;
+          top: 1rem;
+        }
+      }
+
+      &>div:has(img) {
+        border-radius: .5rem;
+        aspect-ratio: 3/2;
+        box-shadow: 0px 0px 3px var(--darkgray);
+
+        &>img {
+          border-radius: inherit;
+          object-position: top;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
 .testimonial-section {
 
   &>.testimonial-header {

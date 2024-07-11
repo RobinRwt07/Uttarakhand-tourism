@@ -109,11 +109,6 @@
       }
     }
 
-    @media (min-width:1200px) {
-      width: 90%;
-      margin-inline: auto;
-    }
-
     & .info {
       flex: 1 0 60%;
 
@@ -233,10 +228,6 @@
 }
 
 .how-to-reach {
-  @media (min-width:1200px) {
-    width: 90%;
-    margin-inline: auto;
-  }
 
   &>.card-container {
     display: flex;
@@ -250,10 +241,6 @@
 }
 
 .hotel-section {
-  @media (min-width:1200px) {
-    width: 90%;
-    margin-inline: auto;
-  }
 
   &>.hotel-list {
     overflow: scroll;
@@ -324,11 +311,6 @@
 
 /* gallery section styles */
 .location-gallery-container {
-  @media (min-width:1200px) {
-    width: 90%;
-    margin-inline: auto;
-  }
-
   &>h2 {
     margin-bottom: 1rem;
   }
@@ -369,11 +351,6 @@
   }
 
   &>div:first-child {
-    @media (min-width:1200px) {
-      width: 90%;
-      margin-inline: auto;
-    }
-
     &>.map {
       position: relative;
       z-index: 0;

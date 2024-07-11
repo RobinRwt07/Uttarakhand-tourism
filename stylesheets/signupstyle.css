@@ -3,143 +3,138 @@
 @import url("./header.css");
 
 #switch:checked+.signin-form {
-    display: none;
+  display: none;
 }
 
 #switch:checked~.signup-form {
-    display: block;
+  display: block;
 }
 
 .login {
-    display: flex;
-    align-items: center;
-    height: 100dvh;
+  display: flex;
+  align-items: center;
+  height: 100dvh;
 }
 
 .login-container {
-    @media (max-width: 768px) {
-        margin-block-start: 3rem;
-    }
+  @media (max-width: 768px) {
+    margin-block-start: 3rem;
+  }
 
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    max-width: 1024px;
-    margin: auto;
-    background-color: var(--bg2);
-    border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: auto;
+  background-color: var(--bg2);
+  border-radius: 0.5rem;
+
+  &>.left {
+    &>img {
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 450px) {
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 100%;
 
     &>.left {
-        &>img {
-            height: 100%;
-        }
-    }
+      width: 50%;
 
-    @media (min-width: 450px) {
-        width: 90%;
-        margin-inline: auto;
-    }
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-        width: 100%;
-
-        &>.left {
-            width: 50%;
-
-            &>img {
-                border-radius: .5rem;
-            }
-        }
-
-        &>.right {
-            width: 50%;
-        }
+      &>img {
+        border-radius: .5rem;
+      }
     }
 
     &>.right {
-        padding: 4% 7%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        @media (min-width: 768px) {
-            padding: 1% 5%;
-        }
-
-        &>h2 {
-            text-align: center;
-        }
-
-        &>.forms {
-            & input[type="checkbox"] {
-                display: none;
-            }
-
-            &>h3 {
-                text-align: center;
-            }
-
-            &>a {
-                display: flex;
-                justify-content: center;
-                gap: 0.5rem;
-                padding: 0.5rem;
-                border: 2px solid var(--blue);
-                border-radius: 0.5rem;
-                margin-block: 0.5rem;
-                font-size: 0.8rem;
-            }
-
-            &>.divider {
-                padding: 0.5rem 1rem;
-                text-align: center;
-                margin-block-end: 1rem;
-
-                &>span {
-                    position: relative;
-                    padding: 1rem;
-
-                    &::after,
-                    &::before {
-                        position: absolute;
-                        content: "";
-                        width: 50%;
-                        height: 3px;
-                        border-radius: 1rem;
-                        background-color: var(--blue);
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-
-                    &::after {
-                        right: -25%;
-                    }
-
-                    &::before {
-                        left: -25%;
-                    }
-                }
-            }
-
-            &>.signup-form {
-                display: none;
-            }
-
-            &>.form {
-                &>form {
-                    &>label {
-                        cursor: pointer;
-                        text-align: center;
-                        font-size: 13px;
-                    }
-
-                    & .error {
-                        font-size: 13px;
-                        color: red;
-                    }
-                }
-            }
-        }
+      width: 50%;
     }
+  }
+
+  &>.right {
+    padding: 4% 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      padding: 1% 5%;
+    }
+
+    &>h2 {
+      text-align: center;
+    }
+
+    &>.forms {
+      & input[type="checkbox"] {
+        display: none;
+      }
+
+      &>h3 {
+        text-align: center;
+      }
+
+      &>a {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border: 2px solid var(--blue);
+        border-radius: 0.5rem;
+        margin-block: 0.5rem;
+        font-size: 0.8rem;
+      }
+
+      &>.divider {
+        padding: 0.5rem 1rem;
+        text-align: center;
+        margin-block-end: 1rem;
+
+        &>span {
+          position: relative;
+          padding: 1rem;
+
+          &::after,
+          &::before {
+            position: absolute;
+            content: "";
+            width: 50%;
+            height: 3px;
+            border-radius: 1rem;
+            background-color: var(--blue);
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &::after {
+            right: -25%;
+          }
+
+          &::before {
+            left: -25%;
+          }
+        }
+      }
+
+      &>.signup-form {
+        display: none;
+      }
+
+      &>.form {
+        &>form {
+          &>label {
+            cursor: pointer;
+            text-align: center;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
 }

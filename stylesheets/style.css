@@ -1,5 +1,5 @@
 @import url(./reset.css);
-@import url('./footer.css');
+@import url("./footer.css");
 
 #search-container {
   max-width: 500px;
@@ -28,7 +28,7 @@
     justify-content: center;
     gap: 2rem;
 
-    @media (min-width:500px) {
+    @media (min-width: 500px) {
       flex-direction: row;
     }
 
@@ -36,7 +36,7 @@
       flex: auto;
       border: none;
       border-bottom: 2px solid var(--lightGray);
-      padding: .3rem 1rem;
+      padding: 0.3rem 1rem;
 
       &:focus {
         outline: none;
@@ -46,7 +46,7 @@
 
     &>button {
       margin: 0;
-      padding: .2rem 1rem;
+      padding: 0.2rem 1rem;
     }
   }
 
@@ -65,13 +65,13 @@
   z-index: 1;
   cursor: pointer;
 
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
     display: none;
   }
 }
 
 #open-search {
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     display: none;
   }
 
@@ -86,6 +86,52 @@
   cursor: pointer;
 }
 
+.loader-box {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background-color: var(--lightGray);
+
+  & .loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-image: linear-gradient(120deg,
+        black,
+        rgba(0, 0, 0, 0.731),
+        rgba(0, 0, 0, 0.469),
+        white);
+    margin-bottom: 1rem;
+    animation: spin 1s linear infinite;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 80%;
+      height: 80%;
+      background-color: var(--lightGray);
+      border-radius: inherit;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
 
 .home-section {
   position: relative;
@@ -106,9 +152,9 @@
     background-color: rgba(0, 0, 0, 0.364);
   }
 
-  @media (min-width:1024px) {
+  @media (min-width: 1024px) {
     height: auto;
-    aspect-ratio: 19/9
+    aspect-ratio: 19/9;
   }
 
   &>.header-box {
@@ -131,9 +177,7 @@
       position: fixed;
       z-index: 5;
 
-
-
-      @media (min-width:768px) {
+      @media (min-width: 768px) {
         left: 0;
         width: 100%;
         gap: 1rem;
@@ -146,7 +190,7 @@
         align-items: center;
       }
 
-      @media (min-width:1024px) {
+      @media (min-width: 1024px) {
         width: 90%;
         margin-inline: auto;
       }
@@ -157,7 +201,7 @@
         right: 1rem;
         top: 2rem;
 
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
           display: none;
         }
       }
@@ -171,12 +215,11 @@
         align-items: center;
         gap: 1rem;
 
-        @media (max-width:768px) {
+        @media (max-width: 768px) {
           margin-inline: auto;
         }
       }
     }
-
 
     &>.menuopen-btn {
       position: absolute;
@@ -185,7 +228,7 @@
       z-index: 1;
       cursor: pointer;
 
-      @media (min-width:768px) {
+      @media (min-width: 768px) {
         display: none;
       }
     }
@@ -195,9 +238,9 @@
       flex-direction: column;
       gap: 1rem;
 
-      @media (min-width:768px) {
+      @media (min-width: 768px) {
         background-color: #ffffff36;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         flex-direction: row;
         backdrop-filter: blur(5px);
         border-radius: 2rem;
@@ -205,13 +248,13 @@
 
       &>li>a {
         display: block;
-        padding: .4rem 1rem;
+        padding: 0.4rem 1rem;
         color: var(--white);
         text-align: center;
 
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
           flex-direction: row;
-          padding: .2rem .6rem;
+          padding: 0.2rem 0.6rem;
         }
 
         &:hover {
@@ -245,17 +288,16 @@
     &>h3 {
       font-family: "Dancing Script", cursive;
       font-size: clamp(20px, 3vw, 42px);
-
     }
 
     &>h1 {
       font-family: var(--fontPoppins);
       font-size: clamp(26px, 4vw, 52px);
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     &>a {
-      padding: .6rem 1.2rem;
+      padding: 0.6rem 1.2rem;
       background-color: var(--white);
       letter-spacing: 2px;
       border-radius: 2rem;
@@ -266,7 +308,6 @@
       }
     }
   }
-
 }
 
 .slider-section {
@@ -277,9 +318,10 @@
 
   & .swiper-slide {
     display: flex;
+    height: 100% !important;
     flex-direction: column;
 
-    @media (min-width:600px) {
+    @media (min-width: 640px) {
       flex-direction: row;
     }
 
@@ -291,9 +333,14 @@
       margin: auto;
 
       &>img {
+        @media (max-width:640px) {
+          /* height: 290px; */
+          max-height: 300px;
+        }
+
         width: 100%;
-        aspect-ratio: 3/2;
         height: auto;
+        aspect-ratio: 3/2;
         object-fit: cover;
         object-position: bottom;
       }
@@ -306,26 +353,23 @@
       gap: 1rem;
       justify-content: center;
 
-      @media (min-width:500px) {
+      @media (min-width: 500px) {
         padding-inline: 1rem;
       }
 
       &>p {
-        font-size: 16px;
-
+        font-size: clamp(14px, 2vw, 16px);
       }
     }
   }
 }
 
 .second-section {
-
   &>.top {
     background-color: var(--bg2);
     padding: clamp(1.4rem, 3vw, 3rem);
 
     &>h2 {
-
       position: relative;
       margin-block-end: 1rem;
 
@@ -348,14 +392,13 @@
     &>div {
       aspect-ratio: 3/2;
 
-      @media (min-width:500px) {
+      @media (min-width: 500px) {
         aspect-ratio: unset;
         order: unset !important;
       }
-
     }
 
-    @media (min-width:500px) {
+    @media (min-width: 500px) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(3, 1fr);
@@ -384,7 +427,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: .5rem;
+      gap: 0.5rem;
 
       &>h3 {
         font-size: clamp(18px, 2vw, 22px);
@@ -392,26 +435,19 @@
 
       &>a {
         font-size: clamp(14px, 2vw, 16px);
-        color: var(--orange);
+        color: var(--blue);
       }
     }
   }
-
 }
 
 .chardham-section {
-
-  /* @media (min-width:1200px) {
-    width: 90%;
-    margin-inline: auto;
-  } */
-
   &>.chardham-box {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
-    @media (min-width:640px) {
+    @media (min-width: 640px) {
       flex-direction: row;
       align-items: center;
       gap: 2rem;
@@ -425,10 +461,10 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
-      gap: .5rem;
+      gap: 0.5rem;
       margin: 1rem;
 
-      @media (min-width:450px) {
+      @media (min-width: 450px) {
         grid-template-columns: 1fr 1fr;
 
         &>div:first-child {
@@ -457,7 +493,7 @@
       }
 
       &>div:has(img) {
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         aspect-ratio: 3/2;
         box-shadow: 0px 0px 3px var(--darkgray);
 
@@ -473,7 +509,6 @@
 }
 
 .testimonial-section {
-
   &>.testimonial-header {
     margin-block-end: 3rem;
     display: flex;
@@ -481,12 +516,12 @@
     flex-direction: column;
 
     & h3 {
-      color: var(--orange);
+      color: var(--blue);
       font-size: clamp(20px, 3vw, 28px);
       font-family: "Dancing Script", cursive;
     }
 
-    @media (min-width:768px) {
+    @media (min-width: 768px) {
       flex-direction: row;
       align-items: flex-end;
 
@@ -505,8 +540,6 @@
 
     &>.testimonial-card {
       max-width: 250px;
-
-
 
       & .top {
         padding: 2rem 2rem 3rem;
@@ -536,18 +569,24 @@
       &>div {
         text-align: center;
         padding: 2rem 2rem 0rem;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
 
-        &>span {
+        &>span:first-child {
+          color: var(--darkgray);
+          font-weight: bold;
+        }
+
+        &>span:last-child {
           color: var(--darkgray);
         }
       }
     }
   }
-
 }
 
 .gallery-section {
-
   & img {
     width: 100%;
     height: 100%;
@@ -561,13 +600,13 @@
     align-items: center;
     margin-block-end: 2rem;
 
-    @media (min-width:1024px) {
+    @media (min-width: 1024px) {
       margin-block-end: 3rem;
     }
 
     & h3 {
       text-align: center;
-      color: var(--orange);
+      color: var(--blue);
       font-size: clamp(20px, 3vw, 28px);
       font-family: "Dancing Script", cursive;
     }
@@ -582,11 +621,11 @@
       border-radius: 1rem;
     }
 
-    @media (min-width:500px) {
+    @media (min-width: 500px) {
       grid-template-columns: 4fr 3fr 3fr;
     }
 
-    @media (min-width:1024px) {
+    @media (min-width: 1024px) {
       width: 90%;
       margin-inline: auto;
     }
@@ -611,20 +650,15 @@
       flex-direction: row;
       gap: 1rem;
 
-      @media (min-width:500px) {
+      @media (min-width: 500px) {
         flex-direction: column;
       }
 
       &>* {
         flex: 1 1;
-
       }
     }
-
   }
-
-
-
 }
 
 .blog-section {
@@ -633,7 +667,7 @@
   gap: 2rem;
   padding-bottom: 2rem;
 
-  @media (min-width:640px) {
+  @media (min-width: 640px) {
     flex-direction: row;
 
     &>* {
@@ -679,7 +713,7 @@
 
     &>.blog-card {
       display: flex;
-      gap: .5rem;
+      gap: 0.5rem;
 
       &>.blog-image {
         flex: none;
@@ -696,10 +730,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: .2rem;
+        gap: 0.2rem;
         width: 70%;
 
-        &>h4 {
+        &>h3 {
           font-size: clamp(14px, 1vw, 16px);
         }
 
@@ -712,11 +746,9 @@
 
         &>a {
           font-size: clamp(12px, 1vw, 16px);
-          color: var(--orange)
+          color: var(--blue);
         }
       }
     }
-
   }
-
 }

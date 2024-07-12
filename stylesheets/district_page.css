@@ -24,11 +24,6 @@
     margin-top: 0;
   }
 
-  @media (min-width:1200px) {
-    width: 90%;
-    margin-inline: auto;
-  }
-
   &>.right {
     &>.image-container {
       display: grid;
@@ -61,20 +56,22 @@
 
 .attraction-container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: minmax(230px, 300px);
   gap: 1rem;
+  justify-content: center;
 
-  @media (min-width:400px) {
-    grid-template-columns: 1fr 1fr;
+  @media (min-width:450px) {
+    grid-template-columns: repeat(2, minmax(200px, 300px));
   }
 
   @media (min-width:768px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(220px, 320px))
   }
 
   &>.attraction-card {
+    aspect-ratio: 3/2;
     position: relative;
+    background-color: var(--lightGray);
     border-radius: .5rem;
 
     &>img {

@@ -71,6 +71,7 @@
       &>h1 {
         font-size: clamp(32px, 5vw, 64px);
         line-height: 1;
+        text-align: center;
       }
 
       &>h2 {

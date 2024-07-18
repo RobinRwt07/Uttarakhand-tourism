@@ -1,0 +1,44 @@
+[
+  {
+    "placeName":"Kandoliya temple",
+    "districtName":"Pauri Garhwal",
+    "description":"Kandoliya temple, located 2km from Pauri town amidst the picture perfect surrounding is dedicated to Kandoliya Devta. The presiding deity of the temple is Lord Shiva and also houses idols of Bhumi Devta.",
+    "category":"temple",
+    "distance":2,
+    "popular":false,
+    "bestTimetoVisit":"AnyTime",
+    "howToReach":{
+      "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
+      "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
+      "byRoad":"Most people prefer to drive down to pauri garhwal. It takes approximately five hours from Dehradun to cover the 200-km stretch."
+    }
+  },
+  {
+    "placeName":"Pauri",
+    "districtName":"Pauri Garhwal",
+    "description":"Kandoliya temple, located 2km from Pauri town amidst the picture perfect surrounding is dedicated to Kandoliya Devta. The presiding deity of the temple is Lord Shiva and also houses idols of Bhumi Devta.",
+    "category":"trekking",
+    "distance":2,
+    "popular":true,
+    "bestTimetoVisit":"AnyTime",
+    "howToReach":{
+      "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
+      "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
+      "byRoad":"Most people prefer to drive down to pauri garhwal. It takes approximately five hours from Dehradun to cover the 200-km stretch."
+    }
+  },
+  {
+    "placeName":"Trekking",
+    "districtName":"Pauri Garhwal",
+    "description":"Kandoliya temple, located 2km from Pauri town amidst the picture perfect surrounding is dedicated to Kandoliya Devta. The presiding deity of the temple is Lord Shiva and also houses idols of Bhumi Devta.",
+    "category":"trekking",
+    "distance":2,
+    "popular":true,
+    "bestTimetoVisit":"May-August",
+    "howToReach":{
+      "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
+      "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
+      "byRoad":"Most people prefer to drive down to pauri garhwal. It takes approximately five hours from Dehradun to cover the 200-km stretch."
+    }
+  }
+]

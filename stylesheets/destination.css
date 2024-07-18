@@ -491,6 +491,10 @@
         color: var(--darkgray);
         font-size: 15px;
       }
+
+      & span {
+        font-weight: bold;
+      }
     }
   }
 }

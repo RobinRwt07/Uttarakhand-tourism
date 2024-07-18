@@ -40,11 +40,14 @@
 
     <!-- <h2>Search location</h2> -->
     <div>
-      <input type="text" name="search-location" id="search-location" placeholder="Search location" />
-      <button>Search</button>
-      <div class="locations">
-        <ul></ul>
-      </div>
+      <input type="text" name="search-location" id="searchField" placeholder="Search location" />
+      <button>
+        <i class="fa-solid fa-search"></i>
+      </button>
+    </div>
+    <div class="locations">
+      <ul id="searchedItemContainer">
+      </ul>
     </div>
   </dialog>
 
@@ -510,6 +513,7 @@
   </section>
 
   <script src="./scripts/swiper.js" type="module"></script>
+  <script src="./scripts/loaddata.js" type="module"></script>
   <script>
     const openBtn = document.querySelector("#menuopen-btn");
     const closeBtn = document.querySelector("#menuclose-btn");

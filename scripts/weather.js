@@ -1,7 +1,7 @@
 import { url, kelvintoCelsius } from "./apis.js";
 
 const weatherContainer = document.querySelector("#weather-container");
-let loc = document.querySelector("#location-name").textContent;
+let loc = document.querySelector("#location-name").textContent.split(" ")[0];
 
 if (loc.length === 0) {
   loc = "Dehradun";

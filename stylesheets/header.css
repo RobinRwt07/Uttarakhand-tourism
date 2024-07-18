@@ -89,19 +89,20 @@
         &>.districts {
           position: absolute;
           display: none;
+          height: 300px;
           width: 100%;
+          overflow-y: scroll;
           top: 110%;
           left: 0;
-          padding: 1rem;
           border-radius: .5rem;
           z-index: 10;
-
+          scrollbar-width: none;
           box-shadow: 0px 0px 2px .2px var(--gray);
 
           @media (min-width:768px) {
-            width: auto
+            width: 200px;
+            width: auto;
           }
-
 
           &>ul {
             display: flex;
@@ -109,12 +110,14 @@
             gap: .2rem;
 
             &>li>a {
-              padding: .5rem 2rem;
+              padding: .5rem 1rem;
+              font-size: 13px;
               color: var(--textColor);
+              text-wrap: nowrap;
 
               &:hover {
                 background-color: var(--white);
-                border-radius: 2rem;
+                border-radius: 0rem;
               }
             }
           }

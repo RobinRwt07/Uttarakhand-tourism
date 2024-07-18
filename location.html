@@ -61,14 +61,7 @@
           <li><a href="./index.html">Home</a> </li>
           <li class="district-container"><a href="./destinations.html">Explore</a>
             <div class="districts">
-              <ul>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
+              <ul id="district-list">
               </ul>
             </div>
           </li>
@@ -90,31 +83,16 @@
         <img src="./Assests/nainital.jpg" alt="image" fetchpriority="high">
       </div>
       <div class="banner-info">
-        <div>
-          <h1 id="location-name">Srinagar</h1>
-          <h2>Tehri Garhwal</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit cumque nam eius exercitationem
-          </p>
+        <div id="location-details">
+          <!-- location info -->
         </div>
       </div>
     </div>
 
     <div class="info-section container">
       <div class="sc-xl">
-        <div class="info card">
-          <div class="location-info">
-            <h2>What to Know</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias itaque dignissimos
-              reiciendis
-              ratione repellat asperiores, esse ipsum quos perferendis aperiam hic magni, rerum at ex et
-              nulla
-              in
-              quis harum!</p>
-          </div>
-          <div class="time-to-visit ">
-            <h2>Best time to Visit</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, perspiciatis.</p>
-          </div>
+        <div class="info card" id="location-info-card">
+
         </div>
         <div class="weather-section card" id="weather-container">
           <!-- <div class="weather-map" id="weather-condition">
@@ -126,19 +104,8 @@
     <div class="container">
       <div class="how-to-reach sc-xl">
         <h2 class="sub-heading">How to Reach</h2>
-        <div class="card-container">
-          <div class="card">
-            <h3>By Road</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, veniam!</p>
-          </div>
-          <div class="card">
-            <h3>By Air</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ex.</p>
-          </div>
-          <div class="card">
-            <h3>By Train</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, eum.</p>
-          </div>
+        <div class="card-container" id="how-to-reach">
+          <!-- how to reach -->
         </div>
       </div>
     </div>
@@ -338,13 +305,9 @@
       </div>
     </div>
   </section>
-
-  <script>
-
-
-  </script>
+  <script src="./scripts/global.js" type="module"> </script>
+  <script src="./scripts/location.js" type="module"> </script>
   <script src="./scripts/weather.js" type="module"> </script>
-  <script src="./scripts/sidebar.js" type="module"> </script>
 </body>
 
 </html>

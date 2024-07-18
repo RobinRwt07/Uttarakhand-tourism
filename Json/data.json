@@ -1,0 +1,69 @@
+[
+  {
+    "districtName":"Dehradun",
+    "state":"Uttarakhand",
+    "info":"Dehradun is the capital city and the largest city of Uttarakhand. Dehradun is located at an altitude of 1400 feet above sea level and has a pleasant climate all year round. Located just 30kms from Mussoorie, Dehradun is known as the gateway to Mussoorie and Rishikesh and Haridwar. Dehradun is also known as the \"Educational Hub of Uttarakhand\" with some of the country's prestigious universities and boarding schools."
+  },
+  {
+    "districtName":"Pauri Garhwal",
+    "state":"Uttarakhand",
+    "info":"Pauri Garhwal is a paradise that showcases the varied colors of nature all packed in to this one place. From snow covered Himalayan peaks and thick cover of lush green forests to deep rooted culture of the place and warm hearted people, this place oozes beauty and charm in every aspect.Perched at an altitude of 1814m above the sea level, Pauri also serves as the headquarters to the district by the same name. It also houses many temples but what fascinates the visitors the most is the sunset here. Ending with the hues of pinks and purple, this most magnificent sight of sunset enthrals everyone with its stunning fusion of colours with the bang of bright orange.",
+    "places":[{
+      "name":"Kandoliya temple",
+      "category":"temple"
+    },
+    {
+      "name":"Pauri",
+      "category":"Trekking"
+    },
+    {
+      "name":"Trekking",
+      "category":"temple"
+    }
+    ]
+  },
+  {
+    "districtName":"Tehri Garhwal",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Chamoli",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Haridwar",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Nainital",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Uttarakashi",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Bageshwar",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Udham Singh Nagar",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Champawat",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Almora",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Pithoragarh",
+    "state":"Uttarakhand"
+  },
+  {
+    "districtName":"Rudraprayag",
+    "state":"Uttarakhand"
+  }
+]

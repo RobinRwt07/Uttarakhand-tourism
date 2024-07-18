@@ -6,7 +6,7 @@
   position: fixed;
   border: none;
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.2rem;
   width: 95%;
   margin: auto;
   z-index: 10;
@@ -23,17 +23,17 @@
 
   &>div:has(input) {
     display: flex;
-    flex-direction: column;
     text-align: center;
-    justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
 
     @media (min-width: 500px) {
       flex-direction: row;
+      gap: 2rem;
     }
 
     &>input {
       flex: auto;
+      width: auto;
       border: none;
       border-bottom: 2px solid var(--lightGray);
       padding: 0.3rem 1rem;
@@ -47,6 +47,23 @@
     &>button {
       margin: 0;
       padding: 0.2rem 1rem;
+    }
+
+  }
+
+  & .locations {
+    margin-block: 1rem;
+
+    & a {
+      display: block;
+      padding: .5rem 1rem;
+      /* border-radius: .5rem; */
+      font-size: 14px;
+      border-bottom: 1px solid var(--lightGray);
+
+      &:hover {
+        background-color: var(--lightGray);
+      }
     }
   }
 
@@ -97,8 +114,8 @@
 
   & .loader {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     aspect-ratio: 1;
     border-radius: 50%;
     background-image: linear-gradient(120deg,

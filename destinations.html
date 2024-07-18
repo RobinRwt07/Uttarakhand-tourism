@@ -53,16 +53,9 @@
       <nav class="navigation">
         <ul>
           <li><a href="./index.html">Home</a> </li>
-          <li class="district-container"><a href="./destinations.html">Explore</a>
+          <li class="district-container"><a>Explore</a>
             <div class="districts">
-              <ul>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
+              <ul id="district-list">
               </ul>
             </div>
           </li>
@@ -81,13 +74,11 @@
     <section class="info-section container">
       <div class="info-container sc-xl">
         <h1 class="heading">Reason why you should visit Uttarakhand</h1>
-
         <p>A land of myths and mountains, Devbhoomi Uttarakhand, is one of the most beautiful states of India.
           Snow-capped Himalayan peaks, serpentine rivers, revered temples, quaint villages, vibrant culture,
           and World Heritage Sites, Uttarakhand's sheer natural beauty and diversity beckon travelers from
           across the world.
         </p>
-
         <div class="item-container">
           <div class="first">
             <img src="./Assests/trek-uttrakhand.jpg" alt="Image">
@@ -113,72 +104,11 @@
 
     <section class="container popular-destination">
       <h2 class="heading">Popular Destinations</h2>
-      <div class="destination-container sc-xl">
-        <div class="figure">
-          <img src="./Assests/pexels-sanmane-1365425.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/velly of flower.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/front-image.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/pexels-sanmane-1365425.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/velly of flower.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/front-image.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/pexels-sanmane-1365425.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/velly of flower.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
-        <div class="figure">
-          <img src="./Assests/front-image.jpg" alt="location image">
-          <div class="location-info">
-            <span>Kedarnath</span>
-            <a href="#">Read More</a>
-          </div>
-        </div>
+      <div class="destination-container sc-xl" id="destinationContainer">
+        <!-- popular destinations -->
       </div>
     </section>
+
 
     <section class="container">
       <div class="treks sc-xl">
@@ -317,50 +247,10 @@
           India’s most sacred rivers and worshipped as a goddess, along with visits to several other
           destinations of religious importance in the state that is also referred to as the land of pilgrims.
         </p>
-        <div class="place-info sc-xl">
-          <div class="figure">
-            <img src="./Assests/Kedarnath.jpeg" alt="location image">
-            <div class="location-info">
-              <span>Kedarnath</span>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-          <div class="figure">
-            <img src="./Assests/Badrinath.jpeg" alt="location image">
-            <div class="location-info">
-              <span>Badrinath</span>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-          <div class="figure">
-            <img src="./Assests/Feature_Haridwar.jpg" alt="location image">
-            <div class="location-info">
-              <span>Haridwar</span>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-          <div class="figure">
-            <img src="./Assests/baijnath-temple-2.jpg" alt="location image">
-            <div class="location-info">
-              <span>Baijnath</span>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-          <div class="figure">
-            <img src="./Assests/Gangotri.jpeg" alt="location image">
-            <div class="location-info">
-              <span>Gangotri</span>
-              <a href="#">Read More</a>
-            </div>
-          </div>
-          <div class="figure">
-            <img src="./Assests/Rishikesh feature.jpg" alt="location image">
-            <div class="location-info">
-              <span>Rishikesh</span>
-              <a href="#">Read More</a>
-            </div>
-          </div>
+        <div class="place-info sc-xl" id="spiritualContainer">
+          <!-- spiritual places -->
         </div>
+
     </section>
 
     <section class="wildlife-section container">
@@ -450,6 +340,7 @@
 
     <!-- scripts -->
   </main>
+
   <section class="footer-section container">
     <div class="footer-container">
       <div class="footer">
@@ -503,8 +394,8 @@
       </div>
     </div>
   </section>
-  <script src="./scripts/sidebar.js"></script>
-  <script src="./scripts/swiper.js"></script>
+  <script src="./scripts/global.js"></script>
+  <script src="./scripts/destination.js" type="module"></script>
 </body>
 
 </html>

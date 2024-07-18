@@ -11,7 +11,7 @@
   <meta property="og:title" content="Explore Uttarakhand With Us">
   <meta property="og:url" content="url">
   <meta property="og:image" content="Image Url">
-  <title>Location</title>
+  <title>district</title>
   <!-- link goggle font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,14 +51,7 @@
           <li><a href="./index.html">Home</a> </li>
           <li class="district-container"><a href="./destinations.html">Explore</a>
             <div class="districts">
-              <ul>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
-                <li><a href="./district.html">Dehradun</a></li>
+              <ul id="district-list">
               </ul>
             </div>
           </li>
@@ -75,72 +68,34 @@
 
   <main class="main-container">
     <section class="district-section container">
-      <div class="district-info sc-xl">
-        <div class="left">
-          <h2 class="sub-heading">Dehradun</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et doloribus accusamus assumenda reiciendis
-            voluptatem eius esse nam, quia odio quam asperiores neque cum, sequi dolores, laudantium in? Quisquam, sunt
-            doloribus.
-          </p>
-        </div>
-        <div class="right">
-          <div class="image-container">
-            <div>
-              <img src="./Assests/velly of flower.jpg" alt="image">
-            </div>
-            <div>
-              <div>
-                <img src="./Assests/Rishikesh feature.jpg" alt="image">
-              </div>
-              <div>
-                <img src="./Assests/Feature_Govind National Park.jpeg" alt="image">
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="district-info sc-xl" id="district-info">
+
       </div>
     </section>
 
     <section class="container">
       <div class="attraction-section sc-xl">
-        <h2 class="heading">Attractions</h2>
-        <div class="attraction-container">
-          <div class="attraction-card">
-            <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
-            <div class="info">
-              <h3>Chakrata</h3>
-              <a href="./location.html" class="btn-style">Read More</a>
-            </div>
+        <h2 class="sub-heading" id="placesToVisit"></h2>
+        <div class="filter-bar scrollbar">
+          <div class="filter-btn" id="allBtn">
+            <span>All</span>
           </div>
-          <div class="attraction-card">
-            <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
-            <div class="info">
-              <h3>Chakrata</h3>
-              <a href="./location.html" class="btn-style">Read More</a>
-            </div>
+          <div class="filter-btn" id="templeBtn">
+            <i class="fa-solid fa-gopuram"></i>
+            <span>Temples</span>
           </div>
-          <div class="attraction-card">
-            <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
-            <div class="info">
-              <h3>Chakrata</h3>
-              <a href="./location.html" class="btn-style">Read More</a>
-            </div>
+          <div class="filter-btn" id="trekkingBtn">
+            <i class=" fa-solid fa-person-hiking"></i>
+            <span>Trekking</span>
           </div>
-          <div class="attraction-card">
-            <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
-            <div class="info">
-              <h3>Chakrata</h3>
-              <a href="./location.html" class="btn-style">Read More</a>
-            </div>
+          <div class="filter-btn" id="landmarksBtn">
+            <i class=" fa-solid fa-location-crosshairs"></i>
+            <span>Landmarks</span>
           </div>
-          <div class="attraction-card">
-            <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
-            <div class="info">
-              <h3>Chakrata</h3>
-              <a href="./location.html" class="btn-style">Read More</a>
-            </div>
-          </div>
+        </div>
+
+        <div class="attraction-container" id="attraction-container">
+          <!-- attraction section -->
         </div>
       </div>
     </section>
@@ -199,7 +154,8 @@
       </div>
     </div>
   </section>
-  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/global.js"></script>
+  <script src="./scripts/district.js" type="module"></script>
 </body>
 
 </html>

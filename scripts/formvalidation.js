@@ -27,7 +27,6 @@ signIn.addEventListener("submit", (e) => {
   }
 
   // verify user data
-
   if (valid) {
     let user = {
       email: formData.get("useremail"),
@@ -40,6 +39,7 @@ signIn.addEventListener("submit", (e) => {
     else {
       let userdata = JSON.parse(localStorage.getItem(user.email));
       if (user.password === userdata.password) {
+        localStorage.setItem("isUserSignIn", true);
         location.href = "./index.html";
       }
       else {

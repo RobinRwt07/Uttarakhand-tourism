@@ -69,3 +69,9 @@ export async function fetchDataPlaces() {
     alert(err.message);
   }
 }
+
+export function verifySignIn() {
+  if (!localStorage.getItem("isUserSignIn")) {
+    localStorage.setItem("isUserSignIn", false);
+  }
+}

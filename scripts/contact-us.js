@@ -52,8 +52,7 @@ contact.addEventListener("submit", (e) => {
     const data = Array.from(contactForm.entries());
     let dataObj = Object.fromEntries(data)
     window.localStorage.setItem(dataObj.useremail, JSON.stringify(dataObj));
+    alert("Message successfully sent");
     location.reload();
   }
-
-
 })

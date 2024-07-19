@@ -96,7 +96,7 @@ img {
 }
 
 .container {
-  padding: 2.2rem 1.4rem 0.5rem;
+  padding: 2.2rem 1.4rem 1rem;
 
   @media (min-width: 1024px) {
     padding: 3.4rem 3rem 1rem;

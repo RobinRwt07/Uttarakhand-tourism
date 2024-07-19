@@ -1,0 +1,20 @@
+[
+  {
+    "trekName":"Chopta Chandrashilla Trek",
+    "location":"Rudraprayag",
+    "difficultyLevel":"Medium",
+    "distance":40,
+    "altitude":3000,
+    "imageUrl":"#",
+    "trekDuration":"5-6 Days"
+  },
+  {
+    "trekName":"Har Ki Doon Trek",
+    "location":"Uttarakashi",
+    "difficultyLevel":"Hard",
+    "distance":60,
+    "altitude":5000,
+    "imageUrl":"#",
+    "trekDuration":"10-11 Days"
+  }
+]

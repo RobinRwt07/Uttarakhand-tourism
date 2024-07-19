@@ -81,7 +81,7 @@
       <nav class="navigation">
         <ul>
           <li><a href="./index.html">Home</a> </li>
-          <li class="district-container"><a href="./destinations.html">Explore</a>
+          <li class="district-container"><a>Explore</a>
             <div class="districts">
               <ul id="district-list">
               </ul>
@@ -338,7 +338,13 @@
     const blog = document.querySelector("#blog");
 
     openDialog.addEventListener("click", () => {
-      blog.showModal();
+      if (localStorage.getItem("isUserSignIn") === "false") {
+        alert("Please Login first");
+        location.href = "./signin.html";
+      }
+      else {
+        blog.showModal();
+      }
     });
     closeDialog.addEventListener("click", () => {
       blog.close();

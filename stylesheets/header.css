@@ -114,6 +114,7 @@
               font-size: 13px;
               color: var(--textColor);
               text-wrap: nowrap;
+              border-bottom: 1px solid var(--lightGray);
 
               &:hover {
                 background-color: var(--white);

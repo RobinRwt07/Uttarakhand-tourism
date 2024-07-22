@@ -6,7 +6,7 @@
     "category":"temple",
     "distance":2,
     "popular":false,
-    "bestTimetoVisit":"AnyTime",
+    "bestTimeToVisit":"AnyTime",
     "howToReach":{
       "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
       "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
@@ -20,7 +20,7 @@
     "category":"trekking",
     "distance":2,
     "popular":true,
-    "bestTimetoVisit":"AnyTime",
+    "bestTimeToVisit":"AnyTime",
     "howToReach":{
       "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
       "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
@@ -34,11 +34,151 @@
     "category":"trekking",
     "distance":2,
     "popular":true,
-    "bestTimetoVisit":"May-August",
+    "bestTimeToVisit":"May-August",
     "howToReach":{
       "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
       "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
       "byRoad":"Most people prefer to drive down to pauri garhwal. It takes approximately five hours from Dehradun to cover the 200-km stretch."
+    }
+  },
+   {
+    "placeName": "Nainital Lake",
+    "districtName": "Nainital",
+    "description": "Nainital Lake, a natural freshwater body, situated amidst the township of Nainital is one of the four famous lakes of Kumaon hills in the state of Uttarakhand.",
+    "category": "lake",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "March to June",
+    "howToReach": {
+      "byTrain": "Kathgodam Railway Station is the nearest railway station and is 34 km away from Nainital",
+      "byAir": "Pantnagar Airport is the nearest airport and is 70 km away from Nainital",
+      "byRoad": "Nainital is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Jim Corbett National Park",
+    "districtName": "Nainital",
+    "description": "Jim Corbett National Park is the oldest national park in India and was established in 1936 to protect the endangered Bengal tiger.",
+    "category": "national park",
+    "distance": 63,
+    "popular": true,
+    "bestTimeToVisit": "November to June",
+    "howToReach": {
+      "byTrain": "Ramnagar Railway Station is the nearest railway station and is 12 km away from the park",
+      "byAir": "Pantnagar Airport is the nearest airport and is 81 km away from the park",
+      "byRoad": "Jim Corbett National Park is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Mussoorie",
+    "districtName": "Dehradun",
+    "description": "Mussoorie, known as The Queen of the Hills, is located in the Dehradun District of Uttarakhand.",
+    "category": "hill station",
+    "distance": 35,
+    "popular": true,
+    "bestTimeToVisit": "April to June",
+    "howToReach": {
+      "byTrain": "Dehradun Railway Station is the nearest railway station and is 36 km away from Mussoorie",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 54 km away from Mussoorie",
+      "byRoad": "Mussoorie is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Rishikesh",
+    "districtName": "Dehradun",
+    "description": "Rishikesh, known as the Gateway to the Garhwal Himalayas and Yoga Capital of the World, is located in the Dehradun District of Uttarakhand.",
+    "category": "city",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "September to November",
+    "howToReach": {
+      "byTrain": "Rishikesh Railway Station is within the city",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 21 km away from Rishikesh",
+      "byRoad": "Rishikesh is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Kedarnath Temple",
+    "districtName": "Rudraprayag",
+    "description": "Kedarnath Temple is one of the most sacred Hindu temples dedicated to Lord Shiva. It is located on the Garhwal Himalayan range near the Mandakini river.",
+    "category": "temple",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "May to June, September to October",
+    "howToReach": {
+      "byTrain": "Rishikesh Railway Station is the nearest railway station and is 216 km away from Kedarnath",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 238 km away from Kedarnath",
+      "byRoad": "Kedarnath is accessible by a 16 km trek from Gaurikund, which is well connected by motorable roads."
+    }
+  },
+  {
+    "placeName": "Valley of Flowers National Park",
+    "districtName": "Chamoli",
+    "description": "Valley of Flowers National Park is known for its meadows of endemic alpine flowers and the variety of flora.",
+    "category": "national park",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "July to September",
+    "howToReach": {
+      "byTrain": "Rishikesh Railway Station is the nearest railway station and is 272 km away from the park",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 295 km away from the park",
+      "byRoad": "Govindghat, the base for the trek to Valley of Flowers, is well connected by motorable roads."
+    }
+  },
+  {
+    "placeName": "Har Ki Pauri",
+    "districtName": "Haridwar",
+    "description": "Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar. It is believed that Lord Vishnu left his footprint here.",
+    "category": "religious place",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "AnyTime",
+    "howToReach": {
+      "byTrain": "Haridwar Junction Railway Station is within the city",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 35 km away from Haridwar",
+      "byRoad": "Haridwar is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Auli",
+    "districtName": "Chamoli",
+    "description": "Auli is known for its beautiful snow-capped peaks and skiing resorts. It is also a popular trekking destination.",
+    "category": "hill station",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "November to March",
+    "howToReach": {
+      "byTrain": "Rishikesh Railway Station is the nearest railway station and is 264 km away from Auli",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 286 km away from Auli",
+      "byRoad": "Auli is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Badrinath Temple",
+    "districtName": "Chamoli",
+    "description": "Badrinath Temple is a Hindu temple dedicated to Lord Vishnu and is part of the Char Dham and Chota Char Dham pilgrimage circuits.",
+    "category": "temple",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "May to June, September to October",
+    "howToReach": {
+      "byTrain": "Rishikesh Railway Station is the nearest railway station and is 295 km away from Badrinath",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 317 km away from Badrinath",
+      "byRoad": "Badrinath is well connected by motorable roads to major destinations of Uttarakhand."
+    }
+  },
+  {
+    "placeName": "Chopta",
+    "districtName": "Rudraprayag",
+    "description": "Chopta is known as the 'Mini Switzerland' of India. It serves as a base for trekking to Tungnath and Chandrashila.",
+    "category": "hill station",
+    "distance": 0,
+    "popular": true,
+    "bestTimeToVisit": "April to November",
+    "howToReach": {
+      "byTrain": "Haridwar Railway Station is the nearest railway station and is 226 km away from Chopta",
+      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 249 km away from Chopta",
+      "byRoad": "Chopta is well connected by motorable roads to major destinations of Uttarakhand."
     }
   }
 ]

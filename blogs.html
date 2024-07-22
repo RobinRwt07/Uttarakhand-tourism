@@ -28,7 +28,6 @@
 </head>
 
 <body>
-
   <dialog id="blog" class="blog-form-section " role="dialog">
     <div class="close-btn">
       <span id="close-dialog">
@@ -45,17 +44,23 @@
             <input type="text" id="user-name" name="username" placeholder="Your Full Name" required>
           </div>
           <div class="input-field">
+            <label for="user-email">User Email</label>
+            <input type="email" id="user-email" name="useremail" placeholder="Your Full Name" required>
+          </div>
+          <div class="input-field">
             <label for="blog-heading">Blog heading</label>
-            <input type="text" id="blog-heading" name="blogheading" placeholder="Blog heading" required>
+            <input type="text" id="blog-heading" name="blogheading" placeholder="Blog heading">
+            <span class="error" id="headingError"></span>
           </div>
           <div class="input-field">
             <label for="image">Image</label>
-            <input type="file" id="image" name="image" required accept=".jpeg, .png, .webp">
+            <input type="file" id="image" name="image" accept=".jpeg, .png, .webp">
           </div>
           <div class="input-field">
             <label for="message">Write Your Experience</label>
-            <textarea name="message" id="message" rows="5" placeholder="minimum 100 Words"></textarea>
+            <textarea name="message" id="message" rows="5" placeholder="minimum 150 Words"></textarea>
           </div>
+          <span class="error" id="msgError"></span>
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -92,8 +97,8 @@
           <li><a href="./about.html">About</a> </li>
         </ul>
       </nav>
-      <div class="btn">
-        <a href="./signin.html" class="btn-style">Sign-Up</a>
+      <div id="login-logout" class="btn">
+        <!-- login logout btn -->
       </div>
     </header>
 
@@ -103,7 +108,7 @@
     <section class="container">
       <div class="blogs-section sc-xl">
         <h1 class="heading">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, veritatis!</h1>
-        <div class="blog-banner">
+        <div class="blog-banner" id="topBlogSection">
           <div class="left">
             <img src="./Assests/adventure.jpg" alt="blog image">
           </div>
@@ -332,6 +337,7 @@
     </div>
   </section>
   <script src="./scripts/global.js"></script>
+  <script src="./scripts/blogs.js"></script>
   <script>
     const openDialog = document.querySelector("#open-dialog");
     const closeDialog = document.querySelector("#close-dialog");

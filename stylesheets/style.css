@@ -5,7 +5,7 @@
   max-width: 500px;
   position: fixed;
   border: none;
-  border-radius: 1rem;
+  border-radius: var(--br);
   padding: 1.2rem;
   width: 95%;
   margin: auto;
@@ -330,7 +330,7 @@
 .slider-section {
   &>h2 {
     text-align: center;
-    margin-block-end: 2rem;
+    margin-block-end: 1rem;
   }
 
   & .swiper-slide {
@@ -367,7 +367,7 @@
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: var(--gap);
       justify-content: center;
 
       @media (min-width: 500px) {
@@ -384,22 +384,9 @@
 .second-section {
   &>.top {
     background-color: var(--bg2);
-    padding: clamp(1.4rem, 3vw, 3rem);
-
-    &>h2 {
-      position: relative;
-      margin-block-end: 1rem;
-
-      &::before {
-        position: absolute;
-        content: "";
-        width: 5px;
-        height: 100%;
-        background-color: var(--orange);
-        left: -15px;
-        top: 0;
-      }
-    }
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+    text-wrap: balance;
   }
 
   & .bottom {
@@ -478,7 +465,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
-      gap: 0.5rem;
+      gap: var(--gap);
       margin: 1rem;
 
       @media (min-width: 450px) {
@@ -510,9 +497,9 @@
       }
 
       &>div:has(img) {
-        border-radius: 0.5rem;
+        border-radius: var(--br);
         aspect-ratio: 3/2;
-        box-shadow: 0px 0px 3px var(--darkgray);
+        box-shadow: 0px 0px 5px rgb(209, 209, 209);
 
         &>img {
           border-radius: inherit;
@@ -527,7 +514,7 @@
 
 .testimonial-section {
   &>.testimonial-header {
-    margin-block-end: 3rem;
+    margin-block-end: 2rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -559,9 +546,9 @@
       max-width: 250px;
 
       & .top {
-        padding: 2rem 2rem 3rem;
+        padding: 2rem 1.8rem 3rem;
         background-color: var(--bg1);
-        border-radius: 1.4rem;
+        border-radius: var(--br);
         position: relative;
 
         &>.userimage {
@@ -607,18 +594,16 @@
   & img {
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: inherit;
   }
 
   &>.gallery-header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    margin-block-end: 2rem;
+    text-align: center;
+    margin-block-end: 1.5rem;
 
-    @media (min-width: 1024px) {
-      margin-block-end: 3rem;
+    & p {
+      text-align: center;
+      text-wrap: balance;
     }
 
     & h3 {
@@ -632,10 +617,10 @@
   &>.gallery {
     display: grid;
     grid-template-columns: 1;
-    gap: 1rem;
+    gap: var(--gap-1);
 
     & div:has(img) {
-      border-radius: 1rem;
+      border-radius: var(--br);
     }
 
     @media (min-width: 500px) {
@@ -650,11 +635,11 @@
     &>.first {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: var(--gap-1);
 
       & div:last-child {
         display: flex;
-        gap: 1rem;
+        gap: var(--gap-1);
 
         &>* {
           flex: 1 1;
@@ -681,11 +666,11 @@
 .blog-section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding-bottom: 2rem;
+  gap: var(--gap-1);
 
   @media (min-width: 640px) {
     flex-direction: row;
+    align-items: center;
 
     &>* {
       flex: 1 1;
@@ -694,11 +679,11 @@
 
   &>.left {
     display: flex;
-    gap: 1rem;
     flex-direction: column;
+    justify-content: space-between;
 
     &>.image-box {
-      border-radius: 1rem;
+      border-radius: var(--br);
       position: relative;
 
       & img {
@@ -725,7 +710,6 @@
   &>.right {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 1rem;
 
     &>.blog-card {
@@ -738,7 +722,7 @@
 
         &>img {
           height: 100%;
-          border-radius: 1rem;
+          border-radius: var(--br);
         }
       }
 
@@ -756,9 +740,6 @@
 
         &>p {
           font-size: clamp(12px, 1vw, 16px);
-          /* text-wrap: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis; */
         }
 
         &>a {

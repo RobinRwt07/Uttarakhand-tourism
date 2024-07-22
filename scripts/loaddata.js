@@ -1,5 +1,4 @@
 import { fetchData, fetchDataPlaces, verifySignIn } from "./functions.js";
-
 verifySignIn();
 
 if (!localStorage.getItem("UttarakhandTourismData")) {

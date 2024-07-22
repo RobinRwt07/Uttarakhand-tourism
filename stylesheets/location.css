@@ -99,7 +99,7 @@
   &>div:first-child {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--gap-1);
 
     @media (min-width:640px) {
       flex-direction: row;
@@ -118,6 +118,7 @@
 
         & h2 {
           color: var(--blue);
+          font-size: clamp(20px 2vw, 22px);
         }
       }
 
@@ -155,7 +156,7 @@
         display: flex;
         flex-direction: column;
         color: var(--white);
-        gap: 1rem;
+        gap: var(--gap-1);
 
         &>.left {
           display: flex;
@@ -181,7 +182,7 @@
         &>.right {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: var(--gap-1);
 
           &>.weather-info>* {
             display: flex;
@@ -207,7 +208,7 @@
         &>.forecast-card {
           flex: none;
           width: 76px;
-          border-radius: 0.5rem;
+          border-radius: var(--br);
           padding: 0.6rem;
           display: flex;
           gap: .4rem;
@@ -233,10 +234,19 @@
   &>.card-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--gap-1);
+
+    &>* {
+      flex: 1 1;
+    }
 
     @media (min-width:640px) {
       flex-direction: row;
+    }
+
+    &>.card p {
+      margin-block: .4rem;
+      font-size: 15px;
     }
   }
 }
@@ -246,7 +256,7 @@
   &>.hotel-list {
     overflow: scroll;
     display: flex;
-    gap: 1rem;
+    gap: var(--gap-1);
     padding: 0.5rem;
 
     &::-webkit-scrollbar {
@@ -264,7 +274,7 @@
     &>.hotel-card {
       display: flex;
       flex-direction: column;
-      border-radius: 0.5rem;
+      border-radius: var(--br);
       width: 220px;
       background-color: var(--bg1);
 
@@ -320,7 +330,7 @@
     display: grid;
     grid-template-columns: repeat(1, minmax(200px, 270px));
     justify-content: center;
-    gap: 1rem;
+    gap: var(--gap-1);
 
     @media (min-width:500px) {
       grid-template-columns: repeat(2, minmax(200px, 270px));
@@ -331,7 +341,7 @@
     }
 
     &>.picture-card:has(img) {
-      border-radius: .5rem;
+      border-radius: var(--br);
       aspect-ratio: 3/2;
 
       &>img {

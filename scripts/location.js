@@ -16,6 +16,8 @@ locationInfo.innerHTML = `<h1>${data.placeName}</h1>
 
 const locationInfoCard = document.querySelector("#location-info-card");
 
+console.log(data.bestTimeToVisit);
+
 locationInfoCard.innerHTML = `
 <div class="location-info">
 <h2>What to Know</h2>
@@ -23,17 +25,17 @@ locationInfoCard.innerHTML = `
 </div>
 <div class="time-to-visit ">
 <h2>Best time to Visit</h2>
-<p>${data.bestTimetoVisit}</p>
+<p>${data.bestTimeToVisit}</p>
 </div>`;
 
 const howToReach = document.querySelector("#how-to-reach");
 howToReach.innerHTML = `<div class="card">
             <h3>By Road</h3>
-            <p>${data.howToReach.byAir}</p>
+            <p>${data.howToReach.byRoad}</p>
           </div>
           <div class="card">
             <h3>By Air</h3>
-            <p>${data.howToReach.byRoad}</p>
+            <p>${data.howToReach.byAir}</p>
           </div>
           <div class="card">
             <h3>By Train</h3>

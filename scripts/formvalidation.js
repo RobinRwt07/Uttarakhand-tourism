@@ -32,22 +32,25 @@ signIn.addEventListener("submit", (e) => {
       email: formData.get("useremail"),
       password: formData.get("userpassword")
     }
-    if (!localStorage.getItem(user.email)) {
-      alert("Please register before login");
-      location.reload();
+    if (!localStorage.getItem("registeredUsers")) {
+      localStorage.setItem("registeredUsers", "[]");
+    }
+    const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
+    const isUserRegistered = registeredUsers.find((item) => item.email === user.email);
+    if (!isUserRegistered) {
+      alert("Please registered first");
+      return;
+    }
+    if (user.email == isUserRegistered.email && user.password == isUserRegistered.password) {
+      localStorage.setItem("isUserSignIn", true);
+      let cookiesString = `username=${user.email}`;
+      document.cookie = cookiesString;
+      location.href = "./index.html";
     }
     else {
-      let userdata = JSON.parse(localStorage.getItem(user.email));
-      if (user.password === userdata.password) {
-        localStorage.setItem("isUserSignIn", true);
-        location.href = "./index.html";
-      }
-      else {
-        alert("Password not matched");
-      }
+      alert("Invalid Credentials");
     }
   }
-
 });
 
 signUp.addEventListener("submit", (e) => {
@@ -88,13 +91,21 @@ signUp.addEventListener("submit", (e) => {
       password: formData.get("new-userpassword")
     }
 
-    if (!localStorage.getItem(user.email)) {
-      localStorage.setItem(user.email, JSON.stringify(user));
-      alert("Registred Successfully");
-      location.reload();
+    if (!localStorage.getItem("registeredUsers")) {
+      localStorage.setItem("registeredUsers", "[]");
+    }
+
+    const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"))
+    const isUserRegistered = registeredUsers.find((item) => item.email === user.email);
+    if (isUserRegistered) {
+      alert("User Already Registred");
     }
     else {
-      alert("User Already Exists");
+      let users = JSON.parse(localStorage.getItem("registeredUsers"));
+      users.push(user);
+      localStorage.setItem("registeredUsers", JSON.stringify(users));
+      alert("Registred Successfully");
+      location.reload();
     }
   }
 });

@@ -62,7 +62,7 @@
   <main class="main-container">
     <section class="home-section">
       <div class="header-box">
-        <div class="menuopen-btn" id="menuopen-btn">
+        <div class="menuopen-btn" id="menu-open-btn">
           <span>
             <i class="fa-solid fa-bars fa-xl" style="color: #ffffff"></i>
           </span>
@@ -74,7 +74,7 @@
         </div>
 
         <header id="header">
-          <div class="close-btn" id="menuclose-btn">
+          <div class="close-btn" id="menu-close-btn">
             <span>
               <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff"></i>
             </span>
@@ -94,8 +94,8 @@
             </ul>
           </nav>
           <div>
-            <div>
-              <a href="./signin.html" class="btn-style">Sign-Up</a>
+            <div id="login-logout">
+              <!-- login logout btn -->
             </div>
             <div id="open-search">
               <i class="fa-solid fa-search " style="color: #000000"></i>
@@ -198,11 +198,11 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
+
     <section class="second-section">
       <div class="top">
-        <h2 class="heading">
+        <h2 class="heading m-0">
           Unveil the Wonders of Uttarakhand <br />
-
         </h2>
         <p>
           Explore the wonders of Uttarakhand, from serene temples and
@@ -254,7 +254,7 @@
     </section>
 
     <section class="container">
-      <h2 class="heading">CharDham </h2>
+      <h2 class="heading mb-1 tx-center ">CharDham </h2>
       <div class="chardham-section">
         <div class="chardham-box">
           <div class="left">
@@ -348,6 +348,7 @@
         </div>
       </div>
     </section>
+
     <section class="gallery-section container">
       <div class="gallery-header">
         <div>
@@ -388,13 +389,16 @@
         </div>
       </div>
     </section>
+
     <section class="blog-section container">
       <div class="left">
-        <h2 class="heading">Read Our Lastest Travel Blog & Tips Here</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
-          maxime quos modi asperiores odio, sed illum vero iusto
-        </p>
+        <div>
+          <h2 class="heading">Read Our Lastest Travel Blog Here</h2>
+          <p class="mb-1">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
+            maxime quos modi asperiores odio, sed illum vero iusto
+          </p>
+        </div>
         <div class="image-box">
           <img src="./Assests/velly of flower.jpg" alt="blog cover" loading="lazy" />
           <div class="overlay">
@@ -459,6 +463,7 @@
       </div>
     </section>
   </main>
+
   <section class="footer-section container">
     <div class="footer-container">
       <div class="footer">
@@ -514,18 +519,9 @@
 
   <script src="./scripts/swiper.js" type="module"></script>
   <script src="./scripts/loaddata.js" type="module"></script>
+  <script src="./scripts/global.js"></script>
+
   <script>
-    const openBtn = document.querySelector("#menuopen-btn");
-    const closeBtn = document.querySelector("#menuclose-btn");
-    const header = document.querySelector("#header");
-
-    openBtn.addEventListener("click", () => {
-      header.style.left = "0";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      header.style.left = "-300px";
-    });
     // script for dialog modal
     const openDialog = document.querySelector("#open-search-icon");
     const openSearch = document.querySelector("#open-search");

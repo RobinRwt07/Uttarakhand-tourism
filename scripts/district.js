@@ -40,8 +40,9 @@ districtInfo.innerHTML = `
 </div>`;
 
 const attractionContainer = document.querySelector("#attraction-container");
-const places = districtData.places;
-console.log(places);
+const placesData = JSON.parse(localStorage.getItem("UttarakhandTouristPlaces"));
+
+const places = placesData.filter((item) => item.districtName.toLowerCase() === district);
 if (places.length === 0) {
   attractionContainer.textContent = `No places Available`;
 }
@@ -51,8 +52,8 @@ else {
     <div class="attraction-card">
     <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
     <div class="info">
-    <h3>${item.name}</h3>
-    <a href="./location.html?place=${item.name}" class="btn-style">Read More</a>
+    <h3>${item.placeName}</h3>
+    <a href="./location.html?place=${item.placeName}" class="btn-style">Read More</a>
     </div>
     </div>`
   }
@@ -71,16 +72,17 @@ function filterPlaces(filterType = "all") {
     filterPlace = places.filter((item) => item.category.toLowerCase() === filterType);
   }
   if (filterPlace.length === 0) {
-    attractionContainer.innerHTML = `<h2 class="sub-heading" style="grid-column:span 2;text-align:center">No Places</h2>`;
+    attractionContainer.innerHTML = `<h2 class="sub-heading" style="grid-column:span 3;text-align:center">No Places</h2>`;
     return;
   }
+  console.log(filterPlace);
   for (const item of filterPlace) {
     attractionContainer.innerHTML += `
     <div class="attraction-card">
     <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
     <div class="info">
-    <h3>${item.name}</h3>
-    <a href="./location.html?place=${item.name}" class="btn-style">Read More</a>
+    <h3>${item.placeName}</h3>
+    <a href="./location.html?place=${item.placeName}" class="btn-style">Read More</a>
     </div>
     </div>`
   }

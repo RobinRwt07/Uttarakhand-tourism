@@ -47,11 +47,15 @@ contact.addEventListener("submit", (e) => {
     valid = false;
     msgErr.textContent = isMsgValid;
   }
-
   if (valid) {
     const data = Array.from(contactForm.entries());
-    let dataObj = Object.fromEntries(data)
-    window.localStorage.setItem(dataObj.useremail, JSON.stringify(dataObj));
+    let dataObj = Object.fromEntries(data);
+    if (!localStorage.getItem('usersQuery')) {
+      localStorage.setItem("usersQuery", "[]");
+    }
+    let queries = JSON.parse(localStorage.getItem("usersQuery"));
+    queries.push(dataObj);
+    localStorage.setItem("usersQuery", JSON.stringify(queries));
     alert("Message successfully sent");
     location.reload();
   }

@@ -7,34 +7,7 @@
     "distance":2,
     "popular":false,
     "bestTimeToVisit":"AnyTime",
-    "howToReach":{
-      "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
-      "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
-      "byRoad":"Most people prefer to drive down to pauri garhwal. It takes approximately five hours from Dehradun to cover the 200-km stretch."
-    }
-  },
-  {
-    "placeName":"Pauri",
-    "districtName":"Pauri Garhwal",
-    "description":"Kandoliya temple, located 2km from Pauri town amidst the picture perfect surrounding is dedicated to Kandoliya Devta. The presiding deity of the temple is Lord Shiva and also houses idols of Bhumi Devta.",
-    "category":"trekking",
-    "distance":2,
-    "popular":true,
-    "bestTimeToVisit":"AnyTime",
-    "howToReach":{
-      "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
-      "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
-      "byRoad":"Most people prefer to drive down to pauri garhwal. It takes approximately five hours from Dehradun to cover the 200-km stretch."
-    }
-  },
-  {
-    "placeName":"Trekking",
-    "districtName":"Pauri Garhwal",
-    "description":"Kandoliya temple, located 2km from Pauri town amidst the picture perfect surrounding is dedicated to Kandoliya Devta. The presiding deity of the temple is Lord Shiva and also houses idols of Bhumi Devta.",
-    "category":"trekking",
-    "distance":2,
-    "popular":true,
-    "bestTimeToVisit":"May-August",
+    "image":"Kandoliya_temple.jpg",
     "howToReach":{
       "byTrain":"Rishikesh Railway Station is the nearest railway station and is 170 km away from Pauri",
       "byAir":"Dehradun JollyGrant Airport is the Nearnest Airport and is 190 km away from Pauri",
@@ -49,6 +22,7 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "March to June",
+    "image":"nanital_lake.jpg",
     "howToReach": {
       "byTrain": "Kathgodam Railway Station is the nearest railway station and is 34 km away from Nainital",
       "byAir": "Pantnagar Airport is the nearest airport and is 70 km away from Nainital",
@@ -63,6 +37,7 @@
     "distance": 63,
     "popular": true,
     "bestTimeToVisit": "November to June",
+    "image":"jim_corbett.jpg",
     "howToReach": {
       "byTrain": "Ramnagar Railway Station is the nearest railway station and is 12 km away from the park",
       "byAir": "Pantnagar Airport is the nearest airport and is 81 km away from the park",
@@ -77,6 +52,7 @@
     "distance": 35,
     "popular": true,
     "bestTimeToVisit": "April to June",
+    "image":"Mussoorie.jpg",
     "howToReach": {
       "byTrain": "Dehradun Railway Station is the nearest railway station and is 36 km away from Mussoorie",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 54 km away from Mussoorie",
@@ -91,6 +67,7 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "September to November",
+    "image":"Rishikesh.jpg",
     "howToReach": {
       "byTrain": "Rishikesh Railway Station is within the city",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 21 km away from Rishikesh",
@@ -105,6 +82,7 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "May to June, September to October",
+    "image":"kedarnath.jpg",
     "howToReach": {
       "byTrain": "Rishikesh Railway Station is the nearest railway station and is 216 km away from Kedarnath",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 238 km away from Kedarnath",
@@ -119,24 +97,11 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "July to September",
+    "image":"vally_of_flowers.jpg",
     "howToReach": {
       "byTrain": "Rishikesh Railway Station is the nearest railway station and is 272 km away from the park",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 295 km away from the park",
       "byRoad": "Govindghat, the base for the trek to Valley of Flowers, is well connected by motorable roads."
-    }
-  },
-  {
-    "placeName": "Har Ki Pauri",
-    "districtName": "Haridwar",
-    "description": "Har Ki Pauri is a famous ghat on the banks of the Ganges in Haridwar. It is believed that Lord Vishnu left his footprint here.",
-    "category": "religious place",
-    "distance": 0,
-    "popular": true,
-    "bestTimeToVisit": "AnyTime",
-    "howToReach": {
-      "byTrain": "Haridwar Junction Railway Station is within the city",
-      "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 35 km away from Haridwar",
-      "byRoad": "Haridwar is well connected by motorable roads to major destinations of Uttarakhand."
     }
   },
   {
@@ -147,6 +112,7 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "November to March",
+    "image":"auli.jpg",
     "howToReach": {
       "byTrain": "Rishikesh Railway Station is the nearest railway station and is 264 km away from Auli",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 286 km away from Auli",
@@ -161,6 +127,7 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "May to June, September to October",
+    "image":"Badrinath.jpg",
     "howToReach": {
       "byTrain": "Rishikesh Railway Station is the nearest railway station and is 295 km away from Badrinath",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 317 km away from Badrinath",
@@ -175,6 +142,7 @@
     "distance": 0,
     "popular": true,
     "bestTimeToVisit": "April to November",
+    "image":"chopta.jpg",
     "howToReach": {
       "byTrain": "Haridwar Railway Station is the nearest railway station and is 226 km away from Chopta",
       "byAir": "Dehradun Jolly Grant Airport is the nearest airport and is 249 km away from Chopta",

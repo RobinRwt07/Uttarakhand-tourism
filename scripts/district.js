@@ -44,7 +44,7 @@ const placesData = JSON.parse(localStorage.getItem("UttarakhandTouristPlaces"));
 
 const places = placesData.filter((item) => item.districtName.toLowerCase() === district);
 if (places.length === 0) {
-  attractionContainer.textContent = `No places Available`;
+  attractionContainer.innerHTML = `<h2 class="sub-heading" style="grid-column:span 3;text-align:center">No Places</h2>`;
 }
 else {
   for (const item of places) {

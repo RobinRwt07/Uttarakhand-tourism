@@ -16,7 +16,7 @@
     margin-top: 2rem;
   }
 
-  &>.user-info {
+  & .user-info {
     &>.userimg {
       width: 50px;
       aspect-ratio: 1;
@@ -36,11 +36,11 @@
     }
   }
 
-  &>h1 {
-    margin-block: 2rem;
+  & h1 {
+    margin-block: 1rem;
   }
 
-  &>.blog-image {
+  & .blog-image {
     &>img {
       aspect-ratio: 3/2;
 
@@ -51,9 +51,9 @@
   }
 
   &>.blog-content {
-    &>p {
-      margin-block: 2rem;
-      line-height: 2;
+    &>pre {
+      margin-block: 1rem;
+      line-height: 1.8;
       text-align: justify;
     }
   }
@@ -63,45 +63,54 @@
     margin-block: 2rem;
 
     &>h2 {
-      margin-block-end: 2rem;
+      margin-block-end: 1rem;
     }
 
     &>.more-blog {
-      display: grid;
+      display: flex;
       justify-content: center;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
-
-      @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      gap: var(--gap-1);
+      flex-wrap: wrap;
 
       &>.blog-card {
+        max-width: 250px;
         display: flex;
+        flex-shrink: 0;
         flex-direction: column;
-        gap: 1rem;
         box-shadow: 0px 0px 1px 0px var(--gray);
 
         &>.top {
-          flex: none;
           height: 50%;
+          flex: none;
 
           &>img {
             height: 100%;
+            width: 100%;
           }
         }
 
         &>.bottom {
+          height: 50%;
+          padding: 0.5rem 0.8rem;
           overflow: hidden;
-          padding: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: .2rem;
+
+          &>h3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-wrap: nowrap;
+            font-size: 16px;
+          }
 
           &>p {
             font-size: 14px;
             color: var(--darkgray);
           }
 
-          &>h3 {
-            margin-bottom: 1rem;
+          &>p:first-child {
+            font-size: 13px;
           }
         }
       }
@@ -110,7 +119,6 @@
 }
 
 /* contact-us page styling */
-
 .contact-section {
   @media (max-width:768px) {
     margin-block-start: 1rem;
@@ -190,13 +198,13 @@
 
   &>h1 {
     text-wrap: balance;
-    color: var(--textColor);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   &>.blog-banner {
     display: flex;
     flex-direction: column;
+    gap: var(--gap);
 
     @media (min-width:600px) {
       flex-direction: row;
@@ -297,13 +305,22 @@
       &>.bottom {
         flex-shrink: 1;
         height: auto;
-        font-size: 14px;
+        font-size: 14px !important;
+        padding-inline: 0.5rem;
         display: flex;
         flex-direction: column;
+
+        &>h3 {
+          text-wrap: nowrap;
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+        }
+
 
         &>a {
           color: var(--orange);
           margin-block: .4rem;
+          font-size: 16px;
 
           &:hover {
             color: var(--blue);
@@ -456,6 +473,12 @@
         margin-inline: auto;
       }
     }
+  }
+
+  & .text-editor {
+    background-color: var(--white);
+    border-top: 2px solid var(--lightGray) !important;
+    border-radius: var(--br);
   }
 
 }

@@ -76,7 +76,7 @@
         <header id="header">
           <div class="close-btn" id="menu-close-btn">
             <span>
-              <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff"></i>
+              <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff"></i>
             </span>
           </div>
 
@@ -87,7 +87,12 @@
           <nav class="navigation" role="navigation">
             <ul>
               <li><a href="./index.html">Home</a></li>
-              <li><a href="./destinations.html">Explore</a></li>
+              <li class="district-container"><a>Districts</a>
+                <div class="districts">
+                  <ul id="district-list">
+                  </ul>
+                </div>
+              </li>
               <li><a href="./blogs.html">Blogs</a></li>
               <li><a href="./contact-us.html">Contact</a></li>
               <li><a href="./About.html">About</a></li>
@@ -254,7 +259,7 @@
     </section>
 
     <section class="container">
-      <h2 class="heading mb-1 tx-center ">CharDham </h2>
+      <h2 class="heading mt-1 mb-2 tx-center ">Journey to Divinity: The Sacred Sites of Char Dham</h2>
       <div class="chardham-section">
         <div class="chardham-box">
           <div class="left">
@@ -272,10 +277,17 @@
             </div>
           </div>
           <div class="right">
-            <h2 class="sub-heading">Lorem, ipsum dolor</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nihil hic voluptatibus sunt fugit! Animi
-              quia
-              rerum porro, similique tempora, ipsa alias est aliquam qui pariatur quibusdam maxime cum et.</p>
+            <h2 class="sub-heading">Divine Pilgrimage Through the Himalayas</h2>
+            <p>Char Dham (sacred Hindu shrines of Badrinath, Kedarnath, Gangotri and Yamunotri) are situated in the
+              snow-covered reaches of the lofty Garhwal Himalayas, Uttaranchal. This part of the Himalayas is referred
+              as the land of
+              the gods in
+              the ancient Hindu mythology. The Char Dham Yatra is popular among the Hindus that thousands
+              of pilgrims visit these four holy shrines every year.
+
+              Devotees visit the four Dham (shrines) all for a spiritual union with the divine. The Char Dham Yatra is
+              popular for
+              centuries.</p>
           </div>
         </div>
       </div>
@@ -290,8 +302,7 @@
         <p>
           Hear from our travelers about their unforgettable experiences
           exploring the serene landscapes, vibrant culture, and thrilling
-          adventures in Uttarakhand. Their stories inspire us and future
-          travelers to embark on their own journeys to this magical land.
+          adventures in Uttarakhand.
         </p>
       </div>
       <div class="testimonial-card-container">
@@ -356,9 +367,9 @@
           <h2 class="heading">Photo's From Travellers</h2>
         </div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          non repellendus iusto molestias modi, eos dolores ea natus vero
-          provident Lorem ipsum dolor sit amet.
+          Explore the stunning beauty of Uttarakhand through our curated gallery. From majestic mountains to serene
+          lakes,
+          discover the natural wonders that make this region a must-visit destination
         </p>
       </div>
 
@@ -393,73 +404,19 @@
     <section class="blog-section container">
       <div class="left">
         <div>
-          <h2 class="heading">Read Our Lastest Travel Blog Here</h2>
+          <h2 class="heading">Read Our Lastest Blog Here</h2>
           <p class="mb-1">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
-            maxime quos modi asperiores odio, sed illum vero iusto
+            we share stories, insights, and tips that bring to life the diverse experiences this Himalayan paradise
+            offers. From hidden gems and adventure activities to cultural heritage our blogs cover everything
           </p>
         </div>
-        <div class="image-box">
-          <img src="./Assests/velly of flower.jpg" alt="blog cover" loading="lazy" />
-          <div class="overlay">
-            <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
-            <a href="#">Read More -></a>
-          </div>
+
+        <div class="image-box" id="latestBlog">
+          <!-- latest blog -->
         </div>
       </div>
-      <div class="right">
-        <div class="blog-card">
-          <div class="blog-image">
-            <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy" />
-          </div>
-          <div class="blog-data">
-            <h3>This is Blog Heading</h3>
-            <p>
-              Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint,
-              corrupti.
-            </p>
-            <a href="#">Read More-></a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-image">
-            <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy" />
-          </div>
-          <div class="blog-data">
-            <h3>This is Blog Heading</h3>
-            <p>
-              Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint,
-              corrupti.
-            </p>
-            <a href="#">Read More-></a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-image">
-            <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy" />
-          </div>
-          <div class="blog-data">
-            <h3>This is Blog Heading</h3>
-            <p>
-              Lorem ipsum dolor sit amet, lorem lorem adipisicing elit. Sint,
-              corrupti.
-            </p>
-            <a href="#">Read More-></a>
-          </div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-image">
-            <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy" />
-          </div>
-          <div class="blog-data">
-            <h3>This is Blog Heading</h3>
-            <p>
-              Lorem ipsum dolor sit amet, loremn adipisicing elit. Sint,
-              corrupti.
-            </p>
-            <a href="#">Read More-></a>
-          </div>
-        </div>
+      <div class="right" id="blogContainer">
+        <!-- blog card -->
       </div>
     </section>
   </main>
@@ -516,13 +473,12 @@
       </div>
     </div>
   </section>
-
+  <script src="./scripts/logout.js"></script>
   <script src="./scripts/swiper.js" type="module"></script>
   <script src="./scripts/loaddata.js" type="module"></script>
   <script src="./scripts/global.js"></script>
 
   <script>
-    // script for dialog modal
     const openDialog = document.querySelector("#open-search-icon");
     const openSearch = document.querySelector("#open-search");
     const closeDialog = document.querySelector("#close-search-icon");

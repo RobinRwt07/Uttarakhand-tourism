@@ -14,7 +14,7 @@ destinationContainer.innerHTML = "";
 for (const item of popularPlaces) {
   destinationContainer.innerHTML += `
   <div class="figure">
-  <img src="./Assests/pexels-sanmane-1365425.jpg" alt="${item.placeName}">
+  <img src="./Assests/places/${item.image}" alt="${item.placeName}">
   <div class="location-info">
   <span>${item.placeName}</span>
   <a href="./location.html?place=${item.placeName}">Read More</a>
@@ -28,14 +28,13 @@ spiritualContainer.innerHTML = "";
 for (const item of spiritualPlaces) {
   spiritualContainer.innerHTML += `
     <div class="figure">
-      <img src="./Assests/Kedarnath.jpeg" alt="${item.placeName}">
+      <img src="./Assests/places/${item.image}" alt="${item.placeName}">
       <div class="location-info">
         <span>${item.placeName}</span>
         <a href="./location.html?place=${item.placeName}">Read More</a>
       </div>
     </div>`;
 }
-
 
 // script for slider
 const previousSlide = document.getElementById("previousSlide");
@@ -70,7 +69,6 @@ nextSlide.addEventListener("click", () => {
 
 // script for trek section
 const treksContainer = document.querySelector("#treksContainer");
-
 window.addEventListener("load", () => {
   fetchTreks();
 });
@@ -91,7 +89,7 @@ function fetchTreks() {
         treksContainer.innerHTML += `
         <a href="#" class="trek-card">
           <div class="top">
-          <img src="./Assests/trek-uttrakhand.jpg" alt="${item.trekName}" loading="lazy">
+          <img src="./Assests/treks/${item.image}" alt="${item.trekName}" loading="lazy">
           </div>
           <div class="bottom">
           <span>${item.trekDuration}</span>

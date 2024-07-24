@@ -43,6 +43,7 @@ signIn.addEventListener("submit", (e) => {
     }
     if (user.email == isUserRegistered.email && user.password == isUserRegistered.password) {
       localStorage.setItem("isUserSignIn", true);
+      localStorage.setItem("loggedInUser", user.email);
       let cookiesString = `username=${user.email}`;
       document.cookie = cookiesString;
       location.href = "./index.html";

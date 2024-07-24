@@ -23,8 +23,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="./stylesheets/blogstyle.css">
-  <!-- font-awesome cdn  -->
-
 </head>
 
 <body>
@@ -41,11 +39,11 @@
         <form method="post" id="blog-form" enctype="multipart/form-data">
           <div class="input-field">
             <label for="user-name">User Name</label>
-            <input type="text" id="user-name" name="username" placeholder="Your Full Name" required>
+            <input type="text" id="user-name" name="username" placeholder="Your Full Name" required readonly>
           </div>
           <div class="input-field">
             <label for="user-email">User Email</label>
-            <input type="email" id="user-email" name="useremail" placeholder="Your Full Name" required>
+            <input type="email" id="user-email" name="useremail" placeholder="Your Full Name" required readonly>
           </div>
           <div class="input-field">
             <label for="blog-heading">Blog heading</label>
@@ -58,9 +56,9 @@
           </div>
           <div class="input-field">
             <label for="message">Write Your Experience</label>
-            <textarea name="message" id="message" rows="5" placeholder="minimum 150 Words"></textarea>
+            <textarea name="message" id="message" placeholder="minimum 150 words"></textarea>
+            <span class="error" id="msgError"></span>
           </div>
-          <span class="error" id="msgError"></span>
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -70,13 +68,13 @@
   <section class="header-section">
     <div class="menuopen-btn" id="menu-open-btn">
       <span>
-        <i class="fa-solid fa-bars fa-2xl"></i>
+        <i class="fa-solid fa-bars fa-xl"></i>
       </span>
     </div>
     <header id="header">
       <div class="close-btn" id="menu-close-btn">
         <span>
-          <i class="fa-solid fa-xmark fa-2xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i>
         </span>
       </div>
       <a href="./index.html" class="logo">
@@ -107,27 +105,9 @@
   <main class="main-container">
     <section class="container">
       <div class="blogs-section sc-xl">
-        <h1 class="heading">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum, veritatis!</h1>
+        <h1 class="heading">Journey Through Our Thoughts: Blogs and Stories</h1>
         <div class="blog-banner" id="topBlogSection">
-          <div class="left">
-            <img src="./Assests/adventure.jpg" alt="blog image">
-          </div>
-          <div class="right">
-            <h2>Lorem ipsum dolor sit amet. loree</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur itaque dicta placeat
-              laboriosam
-              provident ullam similique unde commodi, quibusdam fugiat perferendis!</p>
-
-            <div class="user-info">
-              <div class="picture">
-                <img src="./Assests/Yoga.jpg" alt="userImage" width="50" height="50">
-              </div>
-              <div>
-                <h4>User Name</h4>
-                <p>11 Jan 2024 | <span>5 min Read</span></p>
-              </div>
-            </div>
-          </div>
+          <!-- top blog -->
         </div>
       </div>
     </section>
@@ -138,73 +118,8 @@
           <button type="button" id="open-dialog">Add Blog</button>
 
         </div>
-        <div class="blog-container scrollbar">
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
+        <div class="blog-container scrollbar" id="blogContainer">
+          <!-- blog cards -->
         </div>
       </div>
     </section>
@@ -284,6 +199,7 @@
       </div>
     </section>
   </main>
+
   <section class="footer-section container">
     <div class="footer-container">
       <div class="footer">
@@ -336,6 +252,7 @@
       </div>
     </div>
   </section>
+  <script src="./scripts/logout.js"></script>
   <script src="./scripts/global.js"></script>
   <script src="./scripts/blogs.js"></script>
   <script>
@@ -355,10 +272,6 @@
     closeDialog.addEventListener("click", () => {
       blog.close();
     });
-
-    // validate blog form
-
-
   </script>
 </body>
 

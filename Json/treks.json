@@ -7,7 +7,8 @@
     "distance":30,
     "altitude":3000,
     "imageUrl":"#",
-    "trekDuration":"5-6 days"
+    "trekDuration":"5-6 days",
+    "image":"Chopta_Chandrashilla.jpg"
   },
   {
     "trekName":"Har Ki Doon",
@@ -17,7 +18,8 @@
     "distance":44,
     "altitude":3566,
     "imageUrl":"#",
-    "trekDuration":"10-11 days"
+    "trekDuration":"10-11 days",
+    "image":"Har_ki_dun.jpg"
   },
   {
     "trekName":"Valley of Flowers",
@@ -27,17 +29,19 @@
     "distance":60,
     "altitude":5000,
     "imageUrl":"#",
-    "trekDuration":"4-5 days"
+    "trekDuration":"4-5 days",
+    "image":"vally_of_flowers.jpg"
   },
   {
-    "trekName":"Kedarkantha Trek",
+    "trekName":"Kedarkantha",
     "location":"Chamoli",
     "bestSeason":"Monsoon months of June-October",
     "difficultyLevel":"Moderate",
     "distance":38,
     "altitude": 3500,
     "imageUrl":"#",
-    "trekDuration":"5-6 days"
+    "trekDuration":"5-6 days",
+    "image":"Kedarkantha.jpg"
   },
   {
     "trekName":"Kedartal Trek",
@@ -47,7 +51,8 @@
     "distance":50,
     "altitude": 4750,
     "imageUrl":"#",
-    "trekDuration":"6-7 days"
+    "trekDuration":"6-7 days",
+    "image":"Kedartal.jpg"
   },
   {
     "trekName":"Dayara Bugyal",
@@ -57,7 +62,8 @@
     "distance":40,
     "altitude": 3408,
     "imageUrl":"#",
-    "trekDuration":"6 days"
+    "trekDuration":"6 days",
+    "image":"Dayara_Bugyal_Trek.jpg"
   },
   {
     "trekName":"Deoriatal",
@@ -67,7 +73,8 @@
     "distance":27,
     "altitude": 2438,
     "imageUrl":"#",
-    "trekDuration":"4 days"
+    "trekDuration":"4 days",
+    "image":"Deoriatal.jpg"
   },
   {
     "trekName":"Brahmatal Trek",
@@ -77,7 +84,8 @@
     "distance":30,
     "altitude": 3400,
     "imageUrl":"#",
-    "trekDuration":"6 days"
+    "trekDuration":"6 days",
+    "image":"Brahmatal_Trek.jpg"
   },
   {
     "trekName":"Satopanth Lake",
@@ -87,7 +95,8 @@
     "distance":50,
     "altitude": 4260,
     "imageUrl":"#",
-    "trekDuration":"7 days"
+    "trekDuration":"7 days",
+    "image":"Satopanth.jpg"
   },
   {
     "trekName":"Bagini Glacier Trek",
@@ -97,6 +106,7 @@
     "distance":43,
     "altitude": 4560,
     "imageUrl":"#",
-    "trekDuration":"9 days"
+    "trekDuration":"9 days",
+    "image":"Bagini_Glacier.jpg"
   }
 ]

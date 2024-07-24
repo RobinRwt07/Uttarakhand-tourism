@@ -11,8 +11,17 @@ const data = places.find(item => place === item.placeName.toLowerCase());
 
 const locationInfo = document.querySelector("#location-details");
 
-locationInfo.innerHTML = `<h1>${data.placeName}</h1>
-<h2 id="location-name">${data.districtName}</h2>`;
+locationInfo.innerHTML = `
+<div class="image">
+        <img src="./Assests/login.jpg" alt="image" fetchpriority="high">
+</div>
+<div class="banner-info">
+<div>
+    <h1>${data.placeName}</h1>
+    <h2 id="location-name">${data.districtName}</h2>
+</div>
+</div>
+`;
 
 const locationInfoCard = document.querySelector("#location-info-card");
 

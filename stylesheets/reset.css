@@ -68,6 +68,7 @@
   padding: 0;
 }
 
+
 * {
   font-family: var(--fontPoppins);
 }
@@ -80,6 +81,11 @@ a {
 p {
   line-height: 1.5;
   color: var(--darkgray);
+  font-size: 15px;
+
+  @media (min-width:1024px) {
+    font-size: 16px;
+  }
 }
 
 ul>li,
@@ -106,7 +112,7 @@ img {
 }
 
 .heading {
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(24px, 3vw, 32px);
   color: var(--blue);
 }
 
@@ -233,7 +239,7 @@ form {
     padding: 0.4rem 0.6rem;
     font-size: 15px;
     outline: none;
-    border-radius: 8px;
+    border-radius: var(--br);
     border: 2px solid var(--lightGray);
     resize: none;
 

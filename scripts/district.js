@@ -6,6 +6,9 @@ const trekkingBtn = document.querySelector("#trekkingBtn");
 const landmarksBtn = document.querySelector("#landmarksBtn");
 
 const searchParam = decodeURIComponent(window.location.search);
+if (searchParam.length === 0) {
+  location.replace("./Error.html");
+}
 const district = searchParam.split("=")[1].toLowerCase();
 if (!localStorage.getItem("UttarakhandTourismData")) {
   fetchData();
@@ -13,6 +16,9 @@ if (!localStorage.getItem("UttarakhandTourismData")) {
 const data = JSON.parse(localStorage.getItem("UttarakhandTourismData"));
 
 const districtData = data.find((item) => item.districtName.toLowerCase() === district);
+if (!districtData) {
+  location.replace("./Error.html");
+}
 
 placeToVisit.textContent = `Places to Visit in ${districtData.districtName}`;
 console.log(districtData);
@@ -50,7 +56,7 @@ else {
   for (const item of places) {
     attractionContainer.innerHTML += `
     <div class="attraction-card">
-    <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
+    <img src="./Assests/places/${item.image}" alt="Attractions image" loading="lazy">
     <div class="info">
     <h3>${item.placeName}</h3>
     <a href="./location.html?place=${item.placeName}" class="btn-style">Read More</a>
@@ -79,7 +85,7 @@ function filterPlaces(filterType = "all") {
   for (const item of filterPlace) {
     attractionContainer.innerHTML += `
     <div class="attraction-card">
-    <img src="./Assests/wildlife.jpg" alt="Attractions image" loading="lazy">
+    <img src="./Assests/places/${item.image}" alt="Attractions image" loading="lazy">
     <div class="info">
     <h3>${item.placeName}</h3>
     <a href="./location.html?place=${item.placeName}" class="btn-style">Read More</a>

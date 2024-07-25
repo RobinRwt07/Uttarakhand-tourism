@@ -1,13 +1,18 @@
 import { fetchDataPlaces } from "./functions.js";
 
 let queryParam = window.decodeURIComponent(location.search);
+if (queryParam.length === 0) {
+  location.replace("./Error.html");
+}
 const place = queryParam.split("=")[1].toLowerCase();
-
 if (!localStorage.getItem("UttarakhandTouristPlaces")) {
   fetchDataPlaces();
 }
 const places = JSON.parse(localStorage.getItem("UttarakhandTouristPlaces"));
 const data = places.find(item => place === item.placeName.toLowerCase());
+if (!data) {
+  location.replace("./Error.html");
+}
 
 const locationInfo = document.querySelector("#location-details");
 
@@ -24,8 +29,6 @@ locationInfo.innerHTML = `
 `;
 
 const locationInfoCard = document.querySelector("#location-info-card");
-
-console.log(data.bestTimeToVisit);
 
 locationInfoCard.innerHTML = `
 <div class="location-info">
@@ -50,4 +53,3 @@ howToReach.innerHTML = `<div class="card">
             <h3>By Train</h3>
             <p>${data.howToReach.byTrain}</p>
           </div>`;
-console.log(data);

@@ -45,7 +45,6 @@ blogForm.addEventListener("submit", (e) => {
 
 const allBlogs = JSON.parse(localStorage.getItem("blogsData"));
 const topBlogSection = document.querySelector("#topBlogSection");
-console.log(allBlogs);
 try {
   topBlogSection.innerHTML = `
   <div class="left">

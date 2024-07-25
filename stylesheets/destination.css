@@ -63,8 +63,6 @@
 }
 
 .popular-destination {
-  padding-top: 1rem;
-
   &>h2 {
     text-align: center;
   }
@@ -116,7 +114,7 @@
         justify-content: flex-end;
         align-items: center;
         background-image: linear-gradient(to top, #000000, 15%, transparent);
-        padding-block: 1.4rem;
+        padding: 1.4rem .5rem;
         border-radius: inherit;
 
         &>span {
@@ -393,12 +391,13 @@
         justify-content: flex-end;
         align-items: center;
         background-image: linear-gradient(to top, #0000009d, transparent);
-        padding-block: 1.4rem;
+        padding: 1.4rem .5rem;
         border-radius: inherit;
 
         &>span {
+          text-align: center;
           font-weight: bold;
-          font-size: 20px;
+          font-size: 18px;
         }
 
         &>a {

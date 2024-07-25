@@ -438,19 +438,25 @@
     text-wrap: balance;
   }
 
-  & .bottom {
+  &>.bottom {
     display: flex;
     flex-direction: column;
 
     &>div {
+      height: auto;
       aspect-ratio: 3/2;
 
       &>img {
+        aspect-ratio: inherit;
+        object-fit: cover;
+        object-position: left;
         width: 100%;
         height: 100%;
       }
 
       @media (min-width: 500px) {
+        min-height: 200px;
+        height: 250px;
         aspect-ratio: unset;
         order: unset !important;
       }

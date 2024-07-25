@@ -433,7 +433,7 @@
 .second-section {
   &>.top {
     background-color: var(--bg2);
-    padding: 2rem 1.5rem 1rem;
+    padding: 2rem 1rem 1rem;
     text-align: center;
     text-wrap: balance;
   }

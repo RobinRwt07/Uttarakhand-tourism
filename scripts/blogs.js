@@ -41,12 +41,32 @@ blogForm.addEventListener("submit", (e) => {
     location.reload();
   }
   e.preventDefault();
-})
+});
 
-const allBlogs = JSON.parse(localStorage.getItem("blogsData"));
-const topBlogSection = document.querySelector("#topBlogSection");
-try {
-  topBlogSection.innerHTML = `
+async function fetchBlogs() {
+  try {
+    const response = await fetch('./json/blog.json');
+    if (response.status !== 200) {
+      throw new Error("Request Failed");
+    }
+    else {
+      let blogs = await response.json();
+      const localStorageBlog = JSON.parse(localStorage.getItem("blogsData"));
+      const allBlogs = [...blogs, ...localStorageBlog];
+      displayBlogs(allBlogs);
+    }
+  }
+  catch {
+    console.log("Failed To fetch blogs.");
+  }
+}
+
+fetchBlogs();
+
+function displayBlogs(allBlogs) {
+  const topBlogSection = document.querySelector("#topBlogSection");
+  try {
+    topBlogSection.innerHTML = `
   <div class="left">
     <img src="./Assests/adventure.jpg" alt="blog image">
     </div>
@@ -64,13 +84,13 @@ try {
     </div>
   </div>`;
 
-  const blogContainer = document.querySelector("#blogContainer");
-  if (allBlogs.length === 0) {
-    blogContainer.innerHTML = `<h2 class="sub-heading" style="text-align:center">blogs not available</h2>`;
-  }
-  else {
-    for (const item of allBlogs) {
-      blogContainer.innerHTML += `
+    const blogContainer = document.querySelector("#blogContainer");
+    if (allBlogs.length === 0) {
+      blogContainer.innerHTML = `<h2 class="sub-heading" style="text-align:center">blogs not available</h2>`;
+    }
+    else {
+      for (const item of allBlogs) {
+        blogContainer.innerHTML += `
         <div class="blog-card">
           <div class="top">
             <img src="./Assests/Feature_0.jpg" alt="blog-image">
@@ -81,11 +101,12 @@ try {
             <a href="./blog.html?blogId=${item.blogId}">Read More></a>
           </div>
         </div>`;
+      }
     }
   }
-}
-catch (e) {
-  console.log(e);
+  catch (e) {
+    console.log(e);
+  }
 }
 
 // get the loggedIn user name and email

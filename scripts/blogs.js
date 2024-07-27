@@ -56,7 +56,8 @@ async function fetchBlogs() {
       displayBlogs(allBlogs);
     }
   }
-  catch {
+  catch (e) {
+    console.log(e);
     console.log("Failed To fetch blogs.");
   }
 }

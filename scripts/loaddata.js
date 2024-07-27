@@ -76,7 +76,7 @@ function displayHomeBlogs(allBlogs) {
   const latestBlog = document.querySelector("#latestBlog");
   const blogContainer = document.querySelector("#blogContainer");
 
-  const firstFourBlogs = allBlogs.slice(0, 4);
+  const firstFourBlogs = allBlogs.slice(-4);
 
   console.log(allBlogs);
 

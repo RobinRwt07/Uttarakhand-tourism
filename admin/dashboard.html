@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Uttarakhand With Us" />
+  <meta name="keywords" content="Tourism,Uttarakhand,Nature,web-appication" />
+  <!-- open graph data -->
+  <meta property="og:site_name" content="Uttarakhand Tourism" />
+  <meta property="og:title" content="Explore Uttarakhand With Us" />
+  <meta property="og:url" content="url" />
+  <meta property="og:image" content="Image Url" />
+  <title>Admin Dashboard</title>
+  <!-- link goggle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./adminStyle.css" />
+  <!-- font-awesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <noscript>Please Enable Javascript Into Your Browser</noscript>
+</head>
+
+<body>
+  <header class="p-1">
+    <div class="main-container">
+      <a href="./index.html" class="logo">
+        <img src="../Assests/logo.svg" alt="logo" />
+      </a>
+      <nav>
+        <h2 class="sub-heading">Admin DashBoard</h2>
+      </nav>
+    </div>
+  </header>
+  <main class="main-container">
+    <div class="main-section">
+      <div class="slidebar">
+        <div>
+          <a href="./dashboard.html?home" data-link="home">
+            <i class="fa-solid fa-house"></i>
+            <p>Home</p>
+          </a>
+          <a href="./dashboard.html?places" data-link="places">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Places</p>
+          </a>
+          <a href="./dashboard.html?hotels" data-link="hotels">
+            <i class="fa-solid fa-hotel"></i>
+            <p>Hotels</p>
+          </a>
+          <a href="./dashboard.html?events" data-link="events">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>Events</p>
+          </a>
+          <a href="./dashboard.html?blogs" data-link="blogs">
+            <i class="fa-brands fa-microblog"></i>
+            <p>Blogs</p>
+          </a>
+        </div>
+        <button id="adminLogoutBtn">LogOut</button>
+      </div>
+
+      <div class="content-section">
+        <div class="content">
+          <div class="home-section" data-type="home">
+            <h1>home</h1>
+          </div>
+
+          <div data-type="places">
+            <div class="places-section" id="allPlacesInfo">
+              <div class="mb-1">
+                <h2 class="sub-heading ">All Places</h2>
+                <button id="add-place" onclick='addPlaces()' class="m-0">Add New Places</button>
+              </div>
+
+              <div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>District</th>
+                      <th>Category</th>
+                      <th>Popular</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody id="placeSection">
+                    <!-- all places -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="addPlaceForm" class="m-1">
+              <form method="post" id="add-places">
+                <div class="input-field">
+                  <label>Place Name</label>
+                  <input type="text" id="placename" name="placename" placeholder="Place Name" required>
+                </div>
+
+                <div class="input-field">
+                  <label>Location</label>
+                  <input list="location" name="location" placeholder="Select Location" required>
+                  <datalist id="location">
+                    <option value="Dehradun">
+                    <option value="Pauri Garhwal">
+                    <option value="Haridwar">
+                  </datalist>
+                </div>
+
+                <div class="input-field">
+                  <label>Category</label>
+                  <input list="locationCategory" name="locationCategory" placeholder="Select Category" required>
+                  <datalist id="locationCategory">
+                    <option value="Temple">
+                    <option value="landmark">
+                    <option value="trek">
+                    <option value="hill station">
+                  </datalist>
+                </div>
+
+                <div class="input-field">
+                  <label>Best Time To Visit</label>
+                  <input type="text" id="besttime" name="besttime" placeholder="Best Time to Visit" required>
+                </div>
+
+                <div class="input-radio">
+                  Polpular
+                  <label for="yes">Yes
+                    <input type="radio" id="yes" name="popular" value="true" required>
+                  </label>
+                  <label for="no">No
+                    <input type="radio" id="no" name="popular" value="false">
+                  </label>
+                </div>
+
+                <div class="input-field">
+                  <label>Image Url</label>
+                  <input type="text" name="image" placeholder="Image" required>
+                </div>
+
+                <div class="input-field">
+                  <label for="byAir">How To Reach By Air</label>
+                  <input type="text" id="byAir" name="byAir" required>
+                </div>
+                <div class="input-field">
+                  <label for="byRoad">How To Reach By Road</label>
+                  <input type="text" id="byRoad" name="byRoad" required>
+                </div>
+                <div class="input-field">
+                  <label for="byTrain">How To Reach By Air</label>
+                  <input type="text" id="byTrain" name="byTrain" required>
+                </div>
+
+                <div class="input-field">
+                  <label>Description</label>
+                  <textarea name="description" id="description" rows="5" placeholder="Description" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="hotels-section" data-type="hotels">
+            <h2>hotel section</h2>
+          </div>
+          <div class="blog-section" data-type="blogs">
+            <h3>blog</h3>
+          </div>
+          <div class="events-section" data-type="events">
+            <h3>event section</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./admin.js"></script>
+</body>
+<script>
+</script>
+
+</html>

@@ -21,13 +21,12 @@
     margin-block-start: 3rem;
   }
 
-  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   max-width: 1024px;
   margin: auto;
   background-color: var(--bg2);
-  border-radius: 0.5rem;
+  border-radius: var(--br);
 
   &>.left {
     &>img {

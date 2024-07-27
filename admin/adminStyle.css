@@ -1,0 +1,138 @@
+@import url('../stylesheets/reset.css');
+
+.active {
+  background-color: var(--lightGray);
+}
+
+header {
+  background-color: var(--blue);
+
+  &>.main-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+
+    & nav {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    & h2 {
+      color: var(--white) !important;
+    }
+  }
+}
+
+.main-section {
+  display: flex;
+  gap: var(--gap);
+  padding: .5rem;
+
+  &>.slidebar {
+    padding: 1rem;
+    width: 25%;
+    height: 100dvh;
+    background-color: var(--bg1);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--br);
+    gap: 2rem;
+
+    @media (max-width:768px) {
+      display: none;
+    }
+
+    &>div:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-1);
+
+      &>a {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-1);
+        padding: .5rem 1rem;
+        text-align: center;
+        border-radius: 2rem;
+
+        &:hover {
+          background-color: var(--lightGray);
+        }
+      }
+    }
+  }
+
+  &>.content-section {
+    width: 100%;
+
+    @media (min-width:768px) {
+      width: calc(100% - 25%);
+    }
+
+    &>.content {
+      overflow: scroll;
+      scrollbar-width: none;
+      max-height: 100dvb;
+      padding: 1rem;
+      border-radius: var(--br);
+      background-color: var(--bg1);
+
+      &>div[data-type] {
+        display: none;
+      }
+
+      & .places-section {
+        &>div:first-child {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        &>div:nth-child(2) {
+          overflow-x: auto;
+        }
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+  font-size: 14px;
+
+  &>thead>tr>th {
+    padding: 1rem .5rem !important;
+    background-color: var(--lightGray);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--white);
+  }
+
+  tr:nth-child(odd) {
+    background-color: rgb(246, 246, 246);
+  }
+
+  td {
+    padding: .5rem;
+  }
+}
+
+#addPlaceForm {
+  display: none;
+
+  @media (min-width:1024px) {
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  & .input-radio {
+    font-size: 14px;
+
+    & label {
+      margin-inline-start: 1rem;
+    }
+  }
+}

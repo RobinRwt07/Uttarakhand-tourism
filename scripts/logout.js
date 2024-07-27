@@ -7,15 +7,20 @@ else {
   loginbtn.innerHTML = `<button type="button" class="btn-style logoutBtn" id="logoutBtn">LogOut</button>`;
 }
 // script for logout functionality
-const logOut = document.querySelector("#logoutBtn");
-logOut.addEventListener("click", () => {
-  let ans = confirm("Are You Sure");
-  if (ans) {
-    let userCoookie = document.cookie;
-    userCoookie += ";max-age=0";
-    document.cookie = userCoookie;
-    localStorage.setItem("isUserSignIn", false);
-    localStorage.removeItem("loggedInUser");
-    location.href = "./signin.html";
-  }
-});
+try {
+  const logOut = document.querySelector("#logoutBtn");
+  logOut.addEventListener("click", () => {
+    let ans = confirm("Are You Sure");
+    if (ans) {
+      let userCoookie = document.cookie;
+      userCoookie += ";max-age=0";
+      document.cookie = userCoookie;
+      localStorage.setItem("isUserSignIn", false);
+      localStorage.removeItem("loggedInUser");
+      location.href = "./signin.html";
+    }
+  });
+}
+catch {
+  console.log("Error occured");
+}

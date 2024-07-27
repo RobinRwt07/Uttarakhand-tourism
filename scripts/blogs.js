@@ -43,28 +43,13 @@ blogForm.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-async function fetchBlogs() {
-  try {
-    const response = await fetch('./json/blog.json');
-    if (response.status !== 200) {
-      throw new Error("Request Failed");
-    }
-    else {
-      let blogs = await response.json();
-      const localStorageBlog = JSON.parse(localStorage.getItem("blogsData")) || [];
-      const allBlogs = [...blogs, ...localStorageBlog];
-      displayBlogs(allBlogs);
-    }
-  }
-  catch (e) {
-    console.log("Failed To fetch blogs.");
-  }
-}
 
-fetchBlogs();
+displayBlogs();
 
-function displayBlogs(allBlogs) {
+function displayBlogs() {
   const topBlogSection = document.querySelector("#topBlogSection");
+  const allBlogs = JSON.parse(localStorage.getItem("blogsData")) || [];
+  console.log(allBlogs);
   try {
     topBlogSection.innerHTML = `
   <div class="left">

@@ -48,21 +48,42 @@ function debounce(fun, delay = 500) {
 }
 const filterSearchPlaces = debounce(filterPlace, 700);
 
-
 // script for blog section
+fetchBlogs();
 
-if (localStorage.getItem("blogsData")) {
+async function fetchBlogs() {
+  try {
+    const response = await fetch('./json/blog.json');
+    if (response.status !== 200) {
+      throw new Error("Request Failed");
+    }
+    else {
+      let blogs = await response.json();
+      if (!localStorage.getItem("blogsData")) {
+        localStorage.setItem("blogsData", JSON.stringify(blogs));
+      }
+      const localStorageBlog = JSON.parse(localStorage.getItem("blogsData"));
+      const allBlogs = [...blogs, ...localStorageBlog];
+      displayHomeBlogs(allBlogs);
+    }
+  }
+  catch (e) {
+    console.log("Failed To fetch blogs.");
+  }
+}
+
+function displayHomeBlogs(allBlogs) {
   const latestBlog = document.querySelector("#latestBlog");
   const blogContainer = document.querySelector("#blogContainer");
 
-  const allBlogs = JSON.parse(localStorage.getItem("blogsData"));
   const firstFourBlogs = allBlogs.slice(0, 4);
+
+  console.log(allBlogs);
 
   if (allBlogs.length == 0) {
     latestBlog.innerHTML = `<h3>No Blogs Available</h3>`;
   }
   else {
-
     latestBlog.innerHTML = `
     <img src="./Assests/velly of flower.jpg" alt="blog cover" loading="lazy" />
     <div class="overlay">
@@ -70,7 +91,6 @@ if (localStorage.getItem("blogsData")) {
     <a href="./blog.html?blogId=${allBlogs.at(-1).blogId}">Read More -></a>
     </div>`;
   }
-
   if (firstFourBlogs.length > 0) {
     blogContainer.innerHTML = '';
     for (const item of firstFourBlogs) {

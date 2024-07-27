@@ -51,13 +51,12 @@ async function fetchBlogs() {
     }
     else {
       let blogs = await response.json();
-      const localStorageBlog = JSON.parse(localStorage.getItem("blogsData"));
+      const localStorageBlog = JSON.parse(localStorage.getItem("blogsData")) || [];
       const allBlogs = [...blogs, ...localStorageBlog];
       displayBlogs(allBlogs);
     }
   }
   catch (e) {
-    console.log(e);
     console.log("Failed To fetch blogs.");
   }
 }

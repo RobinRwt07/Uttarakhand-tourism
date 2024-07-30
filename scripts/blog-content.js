@@ -8,26 +8,10 @@ if (isNaN(blogId)) {
   location.replace("./Error.html");
 }
 
-async function fetchBlogs() {
-  try {
-    const response = await fetch('./json/blog.json');
-    if (response.status !== 200) {
-      throw new Error("Request Failed");
-    }
-    else {
-      let blogs = await response.json();
-      const localStorageBlog = JSON.parse(localStorage.getItem("blogsData"));
-      const allBlogs = [...blogs, ...localStorageBlog];
-      displayBlogContent(allBlogs);
-    }
-  }
-  catch {
-    console.log("Failed To fetch blogs.");
-  }
-}
-fetchBlogs();
+displayBlogContent();
 
-function displayBlogContent(allBlogs) {
+function displayBlogContent() {
+  const allBlogs = JSON.parse(localStorage.getItem("blogsData"));
   const blog = allBlogs.find(item => item.blogId === blogId);
   if (!blog) {
     location.replace("./Error.html");
@@ -44,7 +28,7 @@ function displayBlogContent(allBlogs) {
   </div>
   <h1 class="heading">${blog.heading}</h1>
   <div class="blog-image">
-    <img src="./Assests/nainital.jpg" alt="image">
+    <img src="${blog.image}" alt="image">
   </div>`;
 
   blogContent.innerHTML = `<pre style="text-wrap:wrap">${blog.message}</pre>`;
@@ -54,7 +38,7 @@ function displayBlogContent(allBlogs) {
     relatedBlogs.innerHTML += `
         <a href="./blog.html?blogId=${item.blogId}" class="blog-card">
           <div class="top">
-            <img src="./Assests/${item.image ? item.image : "blog_default2.jpg"}" alt="blog-image">
+            <img src="${item.image ? item.image : "./Assests/blog_default2.jpg"}" alt="blog-image">
           </div>
           <div class="bottom">
             <p><span>${item.name}</span> | <span>${item.uploadDate}</span>

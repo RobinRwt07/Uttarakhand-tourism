@@ -47,7 +47,8 @@ document.querySelector("#add-hotels").addEventListener("submit", (e) => {
     hotelAddress: formData.get("hotelAddress"),
     charges: formData.get("charges"),
     hotelOwner: formData.get("hotelOwner"),
-    contact: formData.get("contact")
+    contact: formData.get("contact"),
+    hotelImage: formData.get("hotelImage") || "https://th.bing.com/th/id/OIP.BdzTRoHOWh-qgaREx1e5twAAAA?w=200&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7",
   }
   hotels.push(newHotel);
   localStorage.setItem("hotels", JSON.stringify(hotels));
@@ -77,6 +78,7 @@ function updateHotel(event) {
   document.querySelector("#charges").value = hotel.charges;
   document.querySelector("#hotelOwner").value = hotel.hotelOwner;
   document.querySelector("#contact").value = hotel.contact;
+  document.querySelector("#hotelImage").value = hotel.hotelImage;
 }
 
 
@@ -129,7 +131,7 @@ document.querySelector("#add-Event").addEventListener("submit", (e) => {
     eventDetails: formData.get("eventDetails"),
     startDate: formData.get("startDate"),
     endDate: formData.get("endDate"),
-    image: formData.get("image"),
+    image: formData.get("image") || "https://th.bing.com/th/id/OIP.5rhvgzJxRHyxa26JLafxMQHaEo?w=316&h=197&c=7&r=0&o=5&dpr=1.5&pid=1.7",
   }
   events.push(newEvent);
   localStorage.setItem("events", JSON.stringify(events));

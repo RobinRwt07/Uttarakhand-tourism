@@ -43,6 +43,7 @@
   & .blog-image {
     &>img {
       aspect-ratio: 3/2;
+      object-fit: cover;
 
       @media (min-width: 500px) {
         aspect-ratio: 5/2;
@@ -258,18 +259,14 @@
 
   &>div:first-child {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 
     &>button {
       margin: 0;
-
-      @media (max-width:500px) {
-        display: none;
-      }
-
-      ;
     }
   }
 

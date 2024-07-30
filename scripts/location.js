@@ -67,7 +67,7 @@ else {
     hotelList.innerHTML += `
       <div class="hotel-card">
         <div class="top">
-          <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+          <img src="${item.hotelImage}" alt="hotel Image" loading="lazy">
         </div>
         <div class="bottom">
           <p>${item.hotelName}</p>

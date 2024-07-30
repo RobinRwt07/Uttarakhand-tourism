@@ -14,7 +14,7 @@ blogForm.addEventListener("submit", (e) => {
   headingError.textContent = "";
   const blogData = new FormData(blogForm);
   const msg = blogData.get("message");
-  if (msg.length < 150) {
+  if (msg.split(" ").length < 150) {
     valid = false;
     msgError.textContent = "blog content should contain at least 150 words";
   }
@@ -22,6 +22,7 @@ blogForm.addEventListener("submit", (e) => {
     valid = false;
     headingError.textContent = "Please provide heading for blog"
   }
+
   if (valid) {
     const blog = {
       blogId: Math.floor(Math.random() * 900000) + 10000,
@@ -29,7 +30,8 @@ blogForm.addEventListener("submit", (e) => {
       message: blogData.get("message"),
       userEmail: blogData.get("useremail"),
       uploadDate: new Date().toDateString(),
-      name: blogData.get("username")
+      name: blogData.get("username"),
+      image: blogData.get("image") || "https://brandminds.ro/wp-content/uploads/2021/07/blogging-for-business-blog-articles-e1536066690505.jpg"
     };
     if (!localStorage.getItem("blogsData")) {
       localStorage.setItem("blogsData", "[]");
@@ -52,7 +54,7 @@ function displayBlogs() {
   try {
     topBlogSection.innerHTML = `
   <div class="left">
-    <img src="./Assests/adventure.jpg" alt="blog image">
+    <img src="${allBlogs.at(-1).image}" alt="blog image">
     </div>
     <div class="right">
     <h2>${allBlogs.at(-1).heading}</h2>
@@ -77,7 +79,7 @@ function displayBlogs() {
         blogContainer.innerHTML += `
         <div class="blog-card">
           <div class="top">
-            <img src="./Assests/${item.image ? item.image : "blog_default2.jpg"}" alt="blog-image">
+            <img src="${item.image ? item.image : "./Assests/blog_default2.jpg"}" alt="blog-image">
           </div>
           <div class="bottom">
             <h3 title="${item.heading}">${item.heading}</h3>

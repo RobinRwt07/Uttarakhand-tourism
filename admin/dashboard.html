@@ -37,7 +37,7 @@
         <img src="../Assests/logo.svg" alt="logo" />
       </a>
       <nav>
-        <h2 class="sub-heading">Hello 👋 Robin </h2>
+        <h3 style="color:var(--white)">Hello 👋 Robin </h3>
       </nav>
     </div>
   </header>
@@ -246,7 +246,6 @@
               </table>
             </div>
           </div>
-
           <div id="addHotelForm" class="m-1">
             <h2 class="sub-heading tx-center mb-1">Add New Hotel</h2>
             <form method="post" id="add-hotels">
@@ -294,6 +293,11 @@
                 <label>Contact No.</label>
                 <input type="number" name="contact" id="contact" placeholder="Owner Contact"
                   pattern="((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}" required>
+              </div>
+
+              <div class="input-field">
+                <label>Hotel Image</label>
+                <input type="url" id="hotelImage" name="hotelImage" placeholder="hotel Imagee">
               </div>
               <button type="submit">Submit</button>
             </form>
@@ -362,12 +366,13 @@
               </div>
               <div class="input-field">
                 <label>Image</label>
-                <input type="url" id="image" name="image" placeholder="Image Url" required>
+                <input type="url" id="image" name="image" placeholder="Image Url">
               </div>
               <button type="submit">Submit</button>
             </form>
           </div>
         </div>
+
       </div>
     </div>
   </main>

@@ -81,7 +81,6 @@ function filterPlaces(filterType = "all") {
     attractionContainer.innerHTML = `<h2 class="sub-heading" style="grid-column:span 3;text-align:center">No Places</h2>`;
     return;
   }
-  console.log(filterPlace);
   for (const item of filterPlace) {
     attractionContainer.innerHTML += `
     <div class="attraction-card">

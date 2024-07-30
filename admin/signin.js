@@ -1,10 +1,9 @@
 import { validateEmail, validatePassword } from "../scripts/functions.js";
 
-let admin = {
+let adminCredential = {
   email: "robin123@gmail.com",
   password: "Robin@1234admin"
 }
-localStorage.setItem("AdminCredential", JSON.stringify(admin));
 
 const signIn = document.querySelector("#signin");
 const emailError = document.querySelector("#emailError");
@@ -34,14 +33,7 @@ signIn.addEventListener("submit", (e) => {
       password: formData.get("adminpassword")
     }
 
-    if (!localStorage.getItem("AdminCredential")) {
-      alert("Invalid Credential");
-      return;
-    }
-
-    const AdminCredential = JSON.parse(localStorage.getItem("AdminCredential"));
-
-    if (AdminCredential.email == admin.email && AdminCredential.password == admin.password) {
+    if (adminCredential.email == admin.email && adminCredential.password == admin.password) {
       localStorage.setItem("isAdminSignIn", true);
       location.href = "./dashboard.html";
     }

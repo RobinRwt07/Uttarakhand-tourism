@@ -10,6 +10,7 @@ if (!localStorage.getItem("UttarakhandTouristPlaces")) {
 }
 const places = JSON.parse(localStorage.getItem("UttarakhandTouristPlaces"));
 const data = places.find(item => place === item.placeName.toLowerCase());
+
 if (!data) {
   location.replace("./Error.html");
 }
@@ -25,18 +26,17 @@ locationInfo.innerHTML = `
     <h1>${data.placeName}</h1>
     <h2 id="location-name">${data.districtName}</h2>
 </div>
-</div>
-`;
+</div>`;
 
 const locationInfoCard = document.querySelector("#location-info-card");
 
 locationInfoCard.innerHTML = `
 <div class="location-info">
-<h2>What to Know</h2>
+<h3>What to Know</h3>
 <p>${data.description}</p>
 </div>
 <div class="time-to-visit ">
-<h2>Best time to Visit</h2>
+<h3>Best time to Visit</h3>
 <p>${data.bestTimeToVisit}</p>
 </div>`;
 
@@ -53,3 +53,31 @@ howToReach.innerHTML = `<div class="card">
             <h3>By Train</h3>
             <p>${data.howToReach.byTrain}</p>
           </div>`;
+
+// hotel section
+
+const hotelList = document.querySelector("#hotelList");
+const allHotels = JSON.parse(localStorage.getItem("hotels") || "[]");
+const filteredHotels = allHotels.filter(item => item.hotelLocation.toLowerCase() === data.districtName.toLowerCase());
+if (filteredHotels.length === 0) {
+  hotelList.innerHTML = `<h4 class="tx-center" style="flex:auto">Hotels are Not avilable at this Location</h4>`
+}
+else {
+  for (const item of filteredHotels) {
+    hotelList.innerHTML += `
+      <div class="hotel-card">
+        <div class="top">
+          <img src="./Assests/nainital.jpg" alt="hotel Image" loading="lazy">
+        </div>
+        <div class="bottom">
+          <p>${item.hotelName}</p>
+          <address>${item.hotelAddress}</address>
+          <div>
+            <span>Charges</span>
+            <span>Rs ${item.charges}/ Day</span>
+          </div>
+          <a href="#">Book Now </a>
+        </div>
+      </div>`;
+  }
+}

@@ -29,19 +29,26 @@
 
 <body>
   <header class="p-1">
-    <div class="main-container">
-      <a href="./index.html" class="logo">
+    <div>
+      <div class="slidebar-open-btn" id="slidebar-open-btn">
+        <i class="fa-solid fa-bars fa-xl" style="color: #ffffff"></i>
+      </div>
+      <a href="../index.html" class="logo">
         <img src="../Assests/logo.svg" alt="logo" />
       </a>
       <nav>
-        <h2 class="sub-heading">Admin DashBoard</h2>
+        <h2 class="sub-heading">Hello 👋 Robin </h2>
       </nav>
     </div>
   </header>
   <main class="main-container">
     <div class="main-section">
-      <div class="slidebar">
-        <div>
+      <div class="slidebar" id="slidebar">
+        <div class="slidebar-close-btn" id="slidebar-close-btn">
+          <i class="fa-solid fa-xmark fa-xl"></i>
+        </div>
+
+        <div class="slidebar-link">
           <a href="./dashboard.html?home" data-link="home">
             <i class="fa-solid fa-house"></i>
             <p>Home</p>
@@ -67,122 +74,316 @@
       </div>
 
       <div class="content-section">
-        <div class="content">
-          <div class="home-section" data-type="home">
-            <h1>home</h1>
-          </div>
-
-          <div data-type="places">
-            <div class="places-section" id="allPlacesInfo">
-              <div class="mb-1">
-                <h2 class="sub-heading ">All Places</h2>
-                <button id="add-place" onclick='addPlaces()' class="m-0">Add New Places</button>
-              </div>
-
+        <div class="home-section" data-type="home">
+          <div class="card-section">
+            <a class="card">
+              <h3>Visitor</h3>
               <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>District</th>
-                      <th>Category</th>
-                      <th>Popular</th>
-                      <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tbody id="placeSection">
-                    <!-- all places -->
-                  </tbody>
-                </table>
+                <i class="fa-solid fa-person-walking-luggage fa-2x"></i>
+                <span id="totalVisitor">1234</span>
               </div>
+            </a>
+            <a href="./dashboard.html?places" class="card">
+              <h3> Places</h3>
+              <div>
+                <i class="fa-solid fa-location-dot fa-2x"></i>
+                <span id="totalPlaces"></span>
+              </div>
+            </a>
+            <a href="./dashboard.html?hotels" class="card">
+              <h3>Hotels</h3>
+              <div>
+                <i class="fa-solid fa-hotel fa-2x"></i>
+                <span id="totalHotels"></span>
+              </div>
+            </a>
+            <a href="./dashboard.html?blogs" class="card">
+              <h3>Blogs</h3>
+              <div>
+                <i class="fa-brands fa-microblog fa-2x"></i>
+                <span id="totalBlogs"></span>
+              </div>
+            </a>
+            <a href="./dashboard.html?events" class="card">
+              <h3>Events</h3>
+              <div>
+                <i class="fa-solid fa-calendar-days fa-2x"></i>
+                <span id="totalEvents"></span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div data-type="places">
+          <div class="places-section" id="allPlacesInfo">
+            <div class="mb-1">
+              <h2 class="sub-heading ">All Places</h2>
+              <button type="button" id="add-place" onclick='addPlaces()' class="m-0">Add New Places</button>
             </div>
 
-            <div id="addPlaceForm" class="m-1">
-              <form method="post" id="add-places">
-                <div class="input-field">
-                  <label>Place Name</label>
-                  <input type="text" id="placename" name="placename" placeholder="Place Name" required>
-                </div>
-
-                <div class="input-field">
-                  <label>Location</label>
-                  <input list="location" name="location" placeholder="Select Location" required>
-                  <datalist id="location">
-                    <option value="Dehradun">
-                    <option value="Pauri Garhwal">
-                    <option value="Haridwar">
-                  </datalist>
-                </div>
-
-                <div class="input-field">
-                  <label>Category</label>
-                  <input list="locationCategory" name="locationCategory" placeholder="Select Category" required>
-                  <datalist id="locationCategory">
-                    <option value="Temple">
-                    <option value="landmark">
-                    <option value="trek">
-                    <option value="hill station">
-                  </datalist>
-                </div>
-
-                <div class="input-field">
-                  <label>Best Time To Visit</label>
-                  <input type="text" id="besttime" name="besttime" placeholder="Best Time to Visit" required>
-                </div>
-
-                <div class="input-radio">
-                  Polpular
-                  <label for="yes">Yes
-                    <input type="radio" id="yes" name="popular" value="true" required>
-                  </label>
-                  <label for="no">No
-                    <input type="radio" id="no" name="popular" value="false">
-                  </label>
-                </div>
-
-                <div class="input-field">
-                  <label>Image Url</label>
-                  <input type="text" name="image" placeholder="Image" required>
-                </div>
-
-                <div class="input-field">
-                  <label for="byAir">How To Reach By Air</label>
-                  <input type="text" id="byAir" name="byAir" required>
-                </div>
-                <div class="input-field">
-                  <label for="byRoad">How To Reach By Road</label>
-                  <input type="text" id="byRoad" name="byRoad" required>
-                </div>
-                <div class="input-field">
-                  <label for="byTrain">How To Reach By Air</label>
-                  <input type="text" id="byTrain" name="byTrain" required>
-                </div>
-
-                <div class="input-field">
-                  <label>Description</label>
-                  <textarea name="description" id="description" rows="5" placeholder="Description" required></textarea>
-                </div>
-                <button type="submit">Submit</button>
-              </form>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>District</th>
+                    <th>Category</th>
+                    <th>Popular</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="placeSection">
+                  <!-- all places -->
+                </tbody>
+              </table>
             </div>
           </div>
 
-          <div class="hotels-section" data-type="hotels">
-            <h2>hotel section</h2>
+          <div id="addPlaceForm" class="m-1">
+            <h3 class="sub-heading tx-center">Add New Place</h3>
+            <form method="post" id="add-places">
+              <div class="input-field">
+                <label>Place Name</label>
+                <input type="text" id="placename" name="placeName" placeholder="Place Name" required>
+              </div>
+
+              <div class="input-field">
+                <label>Location</label>
+                <input list="location" name="districtName" placeholder="Select Location" required>
+                <datalist id="location">
+                  <option value="Dehradun">
+                  <option value="Pauri Garhwal">
+                  <option value="Tehri Garhwal">
+                  <option value="Chamoli">
+                  <option value="Haridwar">
+                  <option value="Nainital">
+                  <option value="Uttarkashi">
+                  <option value="Bageshwar">
+                  <option value="Udham Singh Nagar">
+                  <option value="Champawat">
+                  <option value="Almora">
+                  <option value="Pithoragarh">
+                  <option value="Rudraprayag">
+                </datalist>
+              </div>
+
+              <div class="input-field">
+                <label>Category</label>
+                <input list="locationCategory" name="category" placeholder="Select Category" required>
+                <datalist id="locationCategory">
+                  <option value="temple">
+                  <option value="landmark">
+                  <option value="trekking">
+                </datalist>
+              </div>
+
+              <div class="input-field">
+                <label>Best Time To Visit</label>
+                <input type="text" id="besttime" name="bestTimeToVisit" placeholder="Best Time to Visit" required>
+              </div>
+
+              <div class="input-radio">
+                Polpular
+                <label for="yes">Yes
+                  <input type="radio" id="yes" name="popular" value="true" required>
+                </label>
+                <label for="no">No
+                  <input type="radio" id="no" name="popular" value="false">
+                </label>
+              </div>
+
+              <div class="input-field">
+                <label>Image Url</label>
+                <input type="text" name="image" placeholder="Image">
+              </div>
+
+              <div class="input-field">
+                <label for="byAir">How To Reach By Air</label>
+                <input type="text" id="byAir" name="byAir" required>
+              </div>
+              <div class="input-field">
+                <label for="byRoad">How To Reach By Road</label>
+                <input type="text" id="byRoad" name="byRoad" required>
+              </div>
+              <div class="input-field">
+                <label for="byTrain">How To Reach By Train</label>
+                <input type="text" id="byTrain" name="byTrain" required>
+              </div>
+
+              <div class="input-field">
+                <label>Description</label>
+                <textarea name="description" id="description" rows="5" placeholder="Description" required></textarea>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
           </div>
-          <div class="blog-section" data-type="blogs">
-            <h3>blog</h3>
+        </div>
+
+        <div data-type="hotels">
+          <div class="hotels-section" id="allHotels">
+            <div class="mb-1">
+              <h2 class="sub-heading ">All Hotels</h2>
+              <button type="button" id="add-hotel" onclick='addHotel()' class="m-0">Add New Hotel</button>
+            </div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Address</th>
+                    <th>Charges</th>
+                    <th>Owner</th>
+                    <th>Contact</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                  </tr>
+                </thead>
+                <tbody id="hotelsSection">
+                  <!-- all places -->
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="events-section" data-type="events">
-            <h3>event section</h3>
+
+          <div id="addHotelForm" class="m-1">
+            <h2 class="sub-heading tx-center mb-1">Add New Hotel</h2>
+            <form method="post" id="add-hotels">
+              <input type="hidden" name="hotelId" id="hotelId">
+              <div class="input-field">
+                <label>Hotel Name</label>
+                <input type="text" id="hotelName" name="hotelName" placeholder="Place Name" required>
+              </div>
+
+              <div class="input-field">
+                <label>District</label>
+                <input list="location" id="districtName" name="districtName" placeholder="Select District" required>
+                <datalist id="location">
+                  <option value="Dehradun">
+                  <option value="Pauri Garhwal">
+                  <option value="Tehri Garhwal">
+                  <option value="Chamoli">
+                  <option value="Haridwar">
+                  <option value="Nainital">
+                  <option value="Uttarkashi">
+                  <option value="Bageshwar">
+                  <option value="Udham Singh Nagar">
+                  <option value="Champawat">
+                  <option value="Almora">
+                  <option value="Pithoragarh">
+                  <option value="Rudraprayag">
+                </datalist>
+              </div>
+
+              <div class="input-field">
+                <label> Address </label>
+                <input type="text" name="hotelAddress" id="hotelAddress" placeholder="Hotel Address" required>
+              </div>
+
+              <div class="input-field">
+                <label>Charges</label>
+                <input type="number" id="charges" name="charges" placeholder="Best Time to Visit" required>
+              </div>
+
+              <div class="input-field">
+                <label>Hotel Owner</label>
+                <input type="text" id="hotelOwner" name="hotelOwner" placeholder="Owner Name" required>
+              </div>
+              <div class="input-field">
+                <label>Contact No.</label>
+                <input type="number" name="contact" id="contact" placeholder="Owner Contact"
+                  pattern="((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}" required>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div data-type="blogs">
+          <div class="blog-section" id="allBlogs">
+            <h2 class="sub-heading tx-center">All Blogs</h2>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Upload Date</th>
+                    <th>Delete</th>
+                    <th>Preview</th>
+                  </tr>
+                </thead>
+                <tbody id="blogsSection">
+                  <!-- all places -->
+                </tbody>
+              </table>
+              <dialog id="blogPreview">
+              </dialog>
+            </div>
+          </div>
+        </div>
+
+        <div data-type="events">
+          <div class="events-section" id="allEvents">
+            <div class="mb-1">
+              <h2 class="sub-heading ">All Events</h2>
+              <button type="button" id="add-event" onclick='addEvent()' class="m-0">Add New Event</button>
+            </div>
+
+            <div id="eventsSection" style="padding: .5rem;">
+              <!-- events -->
+            </div>
+          </div>
+
+          <div id="addEventForm" class="m-1">
+            <h2 class="sub-heading tx-center mb-1">Add New Event</h2>
+            <form method="post" id="add-Event">
+              <input type="hidden" name="eventId" id="eventId">
+              <div class="input-field">
+                <label>Event Name</label>
+                <input type="text" id="eventName" name="eventName" placeholder="Event Name" required>
+              </div>
+
+              <div class="input-field">
+                <label>Event Details </label>
+                <input type="text" name="eventDetails" id="eventDetails" placeholder="Event Details" required>
+              </div>
+
+              <div class="input-field">
+                <label>Start Date</label>
+                <input type="date" id="startDate" name="startDate" placeholder="Start Date" required>
+              </div>
+
+              <div class="input-field">
+                <label>End Date</label>
+                <input type="date" id="endDate" name="endDate" placeholder="End Date" required>
+              </div>
+              <div class="input-field">
+                <label>Image</label>
+                <input type="url" id="image" name="image" placeholder="Image Url" required>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </main>
   <script src="./admin.js"></script>
+  <script src="./admin3.js"></script>
+  <script src="./admin2.js"></script>
+  <script src="./logout.js"></script>
+  <script>
+    document.querySelector("#slidebar-open-btn").addEventListener("click", () => {
+      document.querySelector("#slidebar").style.display = "flex";
+    });
+
+    document.querySelector("#slidebar-close-btn").addEventListener("click", () => {
+      document.querySelector("#slidebar").style.display = "none";
+    });
+  </script>
 </body>
-<script>
-</script>
 
 </html>

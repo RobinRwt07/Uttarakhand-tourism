@@ -73,19 +73,19 @@ async function fetchBlogs() {
 }
 
 function displayHomeBlogs(allBlogs) {
+  const defaulImage = "blog_default.jpg";
   const latestBlog = document.querySelector("#latestBlog");
   const blogContainer = document.querySelector("#blogContainer");
 
   const firstFourBlogs = allBlogs.slice(-4);
 
-  console.log(allBlogs);
 
   if (allBlogs.length == 0) {
     latestBlog.innerHTML = `<h3>No Blogs Available</h3>`;
   }
   else {
     latestBlog.innerHTML = `
-    <img src="./Assests/velly of flower.jpg" alt="blog cover" loading="lazy" />
+    <img src="./Assests/${allBlogs.at(-1).image || defaulImage}" alt="blog cover" loading="lazy" />
     <div class="overlay">
     <h3 title="${allBlogs.at(-1).heading}">${allBlogs.at(-1).heading}</h3>
     <a href="./blog.html?blogId=${allBlogs.at(-1).blogId}">Read More -></a>
@@ -97,7 +97,7 @@ function displayHomeBlogs(allBlogs) {
       blogContainer.innerHTML += `
       <div class="blog-card">
           <div class="blog-image">
-            <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="blog imgae" loading="lazy" />
+            <img src="./Assests/${item.image ? item.image : "blog_default2.jpg"}" alt="blog imgae" loading="lazy" />
           </div>
           <div class="blog-data">
             <h3 title="${item.heading}">${item.heading}</h3>

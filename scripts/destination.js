@@ -36,37 +36,6 @@ for (const item of spiritualPlaces) {
     </div>`;
 }
 
-// script for slider
-const previousSlide = document.getElementById("previousSlide");
-const nextSlide = document.getElementById("nextSlide");
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("event-item");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "flex";
-}
-
-
-previousSlide.addEventListener("click", () => {
-  plusSlides(-1);
-});
-
-nextSlide.addEventListener("click", () => {
-  plusSlides(1);
-})
-
 // script for trek section
 const treksContainer = document.querySelector("#treksContainer");
 window.addEventListener("load", () => {
@@ -80,7 +49,6 @@ function fetchTreks() {
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status == 200) {
       const treks = xhr.response;
-      console.log(treks);
       treksContainer.innerHTML = "";
       if (treks.length === 0) {
         return;
@@ -118,3 +86,56 @@ function fetchTreks() {
   }
   xhr.send();
 }
+
+
+const eventContainer = document.querySelector("#event-container");
+const events = JSON.parse(localStorage.getItem("events") || "[]");
+if (events.length == 0) {
+  eventContainer.innerHTML = `<h2 class="sub-heading">No Events</h2>`;
+}
+else {
+  for (const item of events) {
+    eventContainer.innerHTML += `
+      <div class="event-item">
+        <div class="event-image">
+          <img src="${item.image}" alt="event image">
+        </div>
+        <div class="event-info">
+          <h3>${item.eventName}</h3>
+          <p>${item.eventDetails.slice(0, 300)}...</p>
+          <strong> <span>${item.startDate} - ${item.endDate}</span></strong>
+        </div>
+      </div>`;
+  }
+}
+
+// script for slider
+const previousSlide = document.getElementById("previousSlide");
+const nextSlide = document.getElementById("nextSlide");
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("event-item");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "flex";
+}
+
+
+previousSlide.addEventListener("click", () => {
+  plusSlides(-1);
+});
+
+nextSlide.addEventListener("click", () => {
+  plusSlides(1);
+})

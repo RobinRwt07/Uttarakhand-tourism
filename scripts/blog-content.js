@@ -54,7 +54,7 @@ function displayBlogContent(allBlogs) {
     relatedBlogs.innerHTML += `
         <a href="./blog.html?blogId=${item.blogId}" class="blog-card">
           <div class="top">
-            <img src="./Assests/velly of flower.jpg" alt="blog-image">
+            <img src="./Assests/${item.image ? item.image : "blog_default2.jpg"}" alt="blog-image">
           </div>
           <div class="bottom">
             <p><span>${item.name}</span> | <span>${item.uploadDate}</span>

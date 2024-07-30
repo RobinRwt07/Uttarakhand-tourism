@@ -49,7 +49,6 @@ displayBlogs();
 function displayBlogs() {
   const topBlogSection = document.querySelector("#topBlogSection");
   const allBlogs = JSON.parse(localStorage.getItem("blogsData")) || [];
-  console.log(allBlogs);
   try {
     topBlogSection.innerHTML = `
   <div class="left">
@@ -78,7 +77,7 @@ function displayBlogs() {
         blogContainer.innerHTML += `
         <div class="blog-card">
           <div class="top">
-            <img src="./Assests/Feature_0.jpg" alt="blog-image">
+            <img src="./Assests/${item.image ? item.image : "blog_default2.jpg"}" alt="blog-image">
           </div>
           <div class="bottom">
             <h3 title="${item.heading}">${item.heading}</h3>

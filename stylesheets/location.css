@@ -290,11 +290,12 @@
       &>.bottom {
         display: flex;
         flex-direction: column;
-        font-size: 15px;
-        gap: 0.4rem;
+        font-size: 14px;
+        gap: 0.2rem;
         padding: 0.5rem;
 
         &>p:first-child {
+          font-size: 1rem;
           font-weight: bold;
         }
 

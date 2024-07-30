@@ -4,14 +4,36 @@
   background-color: var(--lightGray);
 }
 
+.delete-btn {
+  background-color: red;
+  padding: .5rem 1.5rem;
+  margin: 0;
+}
+
+.update-btn {
+  background-color: var(--blue);
+  padding: .5rem 1.5rem;
+  margin: 0;
+}
+
 header {
   background-color: var(--blue);
 
-  &>.main-container {
+  &>div {
+    max-height: 80px;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     justify-content: space-between;
+
+    &>.slidebar-open-btn {
+      margin-right: 1rem;
+      cursor: pointer;
+
+      @media (min-width:768px) {
+        display: none;
+      }
+    }
 
     & nav {
       flex: 1 1 auto;
@@ -25,25 +47,41 @@ header {
 }
 
 .main-section {
+  position: relative;
   display: flex;
+  height: calc(100vh - 80px);
   gap: var(--gap);
   padding: .5rem;
 
   &>.slidebar {
+    position: absolute;
+    height: 100%;
     padding: 1rem;
-    width: 25%;
-    height: 100dvh;
-    background-color: var(--bg1);
-    display: flex;
+    width: 50%;
+    display: none;
+    background-color: rgb(246, 246, 246);
     flex-direction: column;
     border-radius: var(--br);
-    gap: 2rem;
+    gap: 1rem;
 
-    @media (max-width:768px) {
-      display: none;
+    @media (min-width:768px) {
+      display: flex;
+      position: static;
+      width: 270px;
     }
 
-    &>div:first-child {
+    &>.slidebar-close-btn {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      left: 90%;
+
+      @media (min-width:768px) {
+        display: none;
+      }
+    }
+
+    &>.slidebar-link {
       display: flex;
       flex-direction: column;
       gap: var(--gap-1);
@@ -57,7 +95,7 @@ header {
         border-radius: 2rem;
 
         &:hover {
-          background-color: var(--lightGray);
+          background-color: var(--white);
         }
       }
     }
@@ -65,32 +103,87 @@ header {
 
   &>.content-section {
     width: 100%;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+    border-radius: var(--br);
+    background-color: var(--bg1);
+    padding: 1rem .5rem;
 
     @media (min-width:768px) {
-      width: calc(100% - 25%);
+      width: calc(100% - 270px);
+      padding: 1rem;
     }
 
-    &>.content {
-      overflow: scroll;
-      scrollbar-width: none;
-      max-height: 100dvb;
-      padding: 1rem;
-      border-radius: var(--br);
-      background-color: var(--bg1);
+    &>div[data-type] {
+      display: none;
+    }
 
-      &>div[data-type] {
-        display: none;
+    & .places-section,
+    .blog-section,
+    .hotels-section,
+    .events-section {
+      @media (min-width:1200px) {
+        width: 90%;
+        margin-inline: auto;
       }
 
-      & .places-section {
-        &>div:first-child {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
+      &>div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        &>div:nth-child(2) {
-          overflow-x: auto;
+      &>div:nth-child(2) {
+        overflow-x: auto;
+      }
+    }
+  }
+}
+
+.home-section {
+  padding: 1rem;
+
+  &>.card-section {
+    display: grid;
+    gap: var(--gap-1);
+    grid-template-columns: minmax(200px, 240px);
+    justify-content: center;
+
+    @media (min-width:500px) {
+      grid-template-columns: repeat(2, minmax(200px, 240px));
+    }
+
+    @media (min-width:1024px) {
+      gap: 2rem;
+      grid-template-columns: repeat(3, minmax(200px, 240px));
+    }
+
+    &>.card {
+      aspect-ratio: 3/2;
+      background-color: var(--white);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      &:nth-child(odd) {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+
+      &>h3 {
+        font-size: 24px;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & span {
+          font-size: 40px;
+          font-weight: bolder;
         }
       }
     }
@@ -103,6 +196,7 @@ table {
   font-size: 14px;
 
   &>thead>tr>th {
+    font-size: 15px;
     padding: 1rem .5rem !important;
     background-color: var(--lightGray);
   }
@@ -116,11 +210,14 @@ table {
   }
 
   td {
-    padding: .5rem;
+    padding: .5rem .8rem;
+    font-size: 13px;
   }
 }
 
-#addPlaceForm {
+#addPlaceForm,
+#addHotelForm,
+#addEventForm {
   display: none;
 
   @media (min-width:1024px) {
@@ -133,6 +230,75 @@ table {
 
     & label {
       margin-inline-start: 1rem;
+    }
+  }
+}
+
+#blogPreview {
+  margin: auto;
+  padding: 1rem;
+  border-radius: var(--br);
+  border: none;
+  scrollbar-width: none;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.647);
+  }
+
+  &>div:first-child {
+    display: inline-block;
+    position: relative;
+    left: 95%;
+    cursor: pointer;
+  }
+
+  @media (min-width:1024px) {
+    width: 80%;
+    padding: 2rem;
+  }
+}
+
+.events-section {
+  & .event-card {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 0px 5px var(--gray);
+
+    &>.top {
+      &>img {
+        object-fit: cover;
+        object-position: left;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &>.bottom {
+      align-self: center;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      &>p {
+        font-size: 14px;
+      }
+
+      &>div:last-child {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-1);
+      }
+    }
+
+    @media (min-width:600px) {
+      flex-direction: row;
+
+      &>* {
+        flex: 1 1;
+      }
     }
   }
 }

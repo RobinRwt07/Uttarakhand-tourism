@@ -3,7 +3,7 @@ const hotelsSection = document.querySelector("#hotelsSection");
 const hotels = JSON.parse(localStorage.getItem("hotels") || "[]");
 
 if (hotels.length === 0) {
-  hotelsSection.innerHTML = `<h2 colspan="6" class="sub-heading tx-center"> No Places available</h2>`;
+  hotelsSection.parentElement.parentElement.innerHTML = `<h4 class="mt-1 tx-center"> No Places available</h4>`;
 }
 else {
   for (const item of hotels) {
@@ -86,7 +86,7 @@ function updateHotel(event) {
 const eventsSection = document.querySelector("#eventsSection");
 const events = JSON.parse(localStorage.getItem("events") || "[]");
 if (events.length === 0) {
-  eventsSection.innerHTML = `<h2 class="sub-heading tx-center"> No Events  available</h2>`;
+  eventsSection.innerHTML = `<h4 class="tx-center mt-1"> No Events  available</h4>`;
 }
 else {
   for (const item of events) {

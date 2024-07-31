@@ -21,7 +21,7 @@ for (const item of dashboradSection) {
 const placeSection = document.querySelector("#placeSection");
 const places = JSON.parse(localStorage.getItem("UttarakhandTouristPlaces"));
 if (places.length === 0) {
-  placeSection.innerHTML = `<h2 class="sub-heading"> No Places available</h2>`;
+  placeSection.parentElement.parentElement.innerHTML = `<h4 class="tx-center mt-1"> No Places available</h4>`;
 }
 else {
   for (const item of places) {
@@ -86,7 +86,7 @@ const blogsSection = document.querySelector("#blogsSection");
 
 const blogs = JSON.parse(localStorage.getItem("blogsData"));
 if (blogs.length === 0) {
-  blogsSection.innerHTML = `<h2 class="sub-heading"> No blogs available</h2>`;
+  blogsSection.parentElement.parentElement.innerHTML = `<h4 class="tx-center mt-1"> No blogs available</h4>`;
 }
 else {
   for (const item of blogs) {

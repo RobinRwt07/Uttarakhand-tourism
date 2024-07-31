@@ -111,11 +111,15 @@ function fetchTreks() {
   xhr.send();
 }
 
-
+// script for slider
+const previousSlide = document.getElementById("previousSlide");
+const nextSlide = document.getElementById("nextSlide");
 const eventContainer = document.querySelector("#event-container");
+
+let slideIndex = 1;
 const events = JSON.parse(localStorage.getItem("events") || "[]");
 if (events.length == 0) {
-  eventContainer.innerHTML = `<h2 class="sub-heading">No Events</h2>`;
+  eventContainer.innerHTML = `<h3 class="tx-auto" style="flex:1 1 auto">No Events</h3>`;
 }
 else {
   for (const item of events) {
@@ -131,14 +135,8 @@ else {
         </div>
       </div>`;
   }
+  showSlides(slideIndex);
 }
-
-// script for slider
-const previousSlide = document.getElementById("previousSlide");
-const nextSlide = document.getElementById("nextSlide");
-
-let slideIndex = 1;
-showSlides(slideIndex);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);

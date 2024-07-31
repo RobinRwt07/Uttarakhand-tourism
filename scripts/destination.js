@@ -119,7 +119,7 @@ const eventContainer = document.querySelector("#event-container");
 let slideIndex = 1;
 const events = JSON.parse(localStorage.getItem("events") || "[]");
 if (events.length == 0) {
-  eventContainer.innerHTML = `<h3 class="tx-auto" style="flex:1 1 auto">No Events</h3>`;
+  eventContainer.innerHTML = `<h4 class="tx-center" style="flex:1 1 auto">No Events</h4>`;
 }
 else {
   for (const item of events) {

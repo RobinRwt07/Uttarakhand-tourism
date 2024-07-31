@@ -59,12 +59,11 @@ async function fetchBlogs() {
     }
     else {
       let blogs = await response.json();
-      if (!localStorage.getItem("blogsData")) {
+      if ((localStorage.getItem("blogsData") == null || localStorage.getItem("blogsData") == "[]")) {
         localStorage.setItem("blogsData", JSON.stringify(blogs));
       }
       const localStorageBlog = JSON.parse(localStorage.getItem("blogsData"));
-      const allBlogs = [...blogs, ...localStorageBlog];
-      displayHomeBlogs(allBlogs);
+      displayHomeBlogs(localStorageBlog);
     }
   }
   catch (e) {

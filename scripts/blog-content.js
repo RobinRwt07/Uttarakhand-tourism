@@ -13,6 +13,7 @@ displayBlogContent();
 function displayBlogContent() {
   const allBlogs = JSON.parse(localStorage.getItem("blogsData"));
   const blog = allBlogs.find(item => item.blogId === blogId);
+  console.log(blog);
   if (!blog) {
     location.replace("./Error.html");
   }

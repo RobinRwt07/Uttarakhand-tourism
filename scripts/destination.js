@@ -4,23 +4,47 @@ if (!localStorage.getItem("UttarakhandTouristPlaces")) {
 }
 
 const destinationContainer = document.querySelector("#destinationContainer");
+
 const spiritualContainer = document.querySelector("#spiritualContainer");
 
 const places = JSON.parse(localStorage.getItem('UttarakhandTouristPlaces'));
 
-const popularPlaces = places.filter((item) => item.popular == true).slice(0, 10);
+const showPreviousSlide = document.querySelector("#showPreviousSlide");
+const showNextSlide = document.querySelector("#showNextSlide");
 
-destinationContainer.innerHTML = "";
-for (const item of popularPlaces) {
-  destinationContainer.innerHTML += `
-  <div class="figure">
-  <img src="./Assests/places/${item.image}" alt="${item.placeName}">
-  <div class="location-info">
-  <span>${item.placeName}</span>
-  <a href="./location.html?place=${item.placeName}">Read More</a>
-  </div>
-  </div>`;
+let currentSlide = 0;
+function displayPolularPlaces(n = 0) {
+  currentSlide += n;
+  const limit = 9;
+  const offSet = currentSlide * limit;
+  const lastIndex = offSet + limit;
+
+  offSet <= 0 ? showPreviousSlide.classList.add("disabled") : showPreviousSlide.classList.remove("disabled");
+  offSet >= (places.length - 1) ? showNextSlide.classList.add("disabled") : showNextSlide.classList.remove("disabled");
+
+  const popularPlaces = places.slice(offSet, lastIndex);
+  destinationContainer.innerHTML = "";
+  for (const item of popularPlaces) {
+    destinationContainer.innerHTML += `
+    <div class="figure">
+    <img src="./Assests/places/${item.image}" alt="${item.placeName}">
+    <div class="location-info">
+    <span>${item.placeName}</span>
+    <a href="./location.html?place=${item.placeName}">Read More</a>
+    </div>
+    </div>`;
+  }
 }
+
+displayPolularPlaces();
+
+showNextSlide.addEventListener("click", () => {
+  displayPolularPlaces(1);
+});
+showPreviousSlide.addEventListener("click", () => {
+  displayPolularPlaces(-1);
+});
+
 
 // gettting all spiritual places
 const spiritualPlaces = places.filter((item) => item.category === "temple").slice(0, 10);

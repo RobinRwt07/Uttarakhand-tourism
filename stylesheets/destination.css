@@ -2,6 +2,11 @@
 @import url("./header.css");
 @import url('./footer.css');
 
+.disabled {
+  pointer-events: none;
+  background-color: var(--gray) !important;
+}
+
 .info-section {
   @media (max-width: 768px) {
     margin-top: 2rem;
@@ -417,39 +422,36 @@
   }
 }
 
-.event-section {
-  background-color: var(--bg2);
 
-  & .slide-control {
-    margin-top: 2rem;
+.slide-control {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-1);
+
+  & button {
+    border: none;
+    background-color: var(--blue);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1;
     display: flex;
     justify-content: center;
-    gap: var(--gap-1);
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
 
-    @media (min-width:768px) {
-      margin-bottom: 1rem;
-    }
-
-    & button {
-      border: none;
-      background-color: var(--blue);
-      border-radius: 50%;
-      color: var(--white);
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
-      aspect-ratio: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      margin: 0;
-
-      &:hover {
-        background-color: var(--textColor);
-      }
+    &:hover {
+      background-color: var(--textColor);
     }
   }
+}
+
+.event-section {
+  background-color: var(--bg2);
 }
 
 .event-container {

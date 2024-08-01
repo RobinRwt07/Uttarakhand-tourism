@@ -5,7 +5,7 @@ if (isAdminSignIn == null || isAdminSignIn === "false") {
 
 const queryParam = location.search.length === 0 ? "home" : location.search.slice(1);
 
-const arr = ['home', 'places', 'hotels', 'blogs', 'events'];
+const arr = ['home', 'places', 'hotels', 'blogs', 'events', 'query'];
 
 if (!arr.includes(queryParam)) {
   location.replace("../Error.html");
@@ -134,6 +134,62 @@ function deleteBlog(event) {
     const index = blogs.findIndex(item => item.blogId == blogId);
     blogs.splice(index, 1);
     localStorage.setItem("blogsData", JSON.stringify(blogs));
+    location.reload();
+  }
+}
+
+
+// query section
+
+const querySection = document.querySelector("#querySection");
+const queries = JSON.parse(localStorage.getItem("usersQuery") || "[]");
+if (queries.length === 0) {
+  querySection.parentElement.parentElement.innerHTML = `<h4 class="tx-center mt-1"> No Queries</h4>`;
+}
+else {
+  for (const item of queries) {
+    querySection.innerHTML += `
+        <tr>
+          <td>${item.queryId}</td>
+          <td>${item.username}</td>
+          <td>${item.useremail}</td>
+          <td>${item.message}</td>
+          <td style="text-align:center">
+            <button type="button" class="delete-btn" onclick='deleteQuery(event)' data-queryId="${item.queryId}"><i class="fa-solid fa-trash-can"></i></button>
+          </td>
+          <td style="text-align:center">
+            <button type="button" class="update-btn" onclick='previewBlog(event)' data-blogId="${item.blogId}">Preview </button>
+          </td>
+        </tr>`;
+  }
+}
+
+const queryPreview = document.querySelector("#queryPreview");
+
+function previewBlog(event) {
+  const blogId = event.target.attributes['data-blogId'].value;
+  const blog = blogs.find(item => item.blogId == blogId);
+  blogPreview.innerHTML = `
+    <div onclick='closeModal()'>
+      <i class="fa-solid fa-xmark fa-2xl"></i>
+    </div>
+    <h2 class="sub-heading">${blog.heading}</h2>
+    <div>
+      <pre style="text-wrap:wrap">${blog.message}</pre>
+    </div>`;
+  blogPreview.showModal();
+}
+
+function closeModal() {
+  blogPreview.close();
+}
+
+function deleteQuery(event) {
+  if (confirm("Are you sure?")) {
+    const queryId = event.currentTarget.attributes['data-queryId'].value;
+    const index = queries.findIndex(item => item.queryId == queryId);
+    queries.splice(index, 1);
+    localStorage.setItem("usersQuery", JSON.stringify(queries));
     location.reload();
   }
 }

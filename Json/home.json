@@ -1,0 +1,63 @@
+{
+  "slider": {
+    "heading": "Why Visit Uttarakhand",
+    "slides": [
+      {
+        "heading": "Land Of Gods",
+        "content": "Called Devbhoomi (Land of the gods), Uttarakhand is home to one of the highest Lord Shiva temples in the world, the Char Dham (four revered sites), the Panch Kedar (five temples dedicated to Lord Shiva), the Panch Badri (five temples dedicated to Lord Vishnu) and the Panch Prayag (five confluences of the holy Ganges river).",
+        "image": "./Assests/lord shiva.jpg"
+      },
+      {
+        "heading": "Adventure Hub",
+        "content": " From white water rafting to paragliding, from bungee jumping to trekking and from skiing to mountain biking - there is no dearth of adventure activities to be had and experienced in Uttarakhand. While Auli is known as he skiing paradise of India, Rishikesh hosts India's highest bungee platform!.",
+        "image": "./Assests/trek-uttrakhand.jpg"
+      },
+      {
+        "heading": "Where The Beatles Prayed",
+        "content": "Take a trip down memory lane at the Beatles Ashram, where members of the British rock band The Beatles stayed during their visit to India in 1968. A popular tourist spot in Rishikesh, the ashram, also known as Chaurasia Kutir, is located inside the Rajaji Tiger Reserve (RTR).",
+        "image": "./Assests/Corbett_Feature image_1.jpg"
+      },
+      {
+        "heading": "Char Dham Yatra",
+        "content": "This annual pilgrimage to four temple destinations in Uttarakhand - Yamunotri, Gangotri, Kedarnath and Badrinath - is considered to be one of the most sacred in Hinduism, and draws millions of devotees.",
+        "image": "./Assests/spiritural.jpg"
+      },
+      {
+        "heading": "Yoga Capital Of The World",
+        "content": "The city of Rishikesh. located on the banks of the River Ganges, is popularly called the Yoga capital of the world. Every year around March, it hosts the International Yoga Festival, which is attended by yoga enthusiasts, practitioners and gurus from across the world in large numbers.",
+        "image": "./Assests/Yoga.jpg"
+      }
+    ]
+  },
+  "chardhamm": {
+    "heading": "Divine Pilgrimage Through the Himalayas",
+    "images": [
+      "./Assests/Badrinath.jpeg",
+      "./Assests/Yamunotri feature.jpg",
+      "./Assests/Gangotri.jpeg",
+      "./Assests/Kedarnath.jpeg"
+    ],
+    "content": "Char Dham (sacred Hindu shrines of Badrinath, Kedarnath, Gangotri and Yamunotri) are situated in the snow-covered reaches of the lofty Garhwal Himalayas, Uttaranchal. This part of the Himalayas is referred as the land of the gods in the ancient Hindu mythology. The Char Dham Yatra is popular among the Hindus that thousands of pilgrims visit these four holy shrines every year.Devotees visit the four Dham (shrines) all for a spiritual union with the divine. "
+  },
+  "Testimonials": {
+    "heading": "Traveler Testimonials",
+    "content": "Hear from our travelers about their unforgettable experiences     exploring the serene landscapes, vibrant culture, and thrilling adventures in Uttarakhand.",
+    "testimonialsCards": [
+      {
+        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "userImage": "./Assests/velly of flower.jpg",
+        "name": "Robin"
+      },
+      {
+        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "userImage": "./Assests/velly of flower.jpg",
+        "name": "Robin"
+      },
+      {
+        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "userImage": "./Assests/velly of flower.jpg",
+        "name": "Robin"
+      }
+    ]
+  }
+}

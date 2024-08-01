@@ -41,6 +41,7 @@
       </nav>
     </div>
   </header>
+
   <main class="main-container">
     <div class="main-section">
       <div class="slidebar" id="slidebar">
@@ -68,6 +69,10 @@
           <a href="./dashboard.html?blogs" data-link="blogs">
             <i class="fa-brands fa-microblog"></i>
             <p>Blogs</p>
+          </a>
+          <a href="./dashboard.html?query" data-link="query">
+            <i class="fa-brands fa-microblog"></i>
+            <p>Users Query</p>
           </a>
         </div>
         <button id="adminLogoutBtn">LogOut</button>
@@ -370,6 +375,31 @@
               </div>
               <button type="submit">Submit</button>
             </form>
+          </div>
+        </div>
+
+        <div data-type="query">
+          <div class="query-section" id="allQuery">
+            <h2 class="sub-heading tx-center">Users Query</h2>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Delete</th>
+                    <th>Preview</th>
+                  </tr>
+                </thead>
+                <tbody id="querySection">
+                  <!-- all query -->
+                </tbody>
+              </table>
+              <dialog id="queryPreview">
+              </dialog>
+            </div>
           </div>
         </div>
 

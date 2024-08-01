@@ -37,8 +37,6 @@
         <i class="fa-solid fa-xmark fa-2xl"></i>
       </span>
     </div>
-
-    <!-- <h2>Search location</h2> -->
     <div>
       <input type="text" name="search-location" id="searchField" placeholder="Search location" />
       <button>
@@ -52,13 +50,10 @@
   </dialog>
 
   <div class="loader-box" id="loading">
-    <div>
-      <div class="loader">
-      </div>
-      <h3>Loading...</h3>
+    <div class="loader">
     </div>
+    <h3>Loading...</h3>
   </div>
-
   <main class="main-container">
     <section class="home-section">
       <div class="header-box">
@@ -107,6 +102,7 @@
             </div>
           </div>
         </header>
+
       </div>
       <div class="content-box">
         <h3>Visit the Beautiful Landscape!</h3>
@@ -115,106 +111,20 @@
       </div>
     </section>
 
-    <section class="slider-section container" role="banner">
-      <h2 class="heading">Why Visit Uttarakhand</h2>
+    <section class="slider-section container" role="banner" id="sliderSection">
+      <h2 class="heading"></h2>
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="left">
-              <img src="./Assests/lord shiva.jpg" alt="lord shiva" fetchpriority="high" />
-            </div>
-            <div class="right">
-              <h3>Land Of Gods</h3>
-              <p>
-                Called Devbhoomi (Land of the gods), Uttarakhand is home to
-                one of the highest Lord Shiva temples in the world, the Char
-                Dham (four revered sites), the Panch Kedar (five temples
-                dedicated to Lord Shiva), the Panch Badri (five temples
-                dedicated to Lord Vishnu) and the Panch Prayag (five
-                confluences of the holy Ganges river).
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="left">
-              <img src="./Assests/trek-uttrakhand.jpg" alt="Adventure" />
-            </div>
-            <div class="right">
-              <h3>Adventure Hub</h3>
-              <p>
-                From white water rafting to paragliding, from bungee jumping
-                to trekking and from skiing to mountain biking - there is no
-                dearth of adventure activities to be had and experienced in
-                Uttarakhand. While Auli is known as the skiing paradise of
-                India, Rishikesh hosts India's highest bungee platform!
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="left">
-              <img src="./Assests/Corbett_Feature image_1.jpg" alt="slider-image" alt="Adventure" />
-            </div>
-            <div class="right">
-              <h3>Where The Beatles Prayed</h3>
-              <p>
-                Take a trip down memory lane at the Beatles Ashram, where
-                members of the British rock band The Beatles stayed during
-                their visit to India in 1968. A popular tourist spot in
-                Rishikesh, the ashram, also known as Chaurasia Kutir, is
-                located inside the Rajaji Tiger Reserve (RTR).
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="left">
-              <img src="./Assests/spiritural.jpg" alt="slider-image" />
-            </div>
-            <div class="right">
-              <h3>Char Dham Yatra</h3>
-              <p>
-                This annual pilgrimage to four temple destinations in
-                Uttarakhand - Yamunotri, Gangotri, Kedarnath and Badrinath -
-                is considered to be one of the most sacred in Hinduism, and
-                draws millions of devotees.
-              </p>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="left">
-              <img src="./Assests/Yoga.jpg" alt="slider-image" />
-            </div>
-            <div class="right">
-              <h3>Yoga Capital Of The World</h3>
-              <p>
-                The city of Rishikesh. located on the banks of the River
-                Ganges, is popularly called the Yoga capital of the world.
-                Every year around March, it hosts the International Yoga
-                Festival, which is attended by yoga enthusiasts, practitioners
-                and gurus from across the world in large numbers.
-              </p>
-            </div>
-          </div>
+          <!-- slides -->
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
     </section>
 
-    <section class="second-section">
+    <section class="second-section" id="infoSection">
       <div class="top">
-        <h2 class="heading m-0">
-          Unveil the Wonders of Uttarakhand <br />
-        </h2>
-        <p>
-          Explore the wonders of Uttarakhand, from serene temples and
-          pilgrimage sites to thrilling adventures and breathtaking
-          landscapes. Plan your perfect getaway and immerse yourself in the
-          natural beauty and rich culture of this Himalayan paradise.
-        </p>
+
       </div>
       <div class="bottom">
         <div style="order: 1" class="image-box">
@@ -258,142 +168,34 @@
       </div>
     </section>
 
-    <section class="container">
-      <h2 class="heading mt-1 mb-2 tx-center ">Journey to Divinity</h2>
+    <section class="container" id="chardhamSection">
+      <h2 class="heading mt-1 mb-2 tx-center "></h2>
       <div class="chardham-section">
         <div class="chardham-box">
           <div class="left">
-            <div>
-              <img src="./Assests/Badrinath.jpeg" alt="Badrinath">
-            </div>
-            <div>
-              <img src="./Assests/Yamunotri feature.jpg" alt="Yamunotri">
-            </div>
-            <div>
-              <img src="./Assests/Gangotri.jpeg" alt="Gangotri">
-            </div>
-            <div>
-              <img src="./Assests/Kedarnath.jpeg" alt="Kedarnath">
-            </div>
+            <!-- images -->
           </div>
           <div class="right">
-            <h3 class="mb-1">Divine Pilgrimage Through the Himalayas</h3>
-            <p>Char Dham (sacred Hindu shrines of Badrinath, Kedarnath, Gangotri and Yamunotri) are situated in the
-              snow-covered reaches of the lofty Garhwal Himalayas, Uttaranchal. This part of the Himalayas is referred
-              as the land of
-              the gods in the ancient Hindu mythology. The Char Dham Yatra is popular among the Hindus that thousands of
-              pilgrims visit these four holy shrines every year.Devotees visit the four Dham (shrines) all for a
-              spiritual union with the divine. </p>
+            <!-- chardham content -->
           </div>
         </div>
       </div>
     </section>
 
-    <section class="testimonial-section container">
+    <section class="testimonial-section container" id="testimonialSection">
       <div class="testimonial-header">
-        <div>
-          <h3>Testimonials</h3>
-          <h2 class="heading">Traveler Testimonials</h2>
-        </div>
-        <p>
-          Hear from our travelers about their unforgettable experiences
-          exploring the serene landscapes, vibrant culture, and thrilling
-          adventures in Uttarakhand.
-        </p>
+        <!-- header content-->
       </div>
       <div class="testimonial-card-container">
-        <div class="testimonial-card">
-          <div class="top">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem dicta error impedit. Obcaecati ullam assumenda,
-              temporibus totam animi voluptates beatae unde sed eveniet dolor
-            </p>
-            <div class="userimage">
-              <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy" />
-            </div>
-          </div>
-
-          <div>
-            <span>User Name</span>
-            <span>Traveler</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="top">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem dicta error impedit. Obcaecati ullam assumenda,
-              temporibus totam animi voluptates beatae unde sed eveniet dolor
-            </p>
-            <div class="userimage">
-              <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy" />
-            </div>
-          </div>
-
-          <div>
-            <span>User Name</span>
-            <span>Traveler</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="top">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem dicta error impedit. Obcaecati ullam assumenda,
-              temporibus totam animi voluptates beatae unde sed eveniet dolor
-            </p>
-            <div class="userimage">
-              <img src="./Assests/velly of flower.jpg" alt="userImage" loading="lazy" />
-            </div>
-          </div>
-
-          <div>
-            <span>User Name</span>
-            <span>Traveler</span>
-          </div>
-        </div>
+        <!-- testimonial cards -->
       </div>
     </section>
 
-    <section class="gallery-section container">
+    <section class="gallery-section container" id="gallerySection">
       <div class="gallery-header">
-        <div>
-          <h3>Photo Gallery</h3>
-          <h2 class="heading">Photo's From Travellers</h2>
-        </div>
-        <p>
-          Explore the stunning beauty of Uttarakhand through our curated gallery. From majestic mountains to serene
-          lakes,
-          discover the natural wonders that make this region a must-visit destination
-        </p>
       </div>
-
       <div class="gallery">
-        <div class="first">
-          <div>
-            <img src="./Assests/nainital.jpg" alt="image" loading="lazy" />
-          </div>
-          <div>
-            <div>
-              <img src="./Assests/velly of flower.jpg" alt="image" loading="lazy" />
-            </div>
-            <div>
-              <img src="./Assests/pexels-gokul-gurang-224181659-15896015.jpg" alt="image" loading="lazy" />
-            </div>
-          </div>
-        </div>
-        <div class="second">
-          <img src="./Assests/Yamunotri feature.jpg" alt="image" loading="lazy" />
-        </div>
-        <div class="third">
-          <div>
-            <img src="./Assests/front-image.jpg" alt="image" loading="lazy" />
-          </div>
-          <div>
-            <img src="./Assests/pexels-sanmane-1365425.jpg" alt="image" loading="lazy" />
-          </div>
-        </div>
+        <!-- images -->
       </div>
     </section>
 
@@ -406,7 +208,6 @@
             offers. From hidden gems and adventure activities to cultural heritage our blogs cover everything
           </p>
         </div>
-
         <div class="image-box" id="latestBlog">
           <!-- latest blog -->
         </div>
@@ -470,10 +271,9 @@
     </div>
   </section>
   <script src="./scripts/logout.js"></script>
-  <script src="./scripts/swiper.js" type="module"></script>
   <script src="./scripts/index.js" type="module"></script>
   <script src="./scripts/global.js"></script>
-
+  <script src="./scripts/swiper.js" type="module"></script>
   <script>
     const openDialog = document.querySelector("#open-search-icon");
     const openSearch = document.querySelector("#open-search");

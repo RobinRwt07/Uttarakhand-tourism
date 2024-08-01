@@ -57,7 +57,6 @@
     & a {
       display: block;
       padding: .5rem 1rem;
-      /* border-radius: .5rem; */
       font-size: 14px;
       border-bottom: 1px solid var(--lightGray);
 
@@ -88,9 +87,6 @@
 }
 
 #open-search {
-  @media (max-width: 768px) {
-    display: none;
-  }
 
   background-color: var(--white);
   aspect-ratio: 1;
@@ -101,6 +97,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .loader-box {
@@ -108,8 +108,10 @@
   width: 100vw;
   position: fixed;
   z-index: 20;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--lightGray);
 
   & .loader {
@@ -651,11 +653,6 @@
 }
 
 .gallery-section {
-  & img {
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-  }
 
   &>.gallery-header {
     text-align: center;
@@ -675,49 +672,25 @@
   }
 
   &>.gallery {
-    display: grid;
-    grid-template-columns: 1;
-    gap: var(--gap-1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
 
-    & div:has(img) {
+    &>div:has(img) {
+      max-width: 150px;
+      aspect-ratio: 3/2;
       border-radius: var(--br);
-    }
 
-    @media (min-width: 500px) {
-      grid-template-columns: 4fr 3fr 3fr;
-    }
-
-    @media (min-width: 1024px) {
-      width: 90%;
-      margin-inline: auto;
-    }
-
-    &>.first {
-      display: flex;
-      flex-direction: column;
-      gap: var(--gap-1);
-
-      & div:last-child {
-        display: flex;
-        gap: var(--gap-1);
-
-        &>* {
-          flex: 1 1;
-        }
-      }
-    }
-
-    &>.third {
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-
-      @media (min-width: 500px) {
-        flex-direction: column;
+      @media (min-width:768px) {
+        max-width: 250px;
       }
 
-      &>* {
-        flex: 1 1;
+      &>img {
+        aspect-ratio: 3/2;
+        object-fit: cover;
+        object-position: center bottom;
+        border-radius: inherit;
       }
     }
   }

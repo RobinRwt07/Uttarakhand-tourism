@@ -30,7 +30,8 @@
     ]
   },
   "chardhamm": {
-    "heading": "Divine Pilgrimage Through the Himalayas",
+    "heading": "Journey to Divinity",
+    "subHeading": "Divine Pilgrimage Through the Himalayas",
     "images": [
       "./Assests/Badrinath.jpeg",
       "./Assests/Yamunotri feature.jpg",
@@ -39,7 +40,7 @@
     ],
     "content": "Char Dham (sacred Hindu shrines of Badrinath, Kedarnath, Gangotri and Yamunotri) are situated in the snow-covered reaches of the lofty Garhwal Himalayas, Uttaranchal. This part of the Himalayas is referred as the land of the gods in the ancient Hindu mythology. The Char Dham Yatra is popular among the Hindus that thousands of pilgrims visit these four holy shrines every year.Devotees visit the four Dham (shrines) all for a spiritual union with the divine. "
   },
-  "Testimonials": {
+  "testimonials": {
     "heading": "Traveler Testimonials",
     "content": "Hear from our travelers about their unforgettable experiences     exploring the serene landscapes, vibrant culture, and thrilling adventures in Uttarakhand.",
     "testimonialsCards": [
@@ -51,13 +52,31 @@
       {
         "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
         "userImage": "./Assests/velly of flower.jpg",
-        "name": "Robin"
+        "name": "Rahul"
       },
       {
         "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
         "userImage": "./Assests/velly of flower.jpg",
-        "name": "Robin"
+        "name": "Aman"
       }
     ]
+  },
+  "gallery": {
+    "heading": "Photo's From Travellers",
+    "content": "Explore the stunning beauty of Uttarakhand through our curated gallery. From majestic mountains to serene lakes, discover the natural wonders that make this region a must-visit destination",
+    "galleryImages": [
+      "./Assests/nainital.jpg",
+      "./Assests/adventure.jpg",
+      "./Assests/Feature_0.jpg",
+      "./Assests/login.jpg",
+      "./Assests/spiritual.jpg",
+      "./Assests/lord shiva.jpg",
+      "./Assests/nainital.jpg",
+      "./Assests/nature.jpg"
+    ]
+  },
+  "info": {
+    "heading": "Unveil the Wonders of Uttarakhand ",
+    "content": " Explore the wonders of Uttarakhand, from serene temples and        pilgrimage sites to thrilling adventures and breathtaking landscapes. Plan your perfect getaway and immerse yourself in the natural beauty and rich culture of this Himalayan paradise."
   }
 }

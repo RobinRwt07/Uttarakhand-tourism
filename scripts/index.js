@@ -8,6 +8,106 @@ if (!localStorage.getItem("UttarakhandTouristPlaces")) {
   fetchDataPlaces();
 }
 
+fetchHomeData();
+async function fetchHomeData() {
+  try {
+    const response = await fetch("./json/home.json");
+    const data = await response.json();
+    displaySlider(data.slider);
+    displayInfo(data.info);
+    displayChardham(data.chardhamm);
+    displayTestimonial(data.testimonials);
+    displayGallery(data.gallery);
+  }
+  catch (e) {
+    console.log(e);
+  }
+}
+
+
+function displaySlider(slider) {
+  const sliderSection = document.querySelector("#sliderSection");
+  sliderSection.firstElementChild.textContent = slider.heading;
+  for (const item of slider.slides) {
+    sliderSection.lastElementChild.firstElementChild.innerHTML += `
+      <div class="swiper-slide">
+          <div class="left">
+            <img src="${item.image}" alt="${item.heading}" fetchpriority="high" />
+          </div>
+          <div class="right">
+            <h3>${item.heading}</h3>
+            <p>${item.content}</p>
+          </div>
+      </div>`;
+  }
+}
+
+function displayTestimonial(testimonial) {
+  const testimonialSection = document.querySelector("#testimonialSection");
+  testimonialSection.firstElementChild.innerHTML =
+    `<div>
+      <h3>Testimonials</h3>
+      <h2 class="heading">${testimonial.heading}</h2>
+    </div>
+    <p>${testimonial.content}</p>`;
+
+  let container = testimonialSection.lastElementChild;
+  for (const item of testimonial.testimonialsCards) {
+    container.innerHTML += `
+      <div class="testimonial-card">
+        <div class="top">
+          <p>${item.testimonial} </p>
+          <div class="userimage">
+            <img src="${item.userImage}" alt="${item.name}" loading="lazy" />
+          </div>
+        </div>
+        <div>
+          <span>${item.name}</span>
+          <span>Traveler</span>
+        </div>
+      </div>`;
+  }
+}
+
+function displayChardham(data) {
+  const chardhamSection = document.querySelector("#chardhamSection");
+  chardhamSection.firstElementChild.textContent = data.heading;
+  let left = chardhamSection.lastElementChild.firstElementChild.firstElementChild;
+  for (const item of data.images) {
+    left.innerHTML += `
+      <div>
+        <img src="${item}" alt="Badrinath">
+      </div>`;
+  }
+  left.nextElementSibling.innerHTML = `
+            <h3 class="mb-1">${data.subHeading}</h3>
+            <p>${data.content}</p>`;
+}
+
+function displayGallery(data) {
+  const gallerySection = document.querySelector("#gallerySection");
+  gallerySection.firstElementChild.innerHTML = `
+  <div>
+    <h3>Photo Gallery</h3>
+    <h2 class="heading">${data.heading}</h2>
+  </div>
+  <p>${data.content}</p>`;
+
+  for (const item of data.galleryImages) {
+    gallerySection.lastElementChild.innerHTML += `
+    <div>
+    <img src="${item}" alt="gallery Image">
+    </div>`;
+  }
+}
+
+function displayInfo(data) {
+  const infoSection = document.querySelector("#infoSection");
+  infoSection.firstElementChild.innerHTML = `
+    <h2 class="heading m-0">${data.heading}</h2>
+    <p>${data.content}</p>`;
+}
+
 const searchField = document.querySelector("#searchField");
 const searchedItemContainer = document.querySelector("#searchedItemContainer");
 
@@ -31,11 +131,11 @@ function filterPlace(searchValue) {
     filteredItem = allPlaces.filter(item => item.placeName.toLowerCase().includes(searchValue));
   }
   if (filteredItem.length === 0) {
-    searchedItemContainer.innerHTML = `< li > <a>No Match Found</a></li > `;
+    searchedItemContainer.innerHTML = `<li><a>No Match Found</a></li>`;
     return
   }
   for (const item of filteredItem) {
-    searchedItemContainer.innerHTML += `< li > <a href="./location.html?place=${item.placeName}">${item.placeName}, ${item.districtName}</a></li > `
+    searchedItemContainer.innerHTML += `<li><a href="./location.html?place=${item.placeName}">${item.placeName}, ${item.districtName}</a></li>`
   }
 }
 
@@ -50,7 +150,6 @@ const filterSearchPlaces = debounce(filterPlace, 700);
 
 // script for blog section
 fetchBlogs();
-
 async function fetchBlogs() {
   try {
     const response = await fetch('./json/blog.json');
@@ -74,11 +173,10 @@ async function fetchBlogs() {
 function displayHomeBlogs(allBlogs) {
   const latestBlog = document.querySelector("#latestBlog");
   const blogContainer = document.querySelector("#blogContainer");
-
   const firstFourBlogs = allBlogs.slice(-4);
 
   if (allBlogs.length == 0) {
-    latestBlog.innerHTML = `<h3> No Blogs Available</h3 > `;
+    latestBlog.innerHTML = `<h4> No Blogs Available</h4>`;
   }
   else {
     latestBlog.innerHTML = `
@@ -94,7 +192,7 @@ function displayHomeBlogs(allBlogs) {
       blogContainer.innerHTML += `
         <div class="blog-card">
           <div class="blog-image">
-            <img src="${item.image ? item.image : "./Assests/blog_default2.jpg"}" alt="blog imgae" loading="lazy" />
+            <img src="${item.image ? item.image : "./Assests/blog_default2.jpg"}" alt="blog imgae" loading="lazy"/>
           </div>
           <div class="blog-data">
             <h3 title="${item.heading}">${item.heading}</h3>

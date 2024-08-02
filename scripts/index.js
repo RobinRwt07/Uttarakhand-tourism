@@ -171,8 +171,19 @@ async function fetchBlogs() {
 }
 
 function displayHomeBlogs(allBlogs) {
-  const latestBlog = document.querySelector("#latestBlog");
-  const blogContainer = document.querySelector("#blogContainer");
+
+  const blogSection = document.querySelector("#blogSection");
+  let blogHeader = document.createElement("div");
+  blogHeader.innerHTML = `
+      <h2 class="heading">Read Our Lastest Blog Here</h2>
+      <p class="mb-1">
+        we share stories, insights, and tips that bring to life the diverse experiences this Himalayan paradise
+        offers. From hidden gems and adventure activities to cultural heritage our blogs cover everything
+      </p>`;
+
+  blogSection.firstElementChild.prepend(blogHeader);
+  const latestBlog = blogSection.firstElementChild.lastElementChild;
+  const blogContainer = blogSection.lastElementChild;
   const firstFourBlogs = allBlogs.slice(-4);
 
   if (allBlogs.length == 0) {

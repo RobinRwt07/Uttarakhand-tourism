@@ -4,6 +4,14 @@ const headingError = document.getElementById("headingError");
 const uploaderName = document.getElementById("user-name");
 const uploaderEmail = document.getElementById("user-email");
 
+// get the loggedIn user name and email
+const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
+if (localStorage.getItem("loggedInUser")) {
+  const user = registeredUsers.find((item) => item.email === localStorage.getItem("loggedInUser"));
+  uploaderName.value = user.name;
+  uploaderEmail.value = user.email;
+}
+
 blogForm.addEventListener("submit", (e) => {
   if (localStorage.getItem("isUserSignIn") === "false") {
     alert("Please Login");
@@ -31,7 +39,9 @@ blogForm.addEventListener("submit", (e) => {
       userEmail: blogData.get("useremail"),
       uploadDate: new Date().toDateString(),
       name: blogData.get("username"),
-      image: blogData.get("image") || "https://brandminds.ro/wp-content/uploads/2021/07/blogging-for-business-blog-articles-e1536066690505.jpg"
+      image: blogData.get("image") || "https://brandminds.ro/wp-content/uploads/2021/07/blogging-for-business-blog-articles-e1536066690505.jpg",
+      likes: 0,
+      dislikes: 0,
     };
     if (!localStorage.getItem("blogsData")) {
       localStorage.setItem("blogsData", "[]");
@@ -95,10 +105,3 @@ function displayBlogs() {
   }
 }
 
-// get the loggedIn user name and email
-const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
-if (localStorage.getItem("loggedInUser")) {
-  const user = registeredUsers.find((item) => item.email === localStorage.getItem("loggedInUser"));
-  uploaderName.value = user.name;
-  uploaderEmail.value = user.email;
-}

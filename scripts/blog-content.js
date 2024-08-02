@@ -8,15 +8,19 @@ if (isNaN(blogId)) {
   location.replace("./Error.html");
 }
 
-displayBlogContent();
+const allBlogs = JSON.parse(localStorage.getItem("blogsData")) || [];
 
-function displayBlogContent() {
-  const allBlogs = JSON.parse(localStorage.getItem("blogsData"));
-  const blog = allBlogs.find(item => item.blogId === blogId);
-  console.log(blog);
-  if (!blog) {
-    location.replace("./Error.html");
-  }
+const blog = allBlogs.find(item => item.blogId === blogId);
+console.log(blog);
+if (!blog) {
+  location.replace("./Error.html");
+}
+
+displayBlogContent(blog);
+showLikeDislike(blog);
+showRelatedBlog(allBlogs);
+
+function displayBlogContent(blog) {
   blogHeader.innerHTML = `
   <div class="user-info">
     <div class="userimg">
@@ -31,8 +35,15 @@ function displayBlogContent() {
   <div class="blog-image">
     <img src="${blog.image}" alt="image">
   </div>`;
-
   blogContent.innerHTML = `<pre style="text-wrap:wrap">${blog.message}</pre>`;
+}
+
+function showLikeDislike(blog) {
+  document.querySelector("#totalLikes").textContent = blog.likes;
+  document.querySelector("#totalDislikes").textContent = blog.dislike;
+}
+
+function showRelatedBlog(allBlogs) {
   const otherBlogs = allBlogs.slice(-4);
   relatedBlogs.innerHTML = '';
   for (const item of otherBlogs) {
@@ -51,5 +62,98 @@ function displayBlogContent() {
   }
 }
 
+function handleLikeDislike(event, type) {
+  const likeDislike = JSON.parse(localStorage.getItem("likeDislikeData")) || [];
+  if (localStorage.getItem("isUserSignIn") === "true") {
+    let currentUser = localStorage.getItem("loggedInUser");
+    let user = likeDislike.find(item => item.userId == currentUser);
+    if (user) {
+      let ldBlog = user.ldData.find(item => item[0] == blogId);
+      // when user first time like or dislike  blog
+      if (!ldBlog) {
+        if (type === "like") {
+          event.target.style.color = "green";
+          controlLikeDislike(1, type);
+          showLikeDislike(blog)
+        }
+        if (type === "dislike") {
+          event.target.style.color = "red";
+          controlLikeDislike(1, type);
+          showLikeDislike(blog)
+        }
+        likeDislike.find(item => item.userId === currentUser).ldData.push([blogId, type]);
+      } // if user already like of dislike blog
+      else {
+        const previousType = ldBlog[1];
+        if (previousType == type) {
+          event.target.style.color = null;
+          controlLikeDislike(-1, type);
+          showLikeDislike(blog)
+          let ldArray = likeDislike.find(item => item.userId === currentUser).ldData;
+          let index = ldArray.findIndex(item => item[0] == blogId);
+          likeDislike.find(item => item.userId === currentUser).ldData.splice(index, 1);
+        }
+        if (previousType != type) {
+          document.querySelector(`#${previousType}`).lastElementChild.style.color = null;
+          event.target.style.color = type == "like" ? "green" : "red";
+          controlLikeDislike(1, type);
+          controlLikeDislike(-1, previousType);
+          showLikeDislike(blog);
+          let ldArray = likeDislike.find(item => item.userId === currentUser).ldData;
+          let index = ldArray.findIndex(item => item[0] == blogId);
+          likeDislike.find(item => item.userId === currentUser).ldData.splice(index, 1, [blogId, type]);
+        }
+      }
+    } // if user is not present in likeDislike data
+    else {
+      let user = {
+        userId: currentUser,
+        ldData: [],
+      }
+      if (type === "like") {
+        event.target.style.color = "green";
+        controlLikeDislike(1, type);
+        showLikeDislike(blog)
+      }
+      if (type === "dislike") {
+        event.target.style.color = "red";
+        controlLikeDislike(1, type);
+        showLikeDislike(blog)
+      }
+      user.ldData.push([blogId, type]);
 
+      likeDislike.push(user);
+    }
+    localStorage.setItem("likeDislikeData", JSON.stringify(likeDislike));
+  }
+  else {
+    alert("Please login.");
+  }
+}
 
+function controlLikeDislike(n, type) {
+  if (type === "like") {
+    blog.likes += n;
+  }
+  if (type === 'dislike') {
+    blog.dislike += n;
+  }
+  let index = allBlogs.findIndex(item => item.blogId === blogId);
+  allBlogs.splice(index, 1, blog);
+  localStorage.setItem("blogsData", JSON.stringify(allBlogs));
+}
+
+function initialColor() {
+  let likeDislikeData = JSON.parse(localStorage.getItem("likeDislikeData")) || [];
+  if (localStorage.getItem("isUserSignIn") === "true") {
+    let user = likeDislikeData.find(item => item.userId === localStorage.getItem("loggedInUser"));
+    if (user) {
+      let blog = user.ldData.find(item => item[0] === blogId);
+      if (blog) {
+        document.querySelector(`#${blog[1]}`).lastElementChild.style.color = blog[1] == "like" ? "green" : "red";
+      }
+    }
+  }
+}
+
+initialColor();

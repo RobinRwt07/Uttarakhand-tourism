@@ -161,57 +161,57 @@
     margin-bottom: 1.5rem;
     color: var(--darkgray);
   }
+}
 
-  &>.treks-container {
-    overflow: scroll;
+.treks-container {
+  overflow: scroll;
+  display: flex;
+  gap: var(--gap-1);
+
+  &>.trek-card {
+    width: 230px;
+    height: 300px;
+    flex-shrink: 0;
     display: flex;
-    gap: var(--gap-1);
+    flex-direction: column;
+    background-color: var(--bg1);
+    border-radius: var(--br);
 
-    &>.trek-card {
-      width: 230px;
-      height: 300px;
-      flex-shrink: 0;
+    &>.top {
+      flex: none;
+      height: 50%;
+
+      &>img {
+        width: 100%;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        height: 100%;
+      }
+    }
+
+    &>.bottom {
+      flex: 1 1;
       display: flex;
       flex-direction: column;
-      background-color: var(--bg1);
-      border-radius: var(--br);
+      gap: 0rem;
+      padding: 0.5rem .8rem;
+      font-size: 14px;
+      justify-content: space-evenly;
 
-      &>.top {
-        flex: none;
-        height: 50%;
-
-        &>img {
-          width: 100%;
-          border-top-left-radius: 0.5rem;
-          border-top-right-radius: 0.5rem;
-          height: 100%;
-        }
+      &>span {
+        color: var(--darkgray);
       }
 
-      &>.bottom {
-        flex: 1 1;
+      &>p {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &>.first,
+      .second {
         display: flex;
-        flex-direction: column;
-        gap: 0rem;
-        padding: 0.5rem .8rem;
-        font-size: 14px;
-        justify-content: space-evenly;
-
-        &>span {
-          color: var(--darkgray);
-        }
-
-        &>p {
-          font-size: 16px;
-          font-weight: bold;
-        }
-
-        &>.first,
-        .second {
-          display: flex;
-          justify-content: space-between;
-          color: var(--darkgray);
-        }
+        justify-content: space-between;
+        color: var(--darkgray);
       }
     }
   }

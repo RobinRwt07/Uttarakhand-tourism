@@ -71,7 +71,7 @@ export async function fetchDataPlaces() {
 }
 
 export function verifySignIn() {
-  if (!localStorage.getItem("isUserSignIn")) {
+  if (localStorage.getItem("isUserSignIn") === "false") {
     localStorage.setItem("isUserSignIn", false);
   }
 }

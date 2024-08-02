@@ -3,14 +3,30 @@ if (!localStorage.getItem("UttarakhandTouristPlaces")) {
   fetchDataPlaces();
 }
 
+async function fetchExploreData() {
+  try {
+    const response = await fetch("./json/destination.json");
+    if (response.status !== 200) {
+      throw new Error("Request failed");
+    }
+    const data = await response.json();
+    if (data) {
+      displayTreks(data.treks);
+      displaySpiritualPlaces(data.spiritual);
+    }
+  }
+  catch (e) {
+    console.log(e);
+  }
+}
+
+fetchExploreData();
+
 const destinationContainer = document.querySelector("#destinationContainer");
-
 const spiritualContainer = document.querySelector("#spiritualContainer");
-
-const places = JSON.parse(localStorage.getItem('UttarakhandTouristPlaces'));
-
 const showPreviousSlide = document.querySelector("#showPreviousSlide");
 const showNextSlide = document.querySelector("#showNextSlide");
+const places = JSON.parse(localStorage.getItem('UttarakhandTouristPlaces'));
 
 let currentSlide = 0;
 function displayPolularPlaces(n = 0) {
@@ -18,7 +34,6 @@ function displayPolularPlaces(n = 0) {
   const limit = 9;
   const offSet = currentSlide * limit;
   const lastIndex = offSet + limit;
-
   offSet <= 0 ? showPreviousSlide.classList.add("disabled") : showPreviousSlide.classList.remove("disabled");
   offSet >= (places.length - 1) ? showNextSlide.classList.add("disabled") : showNextSlide.classList.remove("disabled");
 
@@ -45,40 +60,34 @@ showPreviousSlide.addEventListener("click", () => {
   displayPolularPlaces(-1);
 });
 
-
-// gettting all spiritual places
-const spiritualPlaces = places.filter((item) => item.category === "temple").slice(0, 10);
-spiritualContainer.innerHTML = "";
-for (const item of spiritualPlaces) {
-  spiritualContainer.innerHTML += `
+function displaySpiritualPlaces(data) {
+  const spiritualSection = document.querySelector("#spiritualSection");
+  spiritualSection.firstElementChild.textContent = data.heading;
+  spiritualSection.children[1].textContent = data.content;
+  const spiritualPlaces = places.filter((item) => item.category === "temple").slice(0, 10);
+  spiritualContainer.innerHTML = "";
+  for (const item of spiritualPlaces) {
+    spiritualContainer.innerHTML += `
     <div class="figure">
-      <img src="./Assests/places/${item.image}" alt="${item.placeName}">
-      <div class="location-info">
-        <span>${item.placeName}</span>
-        <a href="./location.html?place=${item.placeName}">Read More</a>
-      </div>
+    <img src="./Assests/places/${item.image}" alt="${item.placeName}">
+    <div class="location-info">
+    <span>${item.placeName}</span>
+    <a href="./location.html?place=${item.placeName}">Read More</a>
+    </div>
     </div>`;
+  }
 }
 
 // script for trek section
-const treksContainer = document.querySelector("#treksContainer");
-window.addEventListener("load", () => {
-  fetchTreks();
-});
 
-function fetchTreks() {
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", './Json/treks.json', true);
-  xhr.responseType = 'json';
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status == 200) {
-      const treks = xhr.response;
-      treksContainer.innerHTML = "";
-      if (treks.length === 0) {
-        return;
-      }
-      for (const item of treks) {
-        treksContainer.innerHTML += `
+function displayTreks(data) {
+  const treksSection = document.querySelector("#treksSection");
+  treksSection.firstElementChild.firstElementChild.innerHTML = `
+        <h2 class="heading">${data.heading}</h2>
+        <p>${data.content}</p>`;
+
+  for (const item of data.trek) {
+    treksSection.firstElementChild.lastElementChild.innerHTML += `
         <a href="#" class="trek-card">
           <div class="top">
           <img src="./Assests/treks/${item.image}" alt="${item.trekName}" loading="lazy">
@@ -102,13 +111,7 @@ function fetchTreks() {
           </div>
           </div>
         </a>`;
-      }
-    }
   }
-  xhr.onerror = function () {
-    alert("Failed To Fetch Data");
-  }
-  xhr.send();
 }
 
 // script for slider
@@ -131,7 +134,7 @@ else {
         <div class="event-info">
           <h3>${item.eventName}</h3>
           <p>${item.eventDetails.slice(0, 300)}...</p>
-          <strong> <span>${item.startDate} - ${item.endDate}</span></strong>
+          <strong> <span>${new Date(item.startDate).toDateString()} - ${new Date(item.endDate).toDateString()}</span></strong>
         </div>
       </div>`;
   }

@@ -3,7 +3,7 @@ const hotelsSection = document.querySelector("#hotelsSection");
 const hotels = JSON.parse(localStorage.getItem("hotels") || "[]");
 
 if (hotels.length === 0) {
-  hotelsSection.parentElement.parentElement.innerHTML = `<h4 class="mt-1 tx-center"> No Places available</h4>`;
+  hotelsSection.parentElement.parentElement.innerHTML = `<h4 class="mt-1 tx-center"> No Hotels available</h4>`;
 }
 else {
   for (const item of hotels) {
@@ -11,9 +11,9 @@ else {
         <tr>
           <td>${item.hotelId}</td>
           <td>${item.hotelName}</td>
-          <td>${item.hotelLocation}</td>
+          <td>${item.district}, ${item.hotelLocation}</td>
           <td>${item.hotelAddress}</td>
-          <td>${item.charges}</td>
+          <td>Rs. ${item.charges} </td>
           <td>${item.hotelOwner}</td>
           <td>${item.contact}</td>
           <td style="text-align:center">
@@ -43,7 +43,8 @@ document.querySelector("#add-hotels").addEventListener("submit", (e) => {
   const newHotel = {
     hotelId: id ? id : ("HTL" + (Math.floor(Math.random() * 900000) + 10000)),
     hotelName: formData.get("hotelName"),
-    hotelLocation: formData.get("districtName"),
+    district: formData.get("districtName"),
+    hotelLocation: formData.get("hotelLocation"),
     hotelAddress: formData.get("hotelAddress"),
     charges: formData.get("charges"),
     hotelOwner: formData.get("hotelOwner"),
@@ -73,7 +74,8 @@ function updateHotel(event) {
   const hotel = hotels.find(item => item.hotelId == hotelID);
   document.querySelector("#hotelId").value = hotelID;
   document.querySelector("#hotelName").value = hotel.hotelName;
-  document.querySelector("#districtName").value = hotel.hotelLocation;
+  document.querySelector("#districtName").value = hotel.district;
+  document.querySelector("#hotelLocation").value = hotel.hotelLocation;
   document.querySelector("#hotelAddress").value = hotel.hotelAddress;
   document.querySelector("#charges").value = hotel.charges;
   document.querySelector("#hotelOwner").value = hotel.hotelOwner;

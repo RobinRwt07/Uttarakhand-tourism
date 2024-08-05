@@ -69,7 +69,7 @@ footerSection.innerHTML = `
     <div class="important">
       <h3>Important Links</h3>
       <ul>
-        <li><a href="./admin/adminlogin.html">Admin Panel</a></li>
+        <li><a href="./admin/dashboard.html">Admin Panel</a></li>
         <li><a href="#">T&C</a></li>
         <li><a href="#">Places</a></li>
         <li><a href="#">FAQ</a></li>

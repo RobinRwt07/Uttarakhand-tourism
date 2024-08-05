@@ -20,6 +20,8 @@ header {
   background-color: var(--blue);
 
   &>div {
+    max-width: 1500px;
+    margin-inline: auto;
     max-height: 80px;
     display: flex;
     align-items: center;
@@ -124,7 +126,7 @@ header {
     .hotels-section,
     .events-section {
       @media (min-width:1200px) {
-        width: 90%;
+        width: 95%;
         margin-inline: auto;
       }
 

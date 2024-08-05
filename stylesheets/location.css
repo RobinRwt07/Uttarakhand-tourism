@@ -288,20 +288,23 @@
       }
 
       &>.bottom {
+        height: 100%;
         display: flex;
         flex-direction: column;
-        font-size: 14px;
+        justify-content: space-between;
+        font-size: 12px;
         gap: 0.2rem;
         padding: 0.5rem;
 
         &>p:first-child {
-          font-size: 1rem;
+          font-size: 15px;
           font-weight: bold;
         }
 
         &>div {
           display: flex;
           justify-content: space-between;
+          font-weight: bold;
         }
 
         &>a {

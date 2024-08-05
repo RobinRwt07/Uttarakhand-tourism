@@ -154,22 +154,8 @@
 
               <div class="input-field">
                 <label>Location</label>
-                <input list="location" name="districtName" placeholder="Select Location" required>
-                <datalist id="location">
-                  <option value="Dehradun">
-                  <option value="Pauri Garhwal">
-                  <option value="Tehri Garhwal">
-                  <option value="Chamoli">
-                  <option value="Haridwar">
-                  <option value="Nainital">
-                  <option value="Uttarkashi">
-                  <option value="Bageshwar">
-                  <option value="Udham Singh Nagar">
-                  <option value="Champawat">
-                  <option value="Almora">
-                  <option value="Pithoragarh">
-                  <option value="Rudraprayag">
-                </datalist>
+                <input list="districts" name="districtName" placeholder="Select District" required>
+                <datalist id="districts"> </datalist>
               </div>
 
               <div class="input-field">
@@ -251,6 +237,7 @@
               </table>
             </div>
           </div>
+
           <div id="addHotelForm" class="m-1">
             <h2 class="sub-heading tx-center mb-1">Add New Hotel</h2>
             <form method="post" id="add-hotels">
@@ -262,22 +249,15 @@
 
               <div class="input-field">
                 <label>District</label>
-                <input list="location" id="districtName" name="districtName" placeholder="Select District" required>
-                <datalist id="location">
-                  <option value="Dehradun">
-                  <option value="Pauri Garhwal">
-                  <option value="Tehri Garhwal">
-                  <option value="Chamoli">
-                  <option value="Haridwar">
-                  <option value="Nainital">
-                  <option value="Uttarkashi">
-                  <option value="Bageshwar">
-                  <option value="Udham Singh Nagar">
-                  <option value="Champawat">
-                  <option value="Almora">
-                  <option value="Pithoragarh">
-                  <option value="Rudraprayag">
-                </datalist>
+                <input list="allDistricts" id="districtName" name="districtName" placeholder="Select District" required>
+                <datalist id="allDistricts"> </datalist>
+              </div>
+
+              <div class="input-field">
+                <label>Location</label>
+                <input list="allLocations" id="hotelLocation" name="hotelLocation" placeholder="Select locations"
+                  required>
+                <datalist id="allLocations"> </datalist>
               </div>
 
               <div class="input-field">
@@ -302,7 +282,7 @@
 
               <div class="input-field">
                 <label>Hotel Image</label>
-                <input type="url" id="hotelImage" name="hotelImage" placeholder="hotel Imagee">
+                <input type="url" id="hotelImage" name="hotelImage" placeholder="hotel Image">
               </div>
               <button type="submit">Submit</button>
             </form>
@@ -406,6 +386,7 @@
       </div>
     </div>
   </main>
+  <script src="./script.js"></script>
   <script src="./admin.js"></script>
   <script src="./admin3.js"></script>
   <script src="./admin2.js"></script>

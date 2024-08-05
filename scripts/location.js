@@ -60,7 +60,7 @@ howToReach.innerHTML = `<div class="card">
 
 const hotelList = document.querySelector("#hotelList");
 const allHotels = JSON.parse(localStorage.getItem("hotels") || "[]");
-const filteredHotels = allHotels.filter(item => item.hotelLocation.toLowerCase() === data.districtName.toLowerCase());
+const filteredHotels = allHotels.filter(item => item.hotelLocation.toLowerCase() === data.placeName.toLowerCase());
 if (filteredHotels.length === 0) {
   hotelList.innerHTML = `<h4 class="tx-center" style="flex:auto">Hotels are Not avilable at this Location</h4>`
 }
@@ -144,7 +144,7 @@ reviewForm.addEventListener("submit", (e) => {
 const galleryContainer = document.querySelector("#galleryContainer");
 const images = JSON.parse(localStorage.getItem("galleryImages")).filter(item => item.location === data.placeName).slice(-8);
 if (images.length === 0) {
-  galleryContainer.innerHTML = `<h4 class="tx-center m-1" style="grid-column:span 2">No Images 🥲</h4>`;
+  galleryContainer.innerHTML = `<h4 class="tx-center m-1" style="grid-column:span 3">No Images 🥲</h4>`;
 }
 else {
   for (const item of images) {

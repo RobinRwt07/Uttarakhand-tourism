@@ -8,14 +8,14 @@ const uploaderEmail = document.getElementById("user-email");
 
 // get the loggedIn user name and email
 const currentUser = getRegisteredUser();
+uploaderName.value = currentUser?.name || "";
+uploaderEmail.value = currentUser?.email || "";
 
 blogForm.addEventListener("submit", (e) => {
   if (!currentUser) {
     alert("Please Login");
     location.href = "./signin.html";
   }
-  uploaderName.value = currentUser?.name || "";
-  uploaderEmail.value = currentUser?.email || "";
   let valid = true;
   msgError.textContent = "";
   headingError.textContent = "";

@@ -105,26 +105,30 @@
     <section class="container">
 
       <div class="location-gallery-container sc-xl">
-        <h2 class="sub-heading">Pictures Form Travellers</h2>
-        <div class="picture-container">
-          <div class="picture-card">
-            <img src="./Assests/env.jpg" alt="Picture">
-          </div>
-          <div class="picture-card">
-            <img src="./Assests/env2.jpg" alt="Picture">
-          </div>
-          <div class="picture-card">
-            <img src="./Assests/env.jpg" alt="Picture">
-          </div>
-          <div class="picture-card">
-            <img src="./Assests/env2.jpg" alt="Picture">
-          </div>
-          <div class="picture-card">
-            <img src="./Assests/env.jpg" alt="Picture">
-          </div>
-          <div class="picture-card">
-            <img src="./Assests/env2.jpg" alt="Picture">
-          </div>
+        <div class="mb-1">
+          <h2 class="sub-heading">Pictures Form Travellers</h2>
+          <button class="m-0" id="pictureUploadBtn">Upload Picture</button>
+        </div>
+
+        <div id="pictureUploadForm" class="hide">
+          <form method="post" id="pictureform">
+            <div class="input-field">
+              <label for="uploaderName">Name</label>
+              <input type="text" id="uploaderName" name="uploaderName" placeholder="Your Name" required readonly>
+            </div>
+
+            <div class="input-field">
+              <label for="imageField">UploadImages</label>
+              <input type="url" name="imageField" id="imageField" placeholder="Image Url" required>
+            </div>
+            <div>
+              <img src="" class="previewImage" alt="">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="picture-container" id="galleryContainer">
+          <!-- images -->
         </div>
       </div>
     </section>
@@ -142,6 +146,46 @@
         <h2 class="sub-heading">Get Direction</h2>
         <div class="map" id="map">
         </div>
+      </div>
+    </section>
+
+    <section class="user-reviews container">
+      <div class="sc-xl">
+        <div class="mb-2 header">
+          <h2 class="sub-heading">Reviews and Ratings</h2>
+          <button type="button" id="reviewFormBtn">Write your Review</button>
+        </div>
+
+        <div id="reviewForm" class="hide">
+          <form method="post" id="review-form">
+            <div class="input-field">
+              <label for="user-name">User Name</label>
+              <input type="text" id="username" name="username" placeholder="Your Name" required readonly>
+            </div>
+            <div class="input-field">
+              <label for="rate">Rate This Place</label>
+              <select name="rating" id="rate" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <input type="hidden" name="useremail" id="useremail">
+
+            <div class="input-field">
+              <label for="review">Review</label>
+              <textarea name="review" id="review" placeholder="Write you review" required></textarea>
+              <span class="error" id="msgError"></span>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="reviews sc-xl" id="reviews">
+        <!-- all reviews -->
       </div>
     </section>
   </main>

@@ -111,90 +111,24 @@
         </div>
       </div>
     </section>
+
     <section class="container">
       <div class="featured-blog sc-xl">
         <div>
           <h2 class="heading">Featured Blog Post</h2>
           <button type="button" id="open-dialog">Add Blog</button>
-
         </div>
         <div class="blog-container scrollbar" id="blogContainer">
           <!-- blog cards -->
         </div>
       </div>
     </section>
+
     <section class="container">
       <div class="trending-blog sc-xl">
-        <h2 class="heading">Trending Post</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem incidunt obcaecati quam facilis
-          itaque.</p>
-        <div class="blog-container scrollbar">
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
-          <div class="blog-card">
-            <div class="top">
-              <img src="./Assests/Feature_0.jpg" alt="blog-image">
-            </div>
-            <div class="bottom">
-              <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-              <p>Lorem ipsum, dolor Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
-              </p>
-              <a href="./blog.html">Read More></a>
-            </div>
-          </div>
+        <h2 class="heading mb-1">Trending Post</h2>
+        <div class="blog-container scrollbar" id="trendingBlogs">
+          <!-- trending blogs -->
         </div>
       </div>
     </section>
@@ -203,10 +137,9 @@
   <section class="footer-section container" id="footerContainer">
     <!-- footer section -->
   </section>
-
   <script src="./scripts/logout.js"></script>
   <script src="./scripts/global.js"></script>
-  <script src="./scripts/blogs.js"></script>
+  <script src="./scripts/blogs.js" type="module"></script>
   <script>
     const openDialog = document.querySelector("#open-dialog");
     const closeDialog = document.querySelector("#close-dialog");

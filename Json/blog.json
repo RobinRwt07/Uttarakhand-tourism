@@ -7,8 +7,8 @@
     "uploadDate": "Tue Jul 23 2024",
     "userEmail": "robin123@gmail.com",
     "image": "https://brandminds.ro/wp-content/uploads/2021/07/blogging-for-business-blog-articles-e1536066690505.jpg",
-    "likes": 232,
-    "dislike": 23
+    "likes": 100,
+    "dislikes": 20
   },
   {
     "blogId": 642205,
@@ -18,8 +18,8 @@
     "uploadDate": "Tue Jul 24 2024",
     "userEmail": "robin123@gmail.com",
     "image": "https://brandminds.ro/wp-content/uploads/2021/07/blogging-for-business-blog-articles-e1536066690505.jpg",
-    "likes": 232,
-    "dislike": 23
+    "likes": 60,
+    "dislikes": 23
   },
   {
     "blogId": 364052,
@@ -29,7 +29,7 @@
     "uploadDate": "Tue Jul 24 2024",
     "userEmail": "robin123@gmail.com",
     "image": "https://brandminds.ro/wp-content/uploads/2021/07/blogging-for-business-blog-articles-e1536066690505.jpg",
-    "likes": 232,
-    "dislike": 23
+    "likes": 105,
+    "dislikes": 23
   }
 ]

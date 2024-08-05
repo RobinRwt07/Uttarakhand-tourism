@@ -32,14 +32,14 @@ districtInfo.innerHTML = `
 <div class="right">
   <div class="image-container">
     <div>
-      <img src="./Assests/velly of flower.jpg" alt="image">
+      <img src="${districtData.images[0]}" alt="image">
     </div>
     <div>
       <div>
-        <img src="./Assests/Rishikesh feature.jpg" alt="image">
+        <img src="${districtData.images[1]}" alt="image">
       </div>
       <div>
-        <img src="./Assests/Feature_Govind National Park.jpeg" alt="image">
+        <img src="${districtData.images[2]}" alt="image">
       </div>
     </div>
   </div>

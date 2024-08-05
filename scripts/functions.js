@@ -75,3 +75,13 @@ export function verifySignIn() {
     localStorage.setItem("isUserSignIn", false);
   }
 }
+
+export function getRegisteredUser() {
+  if (localStorage.getItem("isUserSignIn") === "false") {
+    return false;
+  }
+  else {
+    const currentUser = JSON.parse(localStorage.getItem("registeredUsers")).find(user => user.email === localStorage.getItem("loggedInUser"));
+    return currentUser;
+  }
+}

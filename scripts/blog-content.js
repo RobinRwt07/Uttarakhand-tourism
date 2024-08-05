@@ -11,7 +11,7 @@ if (isNaN(blogId)) {
 const allBlogs = JSON.parse(localStorage.getItem("blogsData")) || [];
 
 const blog = allBlogs.find(item => item.blogId === blogId);
-console.log(blog);
+
 if (!blog) {
   location.replace("./Error.html");
 }
@@ -40,7 +40,7 @@ function displayBlogContent(blog) {
 
 function showLikeDislike(blog) {
   document.querySelector("#totalLikes").textContent = blog.likes;
-  document.querySelector("#totalDislikes").textContent = blog.dislike;
+  document.querySelector("#totalDislikes").textContent = blog.dislikes;
 }
 
 function showRelatedBlog(allBlogs) {
@@ -68,9 +68,9 @@ function handleLikeDislike(event, type) {
     let currentUser = localStorage.getItem("loggedInUser");
     let user = likeDislike.find(item => item.userId == currentUser);
     if (user) {
-      let ldBlog = user.ldData.find(item => item[0] == blogId);
+      let blogIndex = user.ldData.findIndex(item => item[0] == blogId);
       // when user first time like or dislike  blog
-      if (!ldBlog) {
+      if (blogIndex === -1) {
         if (type === "like") {
           event.target.style.color = "green";
           controlLikeDislike(1, type);
@@ -84,14 +84,12 @@ function handleLikeDislike(event, type) {
         likeDislike.find(item => item.userId === currentUser).ldData.push([blogId, type]);
       } // if user already like of dislike blog
       else {
-        const previousType = ldBlog[1];
+        const previousType = user.ldData[blogIndex][1];
         if (previousType == type) {
           event.target.style.color = null;
           controlLikeDislike(-1, type);
           showLikeDislike(blog)
-          let ldArray = likeDislike.find(item => item.userId === currentUser).ldData;
-          let index = ldArray.findIndex(item => item[0] == blogId);
-          likeDislike.find(item => item.userId === currentUser).ldData.splice(index, 1);
+          likeDislike.find(item => item.userId === currentUser).ldData.splice(blogIndex, 1);
         }
         if (previousType != type) {
           document.querySelector(`#${previousType}`).lastElementChild.style.color = null;
@@ -99,9 +97,7 @@ function handleLikeDislike(event, type) {
           controlLikeDislike(1, type);
           controlLikeDislike(-1, previousType);
           showLikeDislike(blog);
-          let ldArray = likeDislike.find(item => item.userId === currentUser).ldData;
-          let index = ldArray.findIndex(item => item[0] == blogId);
-          likeDislike.find(item => item.userId === currentUser).ldData.splice(index, 1, [blogId, type]);
+          likeDislike.find(item => item.userId === currentUser).ldData.splice(blogIndex, 1, [blogId, type]);
         }
       }
     } // if user is not present in likeDislike data
@@ -136,7 +132,7 @@ function controlLikeDislike(n, type) {
     blog.likes += n;
   }
   if (type === 'dislike') {
-    blog.dislike += n;
+    blog.dislikes += n;
   }
   let index = allBlogs.findIndex(item => item.blogId === blogId);
   allBlogs.splice(index, 1, blog);

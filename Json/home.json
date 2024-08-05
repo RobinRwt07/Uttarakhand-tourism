@@ -45,24 +45,24 @@
     "content": "Hear from our travelers about their unforgettable experiences     exploring the serene landscapes, vibrant culture, and thrilling adventures in Uttarakhand.",
     "testimonialsCards": [
       {
-        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "testimonial": "Exploring Uttarakhand was a dream come true. The natural beauty, adventure activities, and spiritual sites made our trip perfect. Can't wait to return!",
         "userImage": "./Assests/velly of flower.jpg",
-        "name": "Robin"
+        "name": "Robin Rawat"
       },
       {
-        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "testimonial": "We had an amazing time in Uttarakhand. The trekking experiences and scenic views were beyond expectations. A wonderful destination for nature lovers",
         "userImage": "./Assests/velly of flower.jpg",
-        "name": "Rahul"
+        "name": "Rahul Bisht"
       },
       {
-        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "testimonial": "Our stay in Uttarakhand was fantastic. The picturesque landscapes and the warm hospitality of the people made our trip memorable. A beautiful place!",
         "userImage": "./Assests/velly of flower.jpg",
-        "name": "Aman"
+        "name": "Prapti"
       },
       {
-        "testimonial": "Lorem ipsum dolor sit amet consectetur adipisicing elit. ptatem dicta error impedit. Obcaecati ullam assumenda,temporibus totam animi voluptates beatae unde sed eveniet dolor",
+        "testimonial": "Uttarakhand's natural beauty is captivating. The peaceful ambiance and the friendly locals made our trip extraordinary. Highly recommend visiting this beautiful state",
         "userImage": "./Assests/velly of flower.jpg",
-        "name": "Aman"
+        "name": "Rohit Singh"
       }
     ]
   },

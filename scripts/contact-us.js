@@ -1,8 +1,10 @@
-import { validateEmail, validateName } from "./functions.js";
+import { validateEmail, validateName, getRegisteredUser } from "./functions.js";
 const contact = document.querySelector("#contact-form");
 const nameErr = document.querySelector("#nameError");
 const emailErr = document.querySelector("#emailError");
 const msgErr = document.querySelector("#msgError");
+
+const currentUser = getRegisteredUser();
 
 function validateMessage(msg) {
   if (msg.length === 0) {
@@ -13,15 +15,12 @@ function validateMessage(msg) {
   }
 }
 
-
-const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
-const user = registeredUsers.find((item) => item.email === localStorage.getItem("loggedInUser"));
-document.querySelector("#user-name").value = user?.name || "";
-document.querySelector("#user-email").value = user?.email || "";
+document.querySelector("#user-name").value = currentUser?.name || "";
+document.querySelector("#user-email").value = currentUser?.email || "";
 
 contact.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (localStorage.getItem("isUserSignIn") === "false") {
+  if (!currentUser) {
     alert("please login first");
     return;
   }

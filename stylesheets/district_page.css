@@ -13,17 +13,23 @@
   flex-direction: column;
   gap: var(--gap-1);
 
-  &>* {
-    flex: 1 1;
-  }
-
-  @media (min-width:700px) {
+  @media (min-width:750px) {
     flex-direction: row;
     align-items: center;
     margin-top: 0;
   }
 
+  &>.left>p {
+    font-size: 14px;
+  }
+
   &>.right {
+
+    @media (min-width:750px) {
+      flex: none;
+      width: 60%;
+    }
+
     &>.image-container {
       display: grid;
       gap: var(--gap-1);
@@ -113,6 +119,8 @@
       align-items: center;
       gap: 1rem;
       color: var(--white);
+      background-image: linear-gradient(to top, #000000, 35%, transparent);
+      border-radius: inherit;
     }
   }
 }

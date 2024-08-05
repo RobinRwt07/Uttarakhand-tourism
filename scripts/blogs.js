@@ -1,3 +1,5 @@
+import { getRegisteredUser } from "./functions.js";
+
 const blogForm = document.getElementById("blog-form");
 const msgError = document.getElementById("msgError");
 const headingError = document.getElementById("headingError");
@@ -5,18 +7,15 @@ const uploaderName = document.getElementById("user-name");
 const uploaderEmail = document.getElementById("user-email");
 
 // get the loggedIn user name and email
-const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
-if (localStorage.getItem("loggedInUser")) {
-  const user = registeredUsers.find((item) => item.email === localStorage.getItem("loggedInUser"));
-  uploaderName.value = user.name;
-  uploaderEmail.value = user.email;
-}
+const currentUser = getRegisteredUser();
 
 blogForm.addEventListener("submit", (e) => {
-  if (localStorage.getItem("isUserSignIn") === "false") {
+  if (!currentUser) {
     alert("Please Login");
     location.href = "./signin.html";
   }
+  uploaderName.value = currentUser?.name || "";
+  uploaderEmail.value = currentUser?.email || "";
   let valid = true;
   msgError.textContent = "";
   headingError.textContent = "";
@@ -56,11 +55,11 @@ blogForm.addEventListener("submit", (e) => {
 });
 
 
+const allBlogs = JSON.parse(localStorage.getItem("blogsData")) || [];
 displayBlogs();
 
 function displayBlogs() {
   const topBlogSection = document.querySelector("#topBlogSection");
-  const allBlogs = JSON.parse(localStorage.getItem("blogsData")) || [];
   try {
     topBlogSection.innerHTML = `
   <div class="left">
@@ -105,3 +104,30 @@ function displayBlogs() {
   }
 }
 
+displayTrendingBlogs();
+
+function displayTrendingBlogs() {
+  const trendingBlogs = document.querySelector("#trendingBlogs");
+  allBlogs.sort((a, b) => {
+    return b.likes - a.likes
+  });
+
+  if (allBlogs.length === 0) {
+    trendingBlogs.innerHTML = `<h2 class="sub-heading" style="text-align:center">blogs not available</h2>`;
+  }
+  else {
+    for (const item of allBlogs) {
+      trendingBlogs.innerHTML += `
+        <div class="blog-card">
+          <div class="top">
+            <img src="${item.image ? item.image : "./Assests/blog_default2.jpg"}" alt="blog-image">
+          </div>
+          <div class="bottom">
+            <h3 title="${item.heading}">${item.heading}</h3>
+            <p>${item.message.slice(0, 60)}...</p>
+            <a href="./blog.html?blogId=${item.blogId}">Read More></a>
+          </div>
+        </div>`;
+    }
+  }
+}

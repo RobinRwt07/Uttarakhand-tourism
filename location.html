@@ -39,42 +39,51 @@
 </head>
 
 <body>
-  <section class="header-section">
-    <div class="menuopen-btn" id="menu-open-btn" style="z-index:15;">
-      <span>
-        <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
-      </span>
-    </div>
-    <header id="header">
-      <div class=" close-btn" id="menu-close-btn">
+  <section class="headerbar">
+    <div class="header-section sc-xl">
+      <div class="menuopen-btn" id="menu-open-btn">
         <span>
-          <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-bars fa-xl"></i>
         </span>
       </div>
+      <header id="header">
+        <div class="close-btn" id="menu-close-btn">
+          <span>
+            <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i>
+          </span>
+        </div>
 
-      <a href="./index.html" class="logo">
-        <img src="./Assests/logo.svg" alt="logo">
-      </a>
+        <a href="./index.html" class="logo">
+          <img src="./Assests/logo.svg" alt="logo">
+        </a>
+        <nav class="navigation">
+          <ul>
+            <li><a href="./index.html">Home</a> </li>
+            <li class="district-container"><a>Districts</a>
+              <div class="districts">
+                <ul id="district-list">
+                </ul>
+              </div>
+            </li>
+            <li><a href="./blogs.html">Blogs</a> </li>
+            <li><a href="./contact-us.html">Contact</a> </li>
+            <li><a href="./about.html">About</a> </li>
+          </ul>
+        </nav>
+      </header>
 
-      <nav class="navigation">
-        <ul>
-          <li><a href="./index.html">Home</a> </li>
-          <li class="district-container"><a>Districts</a>
-            <div class="districts">
-              <ul id="district-list">
-              </ul>
-            </div>
-          </li>
-          <li><a href="./blogs.html">Blogs</a> </li>
-          <li><a href="./contact-us.html">Contact</a> </li>
-          <li><a href="./about.html">About</a> </li>
-        </ul>
-      </nav>
-      <div id="login-logout" class="btn">
-        <!-- login logout btn -->
+      <div class="profile-section">
+        <div class="profile-image">
+          <img src="./Assests/Feature_0.jpg" alt="profileImage">
+        </div>
+        <div class="links hide">
+          <a href="./profile.html">Profile</a>
+          <div id="login-logout" class="btn">
+            <!-- login logout btn -->
+          </div>
+        </div>
       </div>
-    </header>
-
+    </div>
   </section>
 
   <main class="main-container">

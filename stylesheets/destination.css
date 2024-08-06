@@ -7,12 +7,6 @@
   background-color: var(--gray) !important;
 }
 
-.info-section {
-  @media (max-width: 768px) {
-    margin-top: 2rem;
-  }
-}
-
 .info-container {
   &>h1 {
     text-align: center;

@@ -1,20 +1,18 @@
-.header-section {
-  overflow: hidden;
-
+.headerbar {
   @media (min-width:768px) {
-    position: sticky;
-    top: 0;
-    z-index: 15;
-    overflow: visible;
+    background-color: var(--blue);
   }
+}
 
-  background-color: var(--blue);
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
 
   &>.menuopen-btn {
     cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
 
     @media (min-width:768px) {
       display: none;
@@ -24,25 +22,21 @@
   &>header {
     max-width: 1500px;
     position: fixed;
+    top: 0;
     left: -300px;
     width: 300px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding: 1rem 2rem;
     background-color: var(--blue);
     z-index: 15;
     opacity: 1;
     transition: all .3s linear;
-
-    /* define the staring value for header property */
-    @starting-style {
-      width: 0%;
-      opacity: 0;
-    }
+    padding: 1rem;
 
     @media (min-width:768px) {
+      padding: 0;
       position: sticky;
       gap: 1rem;
       top: 0;
@@ -51,12 +45,16 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      background-color: transparent;
+
+      &>.navigation {
+        flex: auto;
+        display: flex;
+        justify-content: center;
+      }
     }
 
-    @media (min-width:1024px) {
-      width: 85%;
-      margin-inline: auto;
-    }
+
 
     &>.close-btn {
       cursor: pointer;
@@ -146,7 +144,52 @@
         margin-inline: auto;
       }
     }
+  }
 
+  &>.profile-section {
+    position: relative;
+
+    &>.profile-image {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      outline: 2px solid var(--lightGray);
+      outline-offset: 2px;
+
+      &>img {
+        border-radius: inherit;
+      }
+    }
+
+    &>.links {
+      min-width: 150px;
+      position: absolute;
+      z-index: 10;
+      border-radius: var(--br);
+      flex-direction: column;
+      gap: var(--gap);
+      padding: 1rem .5rem;
+      top: 110%;
+      right: 0;
+      background-color: rgb(246, 246, 246);
+      font-size: 14px;
+
+      & button {
+        all: unset;
+      }
+
+      &>* {
+        cursor: pointer;
+        padding: .3rem 1rem;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: var(--white);
+        }
+      }
+    }
   }
 
 }

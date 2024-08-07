@@ -132,6 +132,7 @@ reviewForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(reviewForm);
   formData.set("location", data.placeName);
+  formData.set("reviewId", "RVW" + (Math.floor(Math.random() * 900000) + 10000));
   let reviewObj = Object.fromEntries(formData.entries());
   const reviewData = JSON.parse(localStorage.getItem("usersReview")) || [];
   reviewData.push(reviewObj);
@@ -141,8 +142,8 @@ reviewForm.addEventListener("submit", (e) => {
 });
 
 
-const galleryContainer = document.querySelector("#galleryContainer");
-const images = JSON.parse(localStorage.getItem("galleryImages")).filter(item => item.location === data.placeName).slice(-8);
+const galleryContainer = document.querySelector("#galleryContainer") || [];
+const images = JSON.parse(localStorage.getItem("galleryImages")) || [].filter(item => item.location === data.placeName).slice(-8);
 if (images.length === 0) {
   galleryContainer.innerHTML = `<h4 class="tx-center m-1" style="grid-column:span 3">No Images 🥲</h4>`;
 }
@@ -182,6 +183,7 @@ pictureUploadForm.firstElementChild.addEventListener("submit", (e) => {
   const formData = new FormData(pictureUploadForm.firstElementChild);
   formData.set("location", data.placeName);
   formData.set("uploaderEmail", currentUser.email);
+  formData.set("imageId", "IMG" + (Math.floor(Math.random() * 900000) + 10000));
   let dataObj = Object.fromEntries(formData.entries());
   const galleryImages = JSON.parse(localStorage.getItem("galleryImages")) || [];
   galleryImages.push(dataObj);

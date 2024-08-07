@@ -70,7 +70,7 @@ function displayBlogs() {
     <p>${allBlogs.at(-1).message.split(" ", 50).join(" ")}</p>
     <div class="user-info">
       <div class="picture">
-          <img src="./Assests/Yoga.jpg" alt="userImage" width="50" height="50">
+          <img src="./Assests/user_profile.jpg" alt="userImage" width="50" height="50">
       </div>
       <div>
           <h4>${allBlogs.at(-1).name}</h4>

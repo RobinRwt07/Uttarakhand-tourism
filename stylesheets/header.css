@@ -159,6 +159,8 @@
       outline-offset: 2px;
 
       &>img {
+        width: 100%;
+        height: 100%;
         border-radius: inherit;
       }
     }
@@ -177,6 +179,10 @@
       font-size: 14px;
 
       & button {
+        all: unset;
+      }
+
+      &>div>a {
         all: unset;
       }
 

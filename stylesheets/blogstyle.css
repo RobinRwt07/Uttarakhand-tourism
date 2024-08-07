@@ -12,9 +12,6 @@
 }
 
 .blog-section {
-  @media (max-width: 768px) {
-    margin-top: 2rem;
-  }
 
   & .user-info {
     &>.userimg {
@@ -151,9 +148,6 @@
 
 /* contact-us page styling */
 .contact-section {
-  @media (max-width:768px) {
-    margin-block-start: 1rem;
-  }
 
   &>h1 {
     text-align: center;
@@ -225,7 +219,6 @@
 /* blogs page style */
 
 .blogs-section {
-  margin-top: 1rem;
 
   &>h1 {
     margin-bottom: 1rem;
@@ -358,9 +351,7 @@
 }
 
 /* about-us page */
-
 .about-section {
-  margin-top: 2rem;
 
   &>.about,
   .mission {
@@ -369,7 +360,7 @@
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    padding: 2rem 1.5rem .5rem;
+    padding: 1rem;
 
     @media (min-width:650px) {
       flex-direction: row;
@@ -378,8 +369,6 @@
       &>* {
         flex: 1 1;
       }
-
-
     }
 
     &>.left {

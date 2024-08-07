@@ -24,7 +24,7 @@ function displayBlogContent(blog) {
   blogHeader.innerHTML = `
   <div class="user-info">
     <div class="userimg">
-      <img src="./Assests/adventure.jpg" alt="user image">
+      <img src="./Assests/user_profile.jpg" alt="user image">
     </div>
     <div>
       <h3>${blog.name}</h3>

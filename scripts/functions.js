@@ -77,7 +77,7 @@ export function verifySignIn() {
 }
 
 export function getRegisteredUser() {
-  if (localStorage.getItem("isUserSignIn") === "false") {
+  if (localStorage.getItem("isUserSignIn") === "false" || localStorage.getItem("isUserSignIn") === null) {
     return false;
   }
   else {

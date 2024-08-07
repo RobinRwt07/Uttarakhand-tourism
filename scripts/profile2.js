@@ -32,7 +32,6 @@ fileSelectBtn?.addEventListener("change", (e) => {
   }
 })
 
-
 updateImageBtn?.addEventListener("click", () => {
   if (!isFilePresent) {
     alert("Please select image");

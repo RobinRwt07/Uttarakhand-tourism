@@ -3,7 +3,7 @@ const profileBtn = document.querySelector(".profile-image");
 const links = document.querySelector(".links");
 const headerProfileImage = document.querySelector("#headerProfileImage");
 
-if (localStorage.getItem("isUserSignIn") === "false") {
+if (localStorage.getItem("isUserSignIn") === "false" || localStorage.getItem("isUserSignIn") === null) {
   loginbtn.innerHTML = `<a href="./signin.html" class="btn-style" role="button">Sign-Up</a>`;
   headerProfileImage.innerHTML = `
   <img src="./Assests/user_profile.jpg" alt="profileImage">`
@@ -12,8 +12,6 @@ else {
   loginbtn.innerHTML = `<button type="button" class="btn-style logoutBtn" id="logoutBtn" onclick='handleLogOut()' >Logout</button>`;
 
   const user = JSON.parse(localStorage.getItem("registeredUsers")).find(item => item.email == localStorage.getItem("loggedInUser"));
-
-
 
   headerProfileImage.innerHTML = `
   <img src="${user?.profilePicture ? user.profilePicture : "./Assests/user_profile.jpg"}" alt="profileImage">`;

@@ -21,8 +21,6 @@ if (!districtData) {
 }
 
 placeToVisit.textContent = `Places to Visit in ${districtData.districtName}`;
-console.log(districtData);
-
 const districtInfo = document.querySelector("#district-info");
 districtInfo.innerHTML = `
 <div class="left">

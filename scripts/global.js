@@ -29,9 +29,10 @@ if (localStorage.getItem("UttarakhandTourismData")) {
   }
 }
 
-// load footer
 const footerSection = document.querySelector("#footerContainer");
-footerSection.innerHTML = `
+if (footerSection) {
+  // load footer
+  footerSection.innerHTML = `
 <div class="footer-container">
   <div class="footer">
     <div class="logobox">
@@ -80,3 +81,4 @@ footerSection.innerHTML = `
     <p>Copyright &copy; 2024 All right reserved</p>
   </div>
 </div>`;
+}

@@ -249,7 +249,6 @@
         left: 0;
         width: 100%;
         gap: 1rem;
-        /* margin-inline: auto; */
         height: auto;
         position: static;
         background-color: transparent;
@@ -263,14 +262,17 @@
         margin-inline: auto;
       }
 
-      &>.close-btn {
-        cursor: pointer;
-        position: absolute;
-        right: 1rem;
-        top: 2rem;
+      &>.first-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        @media (min-width: 768px) {
-          display: none;
+        &>span {
+          cursor: pointer;
+
+          @media (min-width: 768px) {
+            display: none;
+          }
         }
       }
 

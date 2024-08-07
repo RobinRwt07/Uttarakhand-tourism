@@ -56,16 +56,19 @@
 
 
 
-    &>.close-btn {
-      cursor: pointer;
-      position: absolute;
-      right: 10%;
-      top: 2rem;
+    &>.first-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-      @media (min-width:768px) {
-        display: none;
+      &>span {
+        margin-right: 1rem;
+        cursor: pointer;
+
+        @media (min-width:768px) {
+          display: none;
+        }
       }
-
     }
 
     & ul {

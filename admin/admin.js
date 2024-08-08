@@ -1,6 +1,6 @@
 const isAdminSignIn = localStorage.getItem("isAdminSignIn");
 if (isAdminSignIn == null || isAdminSignIn === "false") {
-  location.replace("../Error.html");
+  location.replace("./adminlogin.html");
 }
 
 const queryParam = location.search.length === 0 ? "home" : location.search.slice(1);

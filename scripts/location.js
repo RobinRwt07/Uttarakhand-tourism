@@ -1,4 +1,4 @@
-import { fetchDataPlaces, getRegisteredUser } from "./functions.js";
+import { fetchDataPlaces, getRegisteredUser, showError, validateName } from "./functions.js";
 
 let queryParam = window.decodeURIComponent(location.search);
 if (queryParam.length === 0) {
@@ -78,7 +78,7 @@ else {
             <span>Charges</span>
             <span>Rs ${item.charges}/ Day</span>
           </div>
-          <a href="#">Book Now </a>
+          <button type="button" data-hotelId="${item.hotelId}">Book Now </button>
         </div>
       </div>`;
   }
@@ -156,8 +156,6 @@ else {
   }
 }
 
-
-
 // gallery section
 const pictureUploadBtn = document.querySelector("#pictureUploadBtn");
 const pictureUploadForm = document.querySelector("#pictureUploadForm");
@@ -170,7 +168,6 @@ pictureUploadBtn.addEventListener("click", () => {
   }
   pictureUploadForm.classList.toggle("hide");
 });
-
 
 document.querySelector("#imageField").addEventListener("input", (e) => {
   const image = e.target.value;
@@ -194,4 +191,82 @@ pictureUploadForm.firstElementChild.addEventListener("submit", (e) => {
 
 function showImagePreview(image) {
   document.querySelector(".previewImage").src = image;
+}
+
+// hotel booking
+
+hotelList.addEventListener("click", (e) => {
+  if (!currentUser) {
+    alert("Please login");
+    return;
+  }
+  if (e.target.tagName === "BUTTON") {
+    const id = e.target.getAttribute("data-hotelId");
+    bookHotel(id);
+  }
+});
+
+const bookingForm = document.querySelector("#hotelBookingForm");
+function bookHotel(id) {
+  bookingForm.showModal();
+  document.querySelector("#customerName").value = currentUser.name;
+  document.querySelector("#bookingForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(document.querySelector("#bookingForm"));
+    formData.set("hotelId", id);
+    formData.set("customerEmail", currentUser.email);
+
+    const checkInDate = new Date(formData.get("checkIn"));
+    const checkOutDate = new Date(formData.get("checkOut"));
+    if (checkInDate > checkOutDate) {
+      showError("please enter valid Date");
+      return;
+    }
+    const diffTime = Math.abs(checkOutDate - checkInDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    const obj = Object.fromEntries(formData.entries());
+    const hotel = JSON.parse(localStorage.getItem("hotels")).find(item => item.hotelId === id);
+    const amount = (hotel.charges * diffDays) * formData.get("noOfRoom");
+    document.querySelector("#bookingForm").style.display = "none";
+    document.querySelector("#checkoutForm").style.display = "flex";
+    displayPayment(amount, obj);
+  });
+
+}
+
+function displayPayment(amount, obj) {
+  document.querySelector("#totalPayment").textContent = amount;
+  const paymentForm = document.querySelector("#paymentForm");
+  paymentForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(paymentForm);
+    const name = formData.get("cardHolderName");
+    const cardNumber = formData.get("cardNumber");
+    const res = validateName(name);
+    if (res) {
+      showError(res);
+      return;
+    }
+    if (cardNumber.length !== 16) {
+      showError("please provide valid card Number");
+      return;
+    }
+    let paymentInfo = {
+      paymentStatus: "Done",
+      paymentId: "PYMT" + (Math.floor(Math.random() * 900000) + 10000),
+    }
+    const bookingData = { ...obj, ...paymentInfo }
+    const bookedHotel = JSON.parse(localStorage.getItem("hotelBookedData")) || [];
+    bookedHotel.push(bookingData);
+    localStorage.setItem("hotelBookedData", JSON.stringify(bookedHotel));
+    alert("Booking confirmed");
+    bookingForm.close();
+  });
+}
+
+
+const dialogClosebtn = document.querySelector("#dialogClosebtn");
+dialogClosebtn.onclick = () => {
+  bookingForm.close();
 }

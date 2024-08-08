@@ -256,7 +256,7 @@
   &>.hotel-list {
     overflow: scroll;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: var(--gap-1);
     padding: 0.5rem;
 
@@ -469,5 +469,41 @@
     height: 130px;
     object-fit: cover;
     object-position: center bottom;
+  }
+}
+
+#hotelBookingForm {
+  min-width: 300px;
+  position: fixed;
+  border: none;
+  border-radius: var(--br);
+  padding: 2rem;
+  margin: auto;
+  z-index: 10;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+  }
+
+  &>#checkoutForm {
+    display: none;
+
+    & .expiry-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      &>.input-field {
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+      }
+    }
+  }
+
+  &>#dialogClosebtn {
+    position: relative;
+    left: 94%;
   }
 }

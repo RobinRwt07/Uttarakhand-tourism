@@ -85,3 +85,14 @@ export function getRegisteredUser() {
     return currentUser;
   }
 }
+
+
+export function showError(errorMsg) {
+  const errorEle = document.querySelector("#showError");
+  const ele = document.createElement("span");
+  ele.textContent = errorMsg;
+  errorEle.append(ele);
+  setTimeout(() => {
+    errorEle.removeChild(ele);
+  }, 2000);
+}

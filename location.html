@@ -39,6 +39,70 @@
 </head>
 
 <body>
+  <dialog id="hotelBookingForm">
+    <span id="dialogClosebtn">
+      <i class="fa-solid fa-xmark fa-xl"></i>
+    </span>
+    <form method="post" id="bookingForm">
+      <h4 class="tx-center">Fill Your Details</h4>
+      <div class="input-field">
+        <label for="customerName">Name</label>
+        <input type="text" id="customerName" name="customerName" placeholder="Name" required readonly>
+      </div>
+      <input type="hidden" name="customerEmail">
+      <div class="input-field">
+        <label for="checkIn">Check in Date</label>
+        <input type="date" name="checkIn" id="checkIn" placeholder="Check In Date" required>
+      </div>
+
+      <div class="input-field">
+        <label for="checkOut">Check Out Date</label>
+        <input type="date" name="checkOut" id="checkOut" placeholder="Check Out Date" required>
+      </div>
+
+      <div class="input-field">
+        <label for="noOfRoom">Rooms</label>
+        <input type="number" min="1" max="3" name="noOfRoom" id="noOfRoom" placeholder="Number of Rooms" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="checkoutForm">
+      <form method="post" id="paymentForm">
+        <h4 class="tx-center">Payment Details</h4>
+        <div class="input-field">
+          <label for="cardholderName">Name</label>
+          <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Cardholder Name" required>
+        </div>
+
+        <div class="input-field">
+          <label for="cardNumber">Card Number</label>
+          <input type="number" name="cardNumber" id="cardNumber" placeholder="Card number" required>
+        </div>
+
+        <div class="expiry-section">
+          <div class="input-field">
+            <label for="expiryYear">Expiry </label>
+            <input type="number" min="1" max="12" name="expiryMonth" id="expiryMonth" placeholder="Month" required>
+            <input type="number" min="2023" max="2050" name="expiryYear" id="expiryYear" placeholder="Year" required>
+          </div>
+          <div class="input-field">
+            <label for="cvvNumber">CVV</label>
+            <input type="number" min="100" max="999" name="cvvNumber" id="cvvNumber" placeholder="CVV" required>
+          </div>
+        </div>
+
+        <div>
+          <h4>Total Amount : <span id="totalPayment"></span></h4>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="showError" class="tx-center error mt-1">
+
+    </div>
+  </dialog>
+
   <section class="headerbar">
     <div class="header-section sc-xl">
       <div class="menuopen-btn" id="menu-open-btn">
@@ -47,11 +111,11 @@
         </span>
       </div>
       <header id="header">
-        <div class="first-section" id="menu-close-btn">
+        <div class="first-section">
           <a href="./index.html" class="logo">
             <img src="./Assests/logo.svg" alt="logo">
           </a>
-          <span>
+          <span id="menu-close-btn">
             <i class="fa-solid fa-xmark fa-xl" style="color: #ffffff;"></i>
           </span>
         </div>
@@ -88,6 +152,7 @@
     <div class="banner-section" id="location-details">
       <!-- LOCATION INFO -->
     </div>
+
     <div class="info-section container">
       <div class="sc-xl">
         <div class="info card" id="location-info-card">
@@ -110,7 +175,6 @@
     </div>
 
     <section class="container">
-
       <div class="location-gallery-container sc-xl">
         <div class="mb-1">
           <h2 class="sub-heading">Pictures Form Travellers</h2>

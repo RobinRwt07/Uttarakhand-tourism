@@ -199,7 +199,8 @@
 }
 
 .alluploadedBlogs,
-.allUploadedReviews {
+.allUploadedReviews,
+.allBookings {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

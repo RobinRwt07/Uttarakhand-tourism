@@ -270,3 +270,28 @@ form {
 .hide {
   display: none;
 }
+
+.alertDiv {
+  padding: .7rem;
+  border-radius: 3px;
+  width: clamp(200px, 22vw, 250px);
+  position: fixed;
+  z-index: 10;
+  top: 5%;
+  right: 1%;
+  font-size: 13px;
+  transition: opacity .3s linear;
+  opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  align-items: center;
+
+  @starting-style {
+    opacity: 0;
+  }
+
+  &>.close {
+    font-size: 26px !important;
+  }
+}

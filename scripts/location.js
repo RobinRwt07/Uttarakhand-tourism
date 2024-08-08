@@ -1,4 +1,5 @@
 import { fetchDataPlaces, getRegisteredUser, showError, validateName } from "./functions.js";
+import { showAlert } from "./alerts.js";
 
 let queryParam = window.decodeURIComponent(location.search);
 if (queryParam.length === 0) {
@@ -57,7 +58,6 @@ howToReach.innerHTML = `<div class="card">
           </div>`;
 
 // hotel section
-
 const hotelList = document.querySelector("#hotelList");
 const allHotels = JSON.parse(localStorage.getItem("hotels") || "[]");
 const filteredHotels = allHotels.filter(item => item.hotelLocation.toLowerCase() === data.placeName.toLowerCase());
@@ -118,7 +118,7 @@ const reviewBoxForm = document.querySelector("#reviewForm");
 
 reviewFormBtn.addEventListener("click", () => {
   if (!currentUser) {
-    alert("Please Login.");
+    showAlert("error", "Please Login");
     return;
   }
   reviewBoxForm.classList.toggle("hide");
@@ -137,13 +137,16 @@ reviewForm.addEventListener("submit", (e) => {
   const reviewData = JSON.parse(localStorage.getItem("usersReview")) || [];
   reviewData.push(reviewObj);
   localStorage.setItem("usersReview", JSON.stringify(reviewData));
-  alert("Review Submitted");
+  showAlert("success", "Review Submitted");
   location.reload();
 });
 
 
 const galleryContainer = document.querySelector("#galleryContainer") || [];
-const images = JSON.parse(localStorage.getItem("galleryImages")) || [].filter(item => item.location === data.placeName).slice(-8);
+const images = JSON.parse(localStorage.getItem("galleryImages") || "[]").filter(item => item.location == data.placeName).slice(-8);
+console.log(data.placeName);
+console.log(images);
+
 if (images.length === 0) {
   galleryContainer.innerHTML = `<h4 class="tx-center m-1" style="grid-column:span 3">No Images 🥲</h4>`;
 }
@@ -163,7 +166,7 @@ document.querySelector("#uploaderName").value = currentUser.name;
 
 pictureUploadBtn.addEventListener("click", () => {
   if (!currentUser) {
-    alert("Please Login.");
+    showAlert("error", "Please Login");
     return;
   }
   pictureUploadForm.classList.toggle("hide");
@@ -185,7 +188,7 @@ pictureUploadForm.firstElementChild.addEventListener("submit", (e) => {
   const galleryImages = JSON.parse(localStorage.getItem("galleryImages")) || [];
   galleryImages.push(dataObj);
   localStorage.setItem("galleryImages", JSON.stringify(galleryImages));
-  alert("Image Uploaded");
+  showAlert("success", "Image Uploaded");
   location.reload();
 });
 
@@ -197,7 +200,7 @@ function showImagePreview(image) {
 
 hotelList.addEventListener("click", (e) => {
   if (!currentUser) {
-    alert("Please login");
+    showAlert("error", "Please Login");
     return;
   }
   if (e.target.tagName === "BUTTON") {
@@ -253,14 +256,14 @@ function displayPayment(amount, obj) {
       return;
     }
     let paymentInfo = {
-      paymentStatus: "Done",
       paymentId: "PYMT" + (Math.floor(Math.random() * 900000) + 10000),
+      paymentStatus: "Done",
     }
     const bookingData = { ...obj, ...paymentInfo }
     const bookedHotel = JSON.parse(localStorage.getItem("hotelBookedData")) || [];
     bookedHotel.push(bookingData);
     localStorage.setItem("hotelBookedData", JSON.stringify(bookedHotel));
-    alert("Booking confirmed");
+    showAlert("success", "Booking Confirmed");
     bookingForm.close();
   });
 }

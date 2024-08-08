@@ -22,6 +22,7 @@ const slidebarLinks = document.querySelector(".slidebar-link");
 const alluploadedBlogs = document.querySelector(".alluploadedBlogs");
 const allUploadedReviews = document.querySelector(".allUploadedReviews");
 const alluploadedImages = document.querySelector(".alluploadedImages");
+const allBookings = document.querySelector(".allBookings");
 
 const currentSection = "info";
 showActiveSection(currentSection);
@@ -55,6 +56,9 @@ function showActiveSection(section) {
           displayAllImages();
         } else if (section == "reset_passsword") {
           resetPassword();
+        }
+        else if (section == "booking") {
+          displayAllBooking();
         }
       } else {
         item.style.display = "none";
@@ -146,6 +150,30 @@ function displayAllReviews() {
     }
   }
 }
+const bookings = JSON.parse(localStorage.getItem("hotelBookedData")) || [];
+const allhotelsList = JSON.parse(localStorage.getItem("hotels")) || [];
+function displayAllBooking() {
+  const bookedHotel = bookings.filter(
+    (item) => item.customerEmail === currentUser.email
+  );
+  if (bookedHotel.length === 0) {
+    allBookings.innerHTML = `<h4 class="tx-center mt-1">No Bookings</h4>`;
+  }
+  else {
+    for (const item of bookedHotel) {
+      const hotel = allhotelsList.find(ele => ele.hotelId === item.hotelId);
+      allBookings.innerHTML += `
+           <div class="card">
+              <h4 title="${hotel.hotelName}">${hotel.hotelName}</h4>
+              <p title="${hotel.hotelAddress}">${hotel.hotelAddress}</p>
+              <p>Checkin Date : ${item.checkIn}</p>
+              <p>Checkout Date : ${item.checkOut} </p>
+              <h5>Payment Status: ${item.paymentStatus}</h5>
+            </div>`;
+    }
+  }
+}
+
 
 function deleteReview(id) {
   if (confirm("are you sure?")) {

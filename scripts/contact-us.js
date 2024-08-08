@@ -1,4 +1,6 @@
 import { validateEmail, validateName, getRegisteredUser } from "./functions.js";
+
+
 const contact = document.querySelector("#contact-form");
 const nameErr = document.querySelector("#nameError");
 const emailErr = document.querySelector("#emailError");
@@ -21,12 +23,11 @@ document.querySelector("#user-email").value = currentUser?.email || "";
 contact.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!currentUser) {
-    alert("please login first");
+    showAlert("error", "Please Login");
     return;
   }
   const contactForm = new FormData(contact);
   let valid = true;
-
   const name = contactForm.get("username");
   const email = contactForm.get("useremail");
   const msg = contactForm.get("message");
@@ -62,7 +63,7 @@ contact.addEventListener("submit", (e) => {
     let queries = JSON.parse(localStorage.getItem("usersQuery"));
     queries.push(dataObj);
     localStorage.setItem("usersQuery", JSON.stringify(queries));
-    alert("Message successfully sent");
+    showAlert("success", "Message successfully sent");
     location.reload();
   }
 })

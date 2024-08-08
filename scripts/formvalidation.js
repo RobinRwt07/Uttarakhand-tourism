@@ -1,4 +1,5 @@
 import { validateEmail, validatePassword, validateName } from "./functions.js";
+import { showAlert } from "./alerts.js";
 
 const signIn = document.querySelector("#signin");
 const signUp = document.querySelector("#signup");
@@ -38,7 +39,7 @@ signIn.addEventListener("submit", (e) => {
     const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
     const isUserRegistered = registeredUsers.find((item) => item.email === user.email);
     if (!isUserRegistered) {
-      alert("Please registered first");
+      showAlert("error", "Please registered first")
       return;
     }
     if (user.email == isUserRegistered.email && user.password == isUserRegistered.password) {
@@ -49,7 +50,7 @@ signIn.addEventListener("submit", (e) => {
       location.href = "./index.html";
     }
     else {
-      alert("Invalid Credentials");
+      showAlert("error", "Invalid Credentials")
     }
   }
 });
@@ -58,8 +59,6 @@ signUp.addEventListener("submit", (e) => {
   e.preventDefault();
   let valid = true;
   const formData = new FormData(signUp);
-  console.log(formData.get("new-useremail"));
-
   const isNotValid = validateEmail(formData.get("new-useremail"));
 
   emailErr.textContent = "";
@@ -99,13 +98,13 @@ signUp.addEventListener("submit", (e) => {
     const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"))
     const isUserRegistered = registeredUsers.find((item) => item.email === user.email);
     if (isUserRegistered) {
-      alert("User Already Registred");
+      showAlert("error", "User Already Registered")
     }
     else {
       let users = JSON.parse(localStorage.getItem("registeredUsers"));
       users.push(user);
       localStorage.setItem("registeredUsers", JSON.stringify(users));
-      alert("Registred Successfully");
+      showAlert("success", "Registred Successfully")
       location.reload();
     }
   }

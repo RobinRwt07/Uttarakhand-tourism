@@ -1,4 +1,5 @@
 import { getRegisteredUser } from "./functions.js";
+import { showAlert } from "./alerts.js";
 
 const blogForm = document.getElementById("blog-form");
 const msgError = document.getElementById("msgError");
@@ -8,13 +9,30 @@ const uploaderEmail = document.getElementById("user-email");
 
 // get the loggedIn user name and email
 const currentUser = getRegisteredUser();
-uploaderName.value = currentUser?.name || "";
-uploaderEmail.value = currentUser?.email || "";
+const openDialog = document.querySelector("#open-dialog");
+const closeDialog = document.querySelector("#close-dialog");
+const blog = document.querySelector("#blog");
+
+openDialog.addEventListener("click", () => {
+  if (localStorage.getItem("isUserSignIn") === "false" || localStorage.getItem("isUserSignIn") === null) {
+    showAlert("error", "Please Login first");
+    return;
+  }
+  else {
+    blog.showModal();
+    uploaderName.value = currentUser?.name || "";
+    uploaderEmail.value = currentUser?.email || "";
+  }
+});
+closeDialog.addEventListener("click", () => {
+  blog.close();
+});
 
 blogForm.addEventListener("submit", (e) => {
+  e.preventDefault();
   if (!currentUser) {
-    alert("Please Login");
-    location.href = "./signin.html";
+    showAlert("error", "Please login")
+    return;
   }
   let valid = true;
   msgError.textContent = "";
@@ -48,10 +66,9 @@ blogForm.addEventListener("submit", (e) => {
     let blogs = JSON.parse(localStorage.getItem("blogsData"));
     blogs.push(blog);
     localStorage.setItem("blogsData", JSON.stringify(blogs));
-    alert("blog successfully uploaded");
+    showAlert("success", "blog Uploaded");
     location.reload();
   }
-  e.preventDefault();
 });
 
 

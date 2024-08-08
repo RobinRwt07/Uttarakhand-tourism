@@ -59,7 +59,7 @@ header {
     position: absolute;
     height: 100%;
     padding: 1rem;
-    width: 50%;
+    width: 35vmax;
     display: none;
     background-color: rgb(246, 246, 246);
     flex-direction: column;
@@ -73,10 +73,9 @@ header {
     }
 
     &>.slidebar-close-btn {
-      display: inline-block;
+      align-self: flex-end;
       position: relative;
       cursor: pointer;
-      left: 90%;
 
       @media (min-width:768px) {
         display: none;
